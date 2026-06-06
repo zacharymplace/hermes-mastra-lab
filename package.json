@@ -75,7 +75,11 @@
     "sentra:ledger:check": "npm run sentra:ledger && npm run sentra:ledger:gate",
     "sentra:weekly-review": "tsx scripts/write-sentra-weekly-review.ts",
     "sentra:weekly-review:gate": "tsx evaluations/sentra-weekly-review-gate.ts",
-    "sentra:weekly-review:check": "npm run sentra:weekly-review && npm run sentra:weekly-review:gate"
+    "sentra:weekly-review:check": "npm run sentra:weekly-review && npm run sentra:weekly-review:gate",
+    "sentra:priority-proposal": "tsx scripts/write-sentra-priority-proposal.ts",
+    "sentra:priority-apply": "tsx scripts/apply-sentra-priority-proposal.ts",
+    "sentra:priority-rewriter:gate": "tsx evaluations/sentra-priority-rewriter-gate.ts",
+    "sentra:priority-rewriter:check": "npm run sentra:weekly-review && npm run sentra:priority-proposal && npm run sentra:priority-apply && npm run sentra:priority-rewriter:gate"
   },
   "keywords": [],
   "author": "",

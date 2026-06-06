@@ -1,0 +1,25 @@
+{
+  "runtime": "sentra-priority-apply-v1",
+  "generatedAt": "2026-06-06T04:44:32.479Z",
+  "status": "applied",
+  "proposalArtifact": "sentra/priorities/proposals/current.json",
+  "approvalArtifact": "sentra/priorities/proposals/current-approval.json",
+  "targetArtifact": "sentra/priorities/current.json",
+  "approval": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Weekly review priorities are accepted as the next operating priorities."
+  },
+  "checks": {
+    "proposalPendingApproval": true,
+    "approvalGranted": true,
+    "reviewerCaptured": true,
+    "reasonCaptured": true,
+    "prioritiesApplied": true
+  },
+  "notes": [
+    "This applies the weekly-review priority proposal after explicit approval.",
+    "The next Sentra context run should consume the rewritten priorities.",
+    "Approval artifacts are local operating inputs and should not be required for committed state."
+  ]
+}
