@@ -1,0 +1,183 @@
+{
+  "runtime": "hermes-agentic-run-v4-quality-gated-pr-draft-v10.4",
+  "generatedAt": "2026-06-06T21:35:15.523Z",
+  "status": "drafted-for-human-review",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-branch-prepare-v10.3.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v4/pr-draft/v10.4.json",
+    "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-pr-draft-v10.4.json",
+    "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-pr-draft-v10.4.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v4",
+    "sourceBranchPrepare": "hermes-agentic-run-v4-quality-gated-branch-prepare-v10.3",
+    "selectedTarget": "quality-gated-pr-draft"
+  },
+  "prDraft": {
+    "id": "run-v4-quality-gated-pr-draft-v10.4",
+    "title": "Add Hermes agentic run v4 quality-gated source patch",
+    "summary": "Drafts PR metadata for the first quality-gated Hermes source patch chain without opening a PR.",
+    "draftOnly": true,
+    "prOpenedByThisStep": false,
+    "branchName": "hermes/agentic-run-v4-quality-gated-source-patch-v10-3",
+    "baseRef": "main",
+    "body": "## Summary\n\n- Adds the first quality-gated PR draft artifact for Hermes agentic run v4.\n- Carries forward the validated v9.7 `qualityGate` contract through v10.3 branch preparation.\n- Keeps GitHub lifecycle actions operator-controlled.\n\n## Quality Gate\n\n- Status: passed-before-branch-prepare\n- Passed: true\n- Required checks: generated-artifact-drift, stale-timestamp-churn, no-op-patch-claims, human-boundary-preservation, declared-target-only-changes\n- Required apply fields: applied, changed, diffOutput, semanticChange\n- Human boundary preserved: no branch, push, PR, or merge action performed by this step.\n\n## Validation\n\n- `npm run hermes:agentic-run-v4-quality-gated-branch-prepare:v10.3:gate`\n- `npm run hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2:gate`\n- `npm run check`\n- `npm run mastra:check`\n\n## Operator Boundary\n\nThis artifact drafts PR metadata only. It does not create a branch, push, open a PR, merge, or perform destructive git operations."
+  },
+  "qualityGate": {
+    "status": "passed-before-pr-draft",
+    "sourceContract": "hermes-agentic-run-v3-quality-gate-index-v9.7",
+    "sourceCloseout": "hermes-agentic-run-v3-quality-gate-closeout-v9.8",
+    "applicability": "applies-to-this-proposal-before-any-apply-step",
+    "expectedChangedPaths": [
+      "scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
+      "evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
+      "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+      "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+      "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md",
+      "package.json"
+    ],
+    "requiredChecks": [
+      "generated-artifact-drift",
+      "stale-timestamp-churn",
+      "no-op-patch-claims",
+      "human-boundary-preservation",
+      "declared-target-only-changes"
+    ],
+    "requiredGateOutputs": [
+      "status",
+      "requiredChecks",
+      "results",
+      "generatedArtifactDrift",
+      "timestampChurn",
+      "noOpPatchClaims",
+      "humanBoundaryPreserved",
+      "declaredTargetOnlyChanges",
+      "passed"
+    ],
+    "results": [
+      {
+        "id": "generated-artifact-drift",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "stale-timestamp-churn",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "no-op-patch-claims",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "human-boundary-preservation",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "declared-target-only-changes",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      }
+    ],
+    "generatedArtifactDrift": {
+      "status": "checked-at-proposal",
+      "classification": "none",
+      "driftPaths": []
+    },
+    "timestampChurn": {
+      "status": "classified",
+      "classification": "not-applicable-to-proposal",
+      "timestampOnly": false
+    },
+    "noOpPatchClaims": {
+      "status": "classified",
+      "applied": true,
+      "changed": true,
+      "diffOutput": "bounded apply artifact, gate, reports, and package script wiring generated",
+      "semanticChange": true
+    },
+    "humanBoundaryPreserved": {
+      "status": "preserved",
+      "branchCreated": false,
+      "pushed": false,
+      "prOpened": false,
+      "merged": false
+    },
+    "declaredTargetOnlyChanges": {
+      "status": "declared",
+      "allowedTargets": [
+        "scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
+        "evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
+        "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md",
+        "package.json"
+      ],
+      "changedFiles": [
+        "scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
+        "evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
+        "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md",
+        "package.json"
+      ],
+      "undeclaredChanges": []
+    },
+    "passed": true,
+    "branchPrepareRequirement": "generated drift must be clean or declared before branch preparation",
+    "prDraftRequirement": "PR draft must include qualityGate status in validation metadata before operator-controlled PR creation."
+  },
+  "safetyBoundary": {
+    "draftOnly": true,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredForGitHubActions": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v4-quality-gated-branch-prepare:v10.3:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1:gate",
+      "passed": true
+    }
+  ],
+  "gitStatus": "## main...origin/main\n M package.json\n?? evaluations/hermes-agentic-run-v4-quality-gated-pr-draft-v10-4-gate.ts\n?? scripts/write-hermes-agentic-run-v4-quality-gated-pr-draft-v10-4.ts",
+  "checks": {
+    "runtimeLabeled": true,
+    "statusDraftedForHumanReview": true,
+    "branchPrepareReady": true,
+    "qualityGatePresent": true,
+    "qualityGatePassed": true,
+    "prDraftPresent": true,
+    "prBodyIncludesQualityGate": true,
+    "declaredTargetsClean": true,
+    "validationsPassed": true,
+    "draftOnly": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This drafts PR metadata for human review.",
+    "It carries forward the qualityGate from v10.3 branch prepare.",
+    "It does not create a branch, push, merge, or open a PR."
+  ]
+}
