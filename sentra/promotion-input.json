@@ -1,0 +1,24 @@
+{
+  "runtime": "sentra-promotion-input-v1",
+  "generatedAt": "2026-06-06T04:30:51.532Z",
+  "sourceArtifact": "sentra/promotions/current.json",
+  "goal": "Generate the next best Hermes push",
+  "constraints": [
+    "Keep Hermes domain logic framework-independent",
+    "Use Mastra only for qualified orchestration boundaries",
+    "Preserve artifact-backed promotion decisions",
+    "Require external review before promotion"
+  ],
+  "context": [
+    "Mastra promotion report v3 qualified controlled use",
+    "Langfuse OTEL visibility is verified",
+    "Persistence-backed suspend and resume is verified",
+    "External human input is verified",
+    "Failure recovery is verified"
+  ],
+  "notes": [
+    "This is the Sentra-authored input artifact for Hermes promotion.",
+    "Hermes promotion workflow should read this artifact instead of static sample input.",
+    "Sentra owns current operating context; Hermes owns recommendation and promotion."
+  ]
+}

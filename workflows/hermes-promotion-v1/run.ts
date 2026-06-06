@@ -15,7 +15,9 @@ type Review = {
 
 const root = process.cwd();
 
-const inputPath = path.join(root, "sentra/sample-input.json");
+const inputPath = fs.existsSync(path.join(root, "sentra/promotion-input.json"))
+  ? path.join(root, "sentra/promotion-input.json")
+  : path.join(root, "sentra/sample-input.json");
 const reviewExamplePath = path.join(root, "reviews/pending-approval.example.json");
 const reviewPath = path.join(root, "reviews/promotion-v1-review.json");
 const outJsonPath = path.join(root, "reports/promotions/hermes-promotion-v1.json");
@@ -36,7 +38,7 @@ const report = await startActiveObservation(
   async (observation) => {
     observation.update({
       input: {
-        inputArtifact: "sentra/sample-input.json",
+        inputArtifact: path.relative(root, inputPath),
         reviewArtifact: "reviews/promotion-v1-review.json"
       },
       metadata: {
@@ -63,7 +65,7 @@ const report = await startActiveObservation(
       mode: "operational-local",
       status: promoted ? "promoted" : "held",
       generatedAt: new Date().toISOString(),
-      inputArtifact: "sentra/sample-input.json",
+      inputArtifact: path.relative(root, inputPath),
       reviewArtifact: "reviews/promotion-v1-review.json",
       outputArtifacts: [
         "reports/promotions/hermes-promotion-v1.json",

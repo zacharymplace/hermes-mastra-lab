@@ -1,0 +1,16 @@
+{
+  "goal": "Generate the next best Hermes push",
+  "constraints": [
+    "Keep Hermes domain logic framework-independent",
+    "Use Mastra only for qualified orchestration boundaries",
+    "Preserve artifact-backed promotion decisions",
+    "Require external review before promotion"
+  ],
+  "context": [
+    "Mastra promotion report v3 qualified controlled use",
+    "Langfuse OTEL visibility is verified",
+    "Persistence-backed suspend and resume is verified",
+    "External human input is verified",
+    "Failure recovery is verified"
+  ]
+}
