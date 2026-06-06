@@ -4,3 +4,7 @@ dist/
 .env.*
 .DS_Store
 *.log
+storage/
+*.db
+*.db-shm
+*.db-wal
