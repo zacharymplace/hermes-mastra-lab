@@ -8,11 +8,17 @@ function readJson<T>(relativePath: string): T {
 }
 
 const projects = readJson<any[]>("sentra/projects/current.json");
+const prioritizationPath = path.join(root, "reports/priorities/sentra-project-prioritization.json");
+const projectPrioritization = fs.existsSync(prioritizationPath)
+  ? JSON.parse(fs.readFileSync(prioritizationPath, "utf8"))
+  : null;
 const decisions = readJson<any[]>("sentra/decisions/current.json");
 const reviews = readJson<any[]>("sentra/reviews/current.json");
 const priorities = readJson<any[]>("sentra/priorities/current.json");
 
-const activeProjects = projects.filter((project) => project.status === "active");
+const activeProjects = projectPrioritization?.selectedProject
+  ? [projectPrioritization.selectedProject]
+  : projects.filter((project) => project.status === "active");
 const acceptedDecisions = decisions.filter((decision) => decision.status === "accepted");
 const topPriority = [...priorities].sort((a, b) => a.rank - b.rank)[0];
 
@@ -24,6 +30,12 @@ const snapshot = {
   recentReviews: reviews,
   priorities,
   topPriority,
+  projectPrioritization: projectPrioritization
+    ? {
+        selectedProject: projectPrioritization.selectedProject,
+        rankedProjects: projectPrioritization.rankedProjects
+      }
+    : null,
   staleRisks: activeProjects.flatMap((project) => project.risks ?? []),
   hermesPrompt: {
     goal: topPriority?.title ?? "Generate the next best Hermes push",

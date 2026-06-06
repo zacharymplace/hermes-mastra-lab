@@ -1,0 +1,59 @@
+[
+  {
+    "id": "hermes-mastra-lab",
+    "name": "Hermes Mastra Lab",
+    "status": "active",
+    "summary": "Operate the Sentra-fed Hermes promotion loop with Mastra-qualified orchestration and Langfuse visibility.",
+    "nextAction": "Add multi-project prioritization so Sentra can choose between competing workstreams.",
+    "signals": {
+      "strategicFit": 5,
+      "urgency": 4,
+      "learningValue": 5,
+      "operatingLeverage": 5,
+      "riskReduction": 4,
+      "effort": 3
+    },
+    "risks": [
+      "Overfitting the loop to one repo",
+      "Continuing to build infrastructure before testing multi-project choice"
+    ]
+  },
+  {
+    "id": "sentra-os",
+    "name": "Sentra OS",
+    "status": "candidate",
+    "summary": "Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
+    "nextAction": "Define portable Sentra folder structure and generator contracts.",
+    "signals": {
+      "strategicFit": 5,
+      "urgency": 5,
+      "learningValue": 4,
+      "operatingLeverage": 5,
+      "riskReduction": 5,
+      "effort": 4
+    },
+    "risks": [
+      "Premature extraction before the lab loop stabilizes",
+      "Duplicating logic across repos"
+    ]
+  },
+  {
+    "id": "cosmos-mymind",
+    "name": "Cosmos / MyMind Operating Capture",
+    "status": "candidate",
+    "summary": "Connect creative and research capture systems into Sentra as upstream context sources.",
+    "nextAction": "Define capture-to-context import shape before automation.",
+    "signals": {
+      "strategicFit": 4,
+      "urgency": 3,
+      "learningValue": 4,
+      "operatingLeverage": 4,
+      "riskReduction": 3,
+      "effort": 3
+    },
+    "risks": [
+      "Capture sprawl",
+      "Too much manual taxonomy before proven use"
+    ]
+  }
+]

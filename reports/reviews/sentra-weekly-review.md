@@ -1,6 +1,6 @@
 # Sentra Weekly Review
 
-Generated: 2026-06-06T04:40:38.972Z
+Generated: 2026-06-06T04:59:29.251Z
 Status: complete
 
 ## Summary
@@ -21,8 +21,8 @@ Sentra generated operating context, Hermes consumed the promotion input, a promo
 
 ## Risks
 
-- risk-1 (watch): Overbuilding qualification instead of operating the loop
-- risk-2 (watch): Letting framework logic absorb Hermes domain decisions
+- risk-1 (watch): Premature extraction before the lab loop stabilizes
+- risk-2 (watch): Duplicating logic across repos
 
 ## Next priorities
 

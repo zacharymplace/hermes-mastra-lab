@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-weekly-review-v1",
-  "generatedAt": "2026-06-06T04:40:38.972Z",
+  "generatedAt": "2026-06-06T04:59:29.251Z",
   "period": {
     "label": "current-operating-cycle",
     "source": "sentra/ledger/events.jsonl"
@@ -11,7 +11,7 @@
     "snapshot": {
       "runtime": "sentra-context-generator-v1",
       "activeProjects": 1,
-      "topPriority": "Sentra Context Generator v1"
+      "topPriority": "Promotion History Ledger"
     },
     "promotion": {
       "runtime": "hermes-promotion-workflow-v1",
@@ -46,12 +46,12 @@
     {
       "id": "risk-1",
       "status": "watch",
-      "summary": "Overbuilding qualification instead of operating the loop"
+      "summary": "Premature extraction before the lab loop stabilizes"
     },
     {
       "id": "risk-2",
       "status": "watch",
-      "summary": "Letting framework logic absorb Hermes domain decisions"
+      "summary": "Duplicating logic across repos"
     }
   ],
   "nextPriorities": [

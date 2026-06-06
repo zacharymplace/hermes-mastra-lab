@@ -1,18 +1,37 @@
 {
   "runtime": "sentra-context-generator-v1",
-  "generatedAt": "2026-06-06T04:44:32.956Z",
+  "generatedAt": "2026-06-06T04:59:27.510Z",
   "activeProjects": [
     {
-      "id": "hermes-mastra-lab",
-      "name": "Hermes Mastra Lab",
-      "status": "active",
-      "priority": "high",
-      "summary": "Qualify Mastra as a Hermes orchestration runtime with Langfuse observability.",
-      "nextAction": "Move from qualification into Sentra-fed Hermes operation.",
+      "id": "sentra-os",
+      "name": "Sentra OS",
+      "status": "candidate",
+      "summary": "Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
+      "nextAction": "Define portable Sentra folder structure and generator contracts.",
+      "signals": {
+        "strategicFit": 5,
+        "urgency": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 5,
+        "effort": 4
+      },
       "risks": [
-        "Overbuilding qualification instead of operating the loop",
-        "Letting framework logic absorb Hermes domain decisions"
-      ]
+        "Premature extraction before the lab loop stabilizes",
+        "Duplicating logic across repos"
+      ],
+      "score": 52,
+      "scoring": {
+        "strategicFit": 5,
+        "urgency": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 5,
+        "effort": 4,
+        "gross": 58,
+        "effortPenalty": 6,
+        "final": 52
+      }
     }
   ],
   "acceptedDecisions": [
@@ -66,9 +85,137 @@
     "why": "Promotion decisions should accumulate as a durable, queryable operating history.",
     "desiredOutcome": "Append each Hermes promotion result into a promotion history ledger with status, score, reviewer, and linked artifacts."
   },
+  "projectPrioritization": {
+    "selectedProject": {
+      "id": "sentra-os",
+      "name": "Sentra OS",
+      "status": "candidate",
+      "summary": "Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
+      "nextAction": "Define portable Sentra folder structure and generator contracts.",
+      "signals": {
+        "strategicFit": 5,
+        "urgency": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 5,
+        "effort": 4
+      },
+      "risks": [
+        "Premature extraction before the lab loop stabilizes",
+        "Duplicating logic across repos"
+      ],
+      "score": 52,
+      "scoring": {
+        "strategicFit": 5,
+        "urgency": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 5,
+        "effort": 4,
+        "gross": 58,
+        "effortPenalty": 6,
+        "final": 52
+      }
+    },
+    "rankedProjects": [
+      {
+        "id": "sentra-os",
+        "name": "Sentra OS",
+        "status": "candidate",
+        "summary": "Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
+        "nextAction": "Define portable Sentra folder structure and generator contracts.",
+        "signals": {
+          "strategicFit": 5,
+          "urgency": 5,
+          "learningValue": 4,
+          "operatingLeverage": 5,
+          "riskReduction": 5,
+          "effort": 4
+        },
+        "risks": [
+          "Premature extraction before the lab loop stabilizes",
+          "Duplicating logic across repos"
+        ],
+        "score": 52,
+        "scoring": {
+          "strategicFit": 5,
+          "urgency": 5,
+          "learningValue": 4,
+          "operatingLeverage": 5,
+          "riskReduction": 5,
+          "effort": 4,
+          "gross": 58,
+          "effortPenalty": 6,
+          "final": 52
+        }
+      },
+      {
+        "id": "hermes-mastra-lab",
+        "name": "Hermes Mastra Lab",
+        "status": "active",
+        "summary": "Operate the Sentra-fed Hermes promotion loop with Mastra-qualified orchestration and Langfuse visibility.",
+        "nextAction": "Add multi-project prioritization so Sentra can choose between competing workstreams.",
+        "signals": {
+          "strategicFit": 5,
+          "urgency": 4,
+          "learningValue": 5,
+          "operatingLeverage": 5,
+          "riskReduction": 4,
+          "effort": 3
+        },
+        "risks": [
+          "Overfitting the loop to one repo",
+          "Continuing to build infrastructure before testing multi-project choice"
+        ],
+        "score": 51.5,
+        "scoring": {
+          "strategicFit": 5,
+          "urgency": 4,
+          "learningValue": 5,
+          "operatingLeverage": 5,
+          "riskReduction": 4,
+          "effort": 3,
+          "gross": 56,
+          "effortPenalty": 4.5,
+          "final": 51.5
+        }
+      },
+      {
+        "id": "cosmos-mymind",
+        "name": "Cosmos / MyMind Operating Capture",
+        "status": "candidate",
+        "summary": "Connect creative and research capture systems into Sentra as upstream context sources.",
+        "nextAction": "Define capture-to-context import shape before automation.",
+        "signals": {
+          "strategicFit": 4,
+          "urgency": 3,
+          "learningValue": 4,
+          "operatingLeverage": 4,
+          "riskReduction": 3,
+          "effort": 3
+        },
+        "risks": [
+          "Capture sprawl",
+          "Too much manual taxonomy before proven use"
+        ],
+        "score": 39.5,
+        "scoring": {
+          "strategicFit": 4,
+          "urgency": 3,
+          "learningValue": 4,
+          "operatingLeverage": 4,
+          "riskReduction": 3,
+          "effort": 3,
+          "gross": 44,
+          "effortPenalty": 4.5,
+          "final": 39.5
+        }
+      }
+    ]
+  },
   "staleRisks": [
-    "Overbuilding qualification instead of operating the loop",
-    "Letting framework logic absorb Hermes domain decisions"
+    "Premature extraction before the lab loop stabilizes",
+    "Duplicating logic across repos"
   ],
   "hermesPrompt": {
     "goal": "Promotion History Ledger",
@@ -79,7 +226,7 @@
       "Require explicit review for promotion"
     ],
     "context": [
-      "Project: Hermes Mastra Lab — Qualify Mastra as a Hermes orchestration runtime with Langfuse observability.",
+      "Project: Sentra OS — Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
       "Decision: Promote Mastra for controlled Hermes orchestration use.",
       "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
       "Priority 1: Promotion History Ledger — Promotion decisions should accumulate as a durable, queryable operating history.",
