@@ -3,6 +3,10 @@ import path from "node:path";
 
 import type { LangfuseTraceEvent } from "../../observability/langfuse/trace-contract.js";
 
+type LangfuseObservation = {
+  update: (data: Record<string, unknown>) => unknown;
+};
+
 export type LangfuseSdkEmissionResult = {
   runtime: "langfuse-sdk-emission-spike";
   mode: "dry-run" | "sdk-emission";
@@ -19,10 +23,9 @@ export type LangfuseSdkEmissionResult = {
 type LangfuseTracingModule = {
   startActiveObservation?: <TResult>(
     name: string,
-    fn: () => Promise<TResult>,
+    fn: (observation: LangfuseObservation) => Promise<TResult>,
     options?: Record<string, unknown>
   ) => Promise<TResult>;
-  updateActiveObservation?: (data: Record<string, unknown>) => void;
   flush?: () => Promise<void>;
   shutdown?: () => Promise<void>;
 };
@@ -76,16 +79,16 @@ export async function emitLangfuseTraceContract(options: {
 
   const tracing = (await import("@langfuse/tracing")) as LangfuseTracingModule;
 
-  if (!tracing.startActiveObservation || !tracing.updateActiveObservation) {
+  if (!tracing.startActiveObservation) {
     throw new Error(
-      "Expected @langfuse/tracing v5 to expose startActiveObservation and updateActiveObservation."
+      "Expected @langfuse/tracing v5 to expose startActiveObservation."
     );
   }
 
   const emitted = await tracing.startActiveObservation(
     "hermes-mastra-langfuse-qualification",
-    async () => {
-      tracing.updateActiveObservation?.({
+    async (rootObservation) => {
+      rootObservation.update({
         input: {
           sourceReportPath: options.sourceReportPath
         },
@@ -107,8 +110,8 @@ export async function emitLangfuseTraceContract(options: {
       for (const event of events) {
         const emittedEvent = await tracing.startActiveObservation!(
           `hermes-stage-${event.stage}`,
-          async () => {
-            tracing.updateActiveObservation?.({
+          async (eventObservation) => {
+            eventObservation.update({
               input: {
                 inputArtifact: event.inputArtifact ?? null
               },
@@ -169,7 +172,7 @@ export async function emitLangfuseTraceContract(options: {
     sdkVersionMode: "langfuse-tracing-5",
     warnings: [],
     notes: [
-      "Attempted real Langfuse SDK emission through @langfuse/tracing v5 startActiveObservation/updateActiveObservation.",
+      "Attempted real Langfuse SDK emission through @langfuse/tracing v5 startActiveObservation with direct observation.update calls.",
       "Verify trace visibility in the Langfuse UI before removing the blocker.",
       "This does not yet prove Mastra-native automatic tracing."
     ]

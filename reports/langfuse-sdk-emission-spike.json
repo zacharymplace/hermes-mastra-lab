@@ -1,14 +1,14 @@
 {
   "runtime": "langfuse-sdk-emission-spike",
   "mode": "sdk-emission",
-  "traceId": "hermes-mastra-1780716748376",
+  "traceId": "hermes-mastra-1780717168826",
   "attemptedEvents": 7,
   "emittedEvents": 7,
   "artifactsLinked": true,
   "sdkVersionMode": "langfuse-tracing-5",
   "warnings": [],
   "notes": [
-    "Attempted real Langfuse SDK emission through @langfuse/tracing v5 startActiveObservation/updateActiveObservation.",
+    "Attempted real Langfuse SDK emission through @langfuse/tracing v5 startActiveObservation with direct observation.update calls.",
     "Verify trace visibility in the Langfuse UI before removing the blocker.",
     "This does not yet prove Mastra-native automatic tracing."
   ]
