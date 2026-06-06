@@ -79,7 +79,10 @@
     "sentra:priority-proposal": "tsx scripts/write-sentra-priority-proposal.ts",
     "sentra:priority-apply": "tsx scripts/apply-sentra-priority-proposal.ts",
     "sentra:priority-rewriter:gate": "tsx evaluations/sentra-priority-rewriter-gate.ts",
-    "sentra:priority-rewriter:check": "npm run sentra:weekly-review && npm run sentra:priority-proposal && npm run sentra:priority-apply && npm run sentra:priority-rewriter:gate"
+    "sentra:priority-rewriter:check": "npm run sentra:weekly-review && npm run sentra:priority-proposal && npm run sentra:priority-apply && npm run sentra:priority-rewriter:gate",
+    "hermes:promotion-history": "tsx scripts/write-hermes-promotion-history.ts",
+    "hermes:promotion-history:gate": "tsx evaluations/hermes-promotion-history-gate.ts",
+    "hermes:promotion-history:check": "npm run hermes:promotion-history && npm run hermes:promotion-history:gate"
   },
   "keywords": [],
   "author": "",
