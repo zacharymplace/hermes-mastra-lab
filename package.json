@@ -12,14 +12,18 @@
     "doctor": "tsx evaluations/doctor.ts",
     "mastra:spike": "tsx adapters/mastra/run-spike.ts",
     "mastra:gate": "tsx evaluations/mastra-adapter-gate.ts",
-    "mastra:check": "npm run mastra:spike && npm run mastra:gate"
+    "mastra:check": "npm run mastra:spike && npm run mastra:gate",
+    "mastra:native": "tsx adapters/mastra/native/run-native-workflow.ts",
+    "mastra:native:gate": "tsx evaluations/mastra-native-gate.ts",
+    "mastra:native:check": "npm run mastra:native && npm run mastra:native:gate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "mastra": "^1.12.2"
+    "mastra": "^1.12.2",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
