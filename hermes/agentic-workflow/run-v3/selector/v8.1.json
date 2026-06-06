@@ -1,0 +1,169 @@
+{
+  "runtime": "hermes-agentic-run-v3-selector-v8.1",
+  "generatedAt": "2026-06-06T08:07:14.072Z",
+  "status": "selected",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-index-v8.0.json",
+    "sentra/ledger/post-merge-validation.json"
+  ],
+  "context": {
+    "runV2Status": "complete",
+    "runV2State": "completed-and-recorded",
+    "runV2LatestLedgerEntry": "pr-2-run-v2-post-merge-v7.9",
+    "ledgerEntries": 2
+  },
+  "selected": {
+    "id": "loop-quality-hardening",
+    "title": "Harden Agentic Loop Quality",
+    "summary": "Add explicit quality gates for generated artifact drift, stale timestamps, and no-op source patch claims before starting another patch loop.",
+    "signals": {
+      "strategicFit": 5,
+      "learningValue": 5,
+      "operatingLeverage": 5,
+      "riskReduction": 5,
+      "autonomyLeverage": 4,
+      "effort": 2
+    },
+    "risks": [
+      "Could slow forward motion if overbuilt",
+      "Needs to stay focused on practical failure modes"
+    ],
+    "scoring": {
+      "gross": 110,
+      "effortPenalty": 6,
+      "final": 104
+    },
+    "score": 104
+  },
+  "rankedCandidates": [
+    {
+      "id": "loop-quality-hardening",
+      "title": "Harden Agentic Loop Quality",
+      "summary": "Add explicit quality gates for generated artifact drift, stale timestamps, and no-op source patch claims before starting another patch loop.",
+      "signals": {
+        "strategicFit": 5,
+        "learningValue": 5,
+        "operatingLeverage": 5,
+        "riskReduction": 5,
+        "autonomyLeverage": 4,
+        "effort": 2
+      },
+      "risks": [
+        "Could slow forward motion if overbuilt",
+        "Needs to stay focused on practical failure modes"
+      ],
+      "scoring": {
+        "gross": 110,
+        "effortPenalty": 6,
+        "final": 104
+      },
+      "score": 104
+    },
+    {
+      "id": "observability-contract",
+      "title": "Add Agentic Observability Contract",
+      "summary": "Define stable trace fields for Hermes agentic runs so Mastra and Langfuse integration can measure real workflow behavior.",
+      "signals": {
+        "strategicFit": 5,
+        "learningValue": 5,
+        "operatingLeverage": 4,
+        "riskReduction": 4,
+        "autonomyLeverage": 4,
+        "effort": 3
+      },
+      "risks": [
+        "May be premature if run quality semantics are still loose"
+      ],
+      "scoring": {
+        "gross": 101,
+        "effortPenalty": 9,
+        "final": 92
+      },
+      "score": 92
+    },
+    {
+      "id": "sentra-os-extraction",
+      "title": "Extract Sentra OS",
+      "summary": "Begin separating Sentra into a portable operating layer for project priorities, ledgers, reviews, and agent-readable context.",
+      "signals": {
+        "strategicFit": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 4,
+        "autonomyLeverage": 4,
+        "effort": 4
+      },
+      "risks": [
+        "Extraction may freeze immature contracts",
+        "Could split attention before loop quality is hardened"
+      ],
+      "scoring": {
+        "gross": 102,
+        "effortPenalty": 12,
+        "final": 90
+      },
+      "score": 90
+    },
+    {
+      "id": "run-v3-repeat-cycle",
+      "title": "Start Another Full Agentic Run",
+      "summary": "Start run v3 immediately using the completed run v2 index as context.",
+      "signals": {
+        "strategicFit": 4,
+        "learningValue": 4,
+        "operatingLeverage": 4,
+        "riskReduction": 3,
+        "autonomyLeverage": 5,
+        "effort": 3
+      },
+      "risks": [
+        "Could repeat the same artifact chain without improving the system",
+        "May compound generated drift"
+      ],
+      "scoring": {
+        "gross": 93,
+        "effortPenalty": 9,
+        "final": 84
+      },
+      "score": 84
+    }
+  ],
+  "recommendation": {
+    "nextAction": "Create a run v3 target contract for loop-quality hardening before any source patch proposal.",
+    "rationale": [
+      "Run v2 is complete and recorded.",
+      "The next highest-leverage step is improving loop quality before repeating the workflow.",
+      "This reduces generated drift and no-op patch risk while preserving the human boundary."
+    ],
+    "proposedNextArtifact": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-target-contract-v8.2.json"
+  },
+  "safetyBoundary": {
+    "selectorOnly": true,
+    "patchGenerated": false,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "runV2IndexComplete": true,
+    "ledgerHasEntries": true,
+    "candidatesRanked": true,
+    "selectedCandidatePresent": true,
+    "recommendationPresent": true,
+    "selectorOnly": true,
+    "noPatchGenerated": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This selector turns completed run v2 into the next operating decision.",
+    "It selects loop-quality hardening as the safest high-leverage run v3 direction.",
+    "The next step should be a target contract, not a patch."
+  ]
+}
