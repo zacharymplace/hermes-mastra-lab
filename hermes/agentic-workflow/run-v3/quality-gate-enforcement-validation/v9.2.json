@@ -1,0 +1,148 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-enforcement-validation-v9.2",
+  "generatedAt": "2026-06-06T09:53:54.002Z",
+  "status": "validated",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-implementation-v9.1.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-enforcement-validation/v9.2.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-validation-v9.2.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-validation-v9.2.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceEnforcementImplementation": "hermes-agentic-run-v3-quality-gate-enforcement-implementation-v9.1"
+  },
+  "validation": {
+    "qualityGateShapePresent": true,
+    "requiredOutputFields": [
+      "status",
+      "requiredChecks",
+      "results",
+      "generatedArtifactDrift",
+      "timestampChurn",
+      "noOpPatchClaims",
+      "humanBoundaryPreserved",
+      "declaredTargetOnlyChanges",
+      "passed"
+    ],
+    "missingOutputFields": [],
+    "requiredChecks": [
+      "generated-artifact-drift",
+      "stale-timestamp-churn",
+      "no-op-patch-claims",
+      "human-boundary-preservation",
+      "declared-target-only-changes"
+    ],
+    "missingRequiredChecks": [],
+    "failClosedConditions": [
+      "qualityGate is missing when required",
+      "qualityGate.passed is false",
+      "qualityGate.passed is null during validation/readiness",
+      "requiredChecks are missing or incomplete",
+      "timestamp churn is unclassified",
+      "no-op patch fields are missing",
+      "human boundary fields indicate branch, push, PR, or merge action occurred without explicit contract",
+      "changed files include undeclared targets"
+    ],
+    "futurePhaseRequirements": [
+      {
+        "phase": "patch-intent",
+        "qualityGateRequired": false,
+        "requirement": "Reference adopted qualityGate rules when applicable."
+      },
+      {
+        "phase": "target-selection",
+        "qualityGateRequired": false,
+        "requirement": "Reference adopted qualityGate rules when applicable."
+      },
+      {
+        "phase": "source-patch-proposal",
+        "qualityGateRequired": false,
+        "requirement": "Declare qualityGate applicability and expected changed paths."
+      },
+      {
+        "phase": "source-patch-apply",
+        "qualityGateRequired": true,
+        "requirement": "Include complete qualityGate status before readiness."
+      },
+      {
+        "phase": "source-patch-validation",
+        "qualityGateRequired": true,
+        "requirement": "Fail closed if qualityGate is missing, failed, or incomplete."
+      },
+      {
+        "phase": "branch-prepare",
+        "qualityGateRequired": true,
+        "requirement": "Confirm generated drift is clean or declared before branch preparation."
+      },
+      {
+        "phase": "pr-draft",
+        "qualityGateRequired": true,
+        "requirement": "Include qualityGate status in PR draft validation metadata."
+      },
+      {
+        "phase": "pr-lifecycle",
+        "qualityGateRequired": false,
+        "requirement": "Reference adopted qualityGate rules when applicable."
+      },
+      {
+        "phase": "post-merge-ledger",
+        "qualityGateRequired": true,
+        "requirement": "Record qualityGate status with post-merge validation."
+      },
+      {
+        "phase": "run-index",
+        "qualityGateRequired": true,
+        "requirement": "Expose qualityGate status in durable run-level state."
+      }
+    ],
+    "validationReady": true
+  },
+  "safetyBoundary": {
+    "validationOnly": true,
+    "patchAppliedByThisStep": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-implementation:v9.1:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-intent:v9.0:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-plan:v8.9:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusValidated": true,
+    "implementationReady": true,
+    "qualityGateShapePresent": true,
+    "requiredOutputFieldsPresent": true,
+    "requiredChecksPresent": true,
+    "failClosedConditionsDeclared": true,
+    "futurePhaseRequirementsDeclared": true,
+    "validationsPassed": true,
+    "validationOnly": true,
+    "noPatchAppliedByThisStep": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This validates the v9.1 reusable qualityGate enforcement shape.",
+    "It confirms required outputs, required checks, fail-closed conditions, and future phase requirements.",
+    "It does not wire enforcement into future scripts yet."
+  ]
+}
