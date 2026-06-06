@@ -1,6 +1,6 @@
 {
   "runtime": "hermes-agentic-run-v3-quality-gate-wiring-validation-v9.6",
-  "generatedAt": "2026-06-06T10:11:26.352Z",
+  "generatedAt": "2026-06-06T10:17:16.611Z",
   "status": "validated",
   "inputArtifacts": [
     "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9.5.json"
@@ -17,7 +17,7 @@
   },
   "validation": {
     "qualityGateShapePresent": true,
-    "requiredOutputFields": [
+    "requiredGateOutputs": [
       "status",
       "requiredChecks",
       "results",
@@ -28,7 +28,7 @@
       "declaredTargetOnlyChanges",
       "passed"
     ],
-    "missingOutputFields": [],
+    "missingGateOutputs": [],
     "requiredChecks": [
       "generated-artifact-drift",
       "stale-timestamp-churn",
@@ -47,14 +47,49 @@
       "run-index"
     ],
     "missingWiredPhases": [],
-    "reusableContractPresent": true,
-    "failClosedPolicyPresent": true,
+    "reusableContract": {
+      "fieldName": "qualityGate",
+      "failClosedWhenRequired": true,
+      "requiredWhen": [
+        "source-patch-apply",
+        "source-patch-validation",
+        "branch-prepare",
+        "pr-draft",
+        "post-merge-ledger",
+        "run-index"
+      ],
+      "optionalButDeclaredWhen": [
+        "patch-intent",
+        "target-selection",
+        "source-patch-proposal",
+        "pr-lifecycle"
+      ],
+      "requiredApplyFields": [
+        "applied",
+        "changed",
+        "diffOutput",
+        "semanticChange"
+      ],
+      "humanBoundaryFields": [
+        "branchCreated",
+        "pushed",
+        "prOpened",
+        "merged"
+      ]
+    },
+    "failClosedPolicy": [
+      "Future source-patch-validation gates fail when qualityGate is required and absent.",
+      "Future source-patch-validation gates fail when qualityGate.passed is false or null.",
+      "Future readiness reports fail when required qualityGate output fields are missing.",
+      "Future apply reports fail when applied, changed, diffOutput, or semanticChange are missing.",
+      "Future branch preparation fails when generated drift is neither clean nor declared."
+    ],
     "validationReady": true
   },
   "safetyBoundary": {
     "validationOnly": true,
-    "patchAppliedByThisStep": false,
     "broadSourceRewrite": false,
+    "patchAppliedByThisStep": false,
     "branchCreated": false,
     "pushed": false,
     "merged": false,
@@ -79,10 +114,10 @@
     "statusValidated": true,
     "wiringImplementationReady": true,
     "qualityGateShapePresent": true,
-    "requiredOutputFieldsPresent": true,
+    "requiredGateOutputsPresent": true,
     "requiredChecksPresent": true,
-    "wiredPhasesPresent": true,
-    "reusableContractPresent": true,
+    "wiredPhasesValid": true,
+    "reusableContractValid": true,
     "failClosedPolicyPresent": true,
     "validationsPassed": true,
     "validationOnly": true,
@@ -94,8 +129,8 @@
     "noPrOpened": true
   },
   "notes": [
-    "This validates the v9.5 qualityGate wiring implementation.",
+    "This validates the v9.5 bounded qualityGate wiring implementation.",
     "It confirms required outputs, required checks, wired phases, reusable contract, and fail-closed policy.",
-    "It does not rewrite workflow scripts, apply a patch, create a branch, push, merge, or open a PR."
+    "It does not broadly rewrite existing workflow scripts."
   ]
 }
