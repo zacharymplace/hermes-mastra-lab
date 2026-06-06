@@ -1,0 +1,102 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-adoption-contract-v8.7",
+  "generatedAt": "2026-06-06T09:30:14.073Z",
+  "status": "contracted",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-validation-v8.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-adoption-contract/v8.7.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-contract-v8.7.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-contract-v8.7.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceValidation": "hermes-agentic-run-v3-quality-gate-validation-v8.6",
+    "sourceImplementation": "hermes-agentic-run-v3-quality-gate-implementation-v8.5"
+  },
+  "adoptionContract": {
+    "id": "run-v3-quality-gate-adoption-contract",
+    "title": "Hermes Agentic Loop Quality Gate Adoption Contract",
+    "purpose": "Require future Hermes agentic patch/apply steps to run the loop-quality gate before claiming readiness.",
+    "appliesToFuturePhases": [
+      "patch-intent",
+      "target-selection",
+      "source-patch-proposal",
+      "source-patch-apply",
+      "source-patch-validation",
+      "branch-prepare",
+      "pr-draft",
+      "pr-lifecycle",
+      "post-merge-ledger",
+      "run-index"
+    ],
+    "requiredBeforePatchApply": [
+      "generated-artifact-drift",
+      "stale-timestamp-churn",
+      "no-op-patch-claims",
+      "human-boundary-preservation",
+      "declared-target-only-changes"
+    ],
+    "adoptionRules": [
+      "Every future source patch proposal must declare whether it is subject to the loop-quality gate.",
+      "Every future source patch apply step must include quality gate status before reporting readiness.",
+      "Patch apply reports must include applied, changed, diffOutput, and semanticChange fields.",
+      "Timestamp-only changes must be classified separately from semantic changes.",
+      "Generated artifact drift must be either committed as a declared output or restored before final clean state.",
+      "Branch, push, PR creation, and merge remain operator-controlled unless a later explicit contract changes that boundary.",
+      "Changed paths must be compared against declared targets before a patch is considered clean."
+    ],
+    "proposedNextStep": {
+      "id": "run-v3-quality-gate-adoption-report-v8.8",
+      "title": "Quality Gate Adoption Report v8.8",
+      "summary": "Generate an adoption report showing where the v8.7 contract is now required in the Hermes agentic loop."
+    }
+  },
+  "safetyBoundary": {
+    "contractOnly": true,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-validation:v8.6:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-validation:v8.6:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-validation-v8-6-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-validated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"implementation-ready\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"implementation-gate-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"prior-declared-target-failure-resolved\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"path-normalization-fixed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validation-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied-by-this-step\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-implementation:v8.5:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-implementation:v8.5:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"intent-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"contract-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-loop-quality\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"generated-artifact-drift-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"timestamp-churn-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-op-patch-claims-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-boundary-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"declared-target-only-changes-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"implementation-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"declared-targets-clean\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusContracted": true,
+    "validationReady": true,
+    "implementationReady": true,
+    "qualityGateValidated": true,
+    "priorFailureResolved": true,
+    "adoptionRulesDeclared": true,
+    "futurePhasesDeclared": true,
+    "requiredChecksDeclared": true,
+    "validationsPassed": true,
+    "contractOnly": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This contract moves the v8.5/v8.6 quality gate from validated artifact to future loop requirement.",
+    "It does not apply a patch, create a branch, push, merge, or open a PR.",
+    "The next safe step is v8.8 quality gate adoption report."
+  ]
+}
