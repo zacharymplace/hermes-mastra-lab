@@ -1,0 +1,84 @@
+{
+  "runtime": "failure-qualification-local-contract",
+  "mode": "local-deterministic-no-network",
+  "recommendation": "advance-failure-handling",
+  "results": [
+    {
+      "id": "generator-throws",
+      "stage": "generate",
+      "expectedBehavior": "retry-then-recover",
+      "passed": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "failed",
+          "error": "generate failed on first attempt"
+        },
+        {
+          "attempt": 2,
+          "status": "recovered"
+        }
+      ],
+      "finalStatus": "recovered",
+      "artifactPreserved": true,
+      "traceEmitted": true
+    },
+    {
+      "id": "critic-throws",
+      "stage": "critique",
+      "expectedBehavior": "retry-then-recover",
+      "passed": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "failed",
+          "error": "critique failed on first attempt"
+        },
+        {
+          "attempt": 2,
+          "status": "recovered"
+        }
+      ],
+      "finalStatus": "recovered",
+      "artifactPreserved": true,
+      "traceEmitted": true
+    },
+    {
+      "id": "scorer-invalid",
+      "stage": "score",
+      "expectedBehavior": "fail-safely",
+      "passed": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "safe-failure",
+          "error": "score failure was contained"
+        }
+      ],
+      "finalStatus": "safe-failure",
+      "artifactPreserved": true,
+      "traceEmitted": true
+    },
+    {
+      "id": "artifact-write-blocked",
+      "stage": "artifact",
+      "expectedBehavior": "fail-safely",
+      "passed": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "safe-failure",
+          "error": "artifact failure was contained"
+        }
+      ],
+      "finalStatus": "safe-failure",
+      "artifactPreserved": true,
+      "traceEmitted": true
+    }
+  ],
+  "notes": [
+    "This is a local failure qualification contract, not real Mastra retry execution.",
+    "The suite defines expected Hermes behavior for retry, recovery, safe failure, trace emission, and artifact preservation.",
+    "Next step is replacing simulated attempts with real Mastra retry/error behavior."
+  ]
+}
