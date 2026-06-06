@@ -1,36 +1,41 @@
 {
   "runtime": "sentra-context-generator-v1",
-  "generatedAt": "2026-06-06T05:10:57.882Z",
+  "generatedAt": "2026-06-06T05:19:56.856Z",
   "activeProjects": [
     {
-      "id": "sentra-os",
-      "name": "Sentra OS",
+      "id": "hermes-agentic-workflow",
+      "name": "Hermes Agentic Workflow",
       "status": "candidate",
-      "summary": "Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
-      "nextAction": "Define portable Sentra folder structure and generator contracts.",
+      "summary": "Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
+      "nextAction": "Define the first safe agentic execution loop: plan, patch, test, report, and require approval before merge.",
       "signals": {
         "strategicFit": 5,
         "urgency": 5,
-        "learningValue": 4,
+        "learningValue": 5,
         "operatingLeverage": 5,
-        "riskReduction": 5,
+        "riskReduction": 4,
+        "executionLeverage": 5,
+        "autonomyReadiness": 5,
         "effort": 4
       },
       "risks": [
-        "Premature extraction before the lab loop stabilizes",
-        "Duplicating logic across repos"
+        "Autonomy without tight gates could create unsafe repo changes",
+        "Execution agents may overfit to terminal scripting instead of durable workflows",
+        "Premature full autonomy before patch/test/report boundaries are stable"
       ],
-      "score": 52,
+      "score": 82,
       "scoring": {
         "strategicFit": 5,
         "urgency": 5,
-        "learningValue": 4,
+        "learningValue": 5,
         "operatingLeverage": 5,
-        "riskReduction": 5,
+        "riskReduction": 4,
+        "executionLeverage": 5,
+        "autonomyReadiness": 5,
         "effort": 4,
-        "gross": 58,
+        "gross": 88,
         "effortPenalty": 6,
-        "final": 52
+        "final": 82
       }
     }
   ],
@@ -87,37 +92,78 @@
   },
   "projectPrioritization": {
     "selectedProject": {
-      "id": "sentra-os",
-      "name": "Sentra OS",
+      "id": "hermes-agentic-workflow",
+      "name": "Hermes Agentic Workflow",
       "status": "candidate",
-      "summary": "Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
-      "nextAction": "Define portable Sentra folder structure and generator contracts.",
+      "summary": "Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
+      "nextAction": "Define the first safe agentic execution loop: plan, patch, test, report, and require approval before merge.",
       "signals": {
         "strategicFit": 5,
         "urgency": 5,
-        "learningValue": 4,
+        "learningValue": 5,
         "operatingLeverage": 5,
-        "riskReduction": 5,
+        "riskReduction": 4,
+        "executionLeverage": 5,
+        "autonomyReadiness": 5,
         "effort": 4
       },
       "risks": [
-        "Premature extraction before the lab loop stabilizes",
-        "Duplicating logic across repos"
+        "Autonomy without tight gates could create unsafe repo changes",
+        "Execution agents may overfit to terminal scripting instead of durable workflows",
+        "Premature full autonomy before patch/test/report boundaries are stable"
       ],
-      "score": 52,
+      "score": 82,
       "scoring": {
         "strategicFit": 5,
         "urgency": 5,
-        "learningValue": 4,
+        "learningValue": 5,
         "operatingLeverage": 5,
-        "riskReduction": 5,
+        "riskReduction": 4,
+        "executionLeverage": 5,
+        "autonomyReadiness": 5,
         "effort": 4,
-        "gross": 58,
+        "gross": 88,
         "effortPenalty": 6,
-        "final": 52
+        "final": 82
       }
     },
     "rankedProjects": [
+      {
+        "id": "hermes-agentic-workflow",
+        "name": "Hermes Agentic Workflow",
+        "status": "candidate",
+        "summary": "Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
+        "nextAction": "Define the first safe agentic execution loop: plan, patch, test, report, and require approval before merge.",
+        "signals": {
+          "strategicFit": 5,
+          "urgency": 5,
+          "learningValue": 5,
+          "operatingLeverage": 5,
+          "riskReduction": 4,
+          "executionLeverage": 5,
+          "autonomyReadiness": 5,
+          "effort": 4
+        },
+        "risks": [
+          "Autonomy without tight gates could create unsafe repo changes",
+          "Execution agents may overfit to terminal scripting instead of durable workflows",
+          "Premature full autonomy before patch/test/report boundaries are stable"
+        ],
+        "score": 82,
+        "scoring": {
+          "strategicFit": 5,
+          "urgency": 5,
+          "learningValue": 5,
+          "operatingLeverage": 5,
+          "riskReduction": 4,
+          "executionLeverage": 5,
+          "autonomyReadiness": 5,
+          "effort": 4,
+          "gross": 88,
+          "effortPenalty": 6,
+          "final": 82
+        }
+      },
       {
         "id": "sentra-os",
         "name": "Sentra OS",
@@ -143,6 +189,8 @@
           "learningValue": 4,
           "operatingLeverage": 5,
           "riskReduction": 5,
+          "executionLeverage": 0,
+          "autonomyReadiness": 0,
           "effort": 4,
           "gross": 58,
           "effortPenalty": 6,
@@ -174,6 +222,8 @@
           "learningValue": 5,
           "operatingLeverage": 5,
           "riskReduction": 4,
+          "executionLeverage": 0,
+          "autonomyReadiness": 0,
           "effort": 3,
           "gross": 56,
           "effortPenalty": 4.5,
@@ -205,6 +255,8 @@
           "learningValue": 4,
           "operatingLeverage": 4,
           "riskReduction": 3,
+          "executionLeverage": 0,
+          "autonomyReadiness": 0,
           "effort": 3,
           "gross": 44,
           "effortPenalty": 4.5,
@@ -214,8 +266,9 @@
     ]
   },
   "staleRisks": [
-    "Premature extraction before the lab loop stabilizes",
-    "Duplicating logic across repos"
+    "Autonomy without tight gates could create unsafe repo changes",
+    "Execution agents may overfit to terminal scripting instead of durable workflows",
+    "Premature full autonomy before patch/test/report boundaries are stable"
   ],
   "hermesPrompt": {
     "goal": "Promotion History Ledger",
@@ -226,7 +279,7 @@
       "Require explicit review for promotion"
     ],
     "context": [
-      "Project: Sentra OS — Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.",
+      "Project: Hermes Agentic Workflow — Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
       "Decision: Promote Mastra for controlled Hermes orchestration use.",
       "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
       "Priority 1: Promotion History Ledger — Promotion decisions should accumulate as a durable, queryable operating history.",

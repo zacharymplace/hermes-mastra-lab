@@ -17,6 +17,8 @@ function scoreProject(project: any) {
   const learningValue = signals.learningValue ?? 0;
   const operatingLeverage = signals.operatingLeverage ?? 0;
   const riskReduction = signals.riskReduction ?? 0;
+  const executionLeverage = signals.executionLeverage ?? 0;
+  const autonomyReadiness = signals.autonomyReadiness ?? 0;
   const effort = signals.effort ?? 1;
 
   const gross =
@@ -24,7 +26,9 @@ function scoreProject(project: any) {
     urgency * 2 +
     learningValue * 2 +
     operatingLeverage * 3 +
-    riskReduction * 2;
+    riskReduction * 2 +
+    executionLeverage * 3 +
+    autonomyReadiness * 3;
 
   const score = gross - effort * 1.5;
 
@@ -37,6 +41,8 @@ function scoreProject(project: any) {
       learningValue,
       operatingLeverage,
       riskReduction,
+      executionLeverage,
+      autonomyReadiness,
       effort,
       gross,
       effortPenalty: effort * 1.5,

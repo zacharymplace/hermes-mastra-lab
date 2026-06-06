@@ -55,5 +55,27 @@
       "Capture sprawl",
       "Too much manual taxonomy before proven use"
     ]
+  },
+  {
+    "id": "hermes-agentic-workflow",
+    "name": "Hermes Agentic Workflow",
+    "status": "candidate",
+    "summary": "Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
+    "nextAction": "Define the first safe agentic execution loop: plan, patch, test, report, and require approval before merge.",
+    "signals": {
+      "strategicFit": 5,
+      "urgency": 5,
+      "learningValue": 5,
+      "operatingLeverage": 5,
+      "riskReduction": 4,
+      "executionLeverage": 5,
+      "autonomyReadiness": 5,
+      "effort": 4
+    },
+    "risks": [
+      "Autonomy without tight gates could create unsafe repo changes",
+      "Execution agents may overfit to terminal scripting instead of durable workflows",
+      "Premature full autonomy before patch/test/report boundaries are stable"
+    ]
   }
 ]

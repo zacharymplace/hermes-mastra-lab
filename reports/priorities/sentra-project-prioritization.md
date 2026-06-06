@@ -1,20 +1,21 @@
 # Sentra Multi-Project Prioritization
 
-Generated: 2026-06-06T05:10:57.698Z
+Generated: 2026-06-06T05:19:56.336Z
 
 ## Selected project
 
-**Sentra OS**
+**Hermes Agentic Workflow**
 
-Extract the Sentra operating layer into its own repo/system with projects, decisions, reviews, priorities, ledger, and promotion inputs.
+Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.
 
-Score: 52
+Score: 82
 
 ## Ranked projects
 
-- 1. Sentra OS: 52 — Define portable Sentra folder structure and generator contracts.
-- 2. Hermes Mastra Lab: 51.5 — Add multi-project prioritization so Sentra can choose between competing workstreams.
-- 3. Cosmos / MyMind Operating Capture: 39.5 — Define capture-to-context import shape before automation.
+- 1. Hermes Agentic Workflow: 82 — Define the first safe agentic execution loop: plan, patch, test, report, and require approval before merge.
+- 2. Sentra OS: 52 — Define portable Sentra folder structure and generator contracts.
+- 3. Hermes Mastra Lab: 51.5 — Add multi-project prioritization so Sentra can choose between competing workstreams.
+- 4. Cosmos / MyMind Operating Capture: 39.5 — Define capture-to-context import shape before automation.
 
 ## Notes
 
