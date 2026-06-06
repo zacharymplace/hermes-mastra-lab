@@ -42,14 +42,19 @@
     "langfuse:sdk-spike:check": "npm run langfuse:qualification:check && npm run langfuse:sdk-spike && npm run langfuse:sdk-spike:gate",
     "langfuse:real-emission:verify": "tsx scripts/verify-real-langfuse-emission.ts",
     "langfuse:real-emission:check": "npm run langfuse:sdk-spike && npm run langfuse:real-emission:verify",
-    "langfuse:api-probe": "tsx scripts/langfuse-api-shape-probe.ts"
+    "langfuse:api-probe": "tsx scripts/langfuse-api-shape-probe.ts",
+    "langfuse:otel-smoke": "tsx scripts/langfuse-otel-smoke.ts",
+    "langfuse:otel-smoke:gate": "tsx evaluations/langfuse-otel-smoke-gate.ts",
+    "langfuse:otel-smoke:check": "npm run langfuse:otel-smoke && npm run langfuse:otel-smoke:gate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@langfuse/otel": "^5.4.1",
     "@langfuse/tracing": "^5.4.1",
+    "@opentelemetry/sdk-node": "^0.218.0",
     "mastra": "^1.12.2",
     "zod": "^4.4.3"
   },
