@@ -93,7 +93,10 @@
     "sentra:contracts:gate": "tsx evaluations/sentra-contracts-gate.ts",
     "sentra:contracts:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run sentra:extraction-plan && npm run sentra:contracts && npm run sentra:contracts:gate",
     "hermes:agentic-workflow:priority-gate": "tsx evaluations/hermes-agentic-workflow-priority-gate.ts",
-    "hermes:agentic-workflow:priority-check": "npm run sentra:project-prioritization && npm run hermes:agentic-workflow:priority-gate"
+    "hermes:agentic-workflow:priority-check": "npm run sentra:project-prioritization && npm run hermes:agentic-workflow:priority-gate",
+    "hermes:agentic-workflow": "tsx scripts/write-hermes-agentic-workflow.ts",
+    "hermes:agentic-workflow:gate": "tsx evaluations/hermes-agentic-workflow-gate.ts",
+    "hermes:agentic-workflow:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-workflow:gate"
   },
   "keywords": [],
   "author": "",

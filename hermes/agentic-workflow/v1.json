@@ -1,0 +1,70 @@
+{
+  "id": "hermes-agentic-workflow-v1",
+  "title": "Hermes Agentic Workflow v1",
+  "selectedProject": {
+    "id": "hermes-agentic-workflow",
+    "name": "Hermes Agentic Workflow",
+    "score": 82,
+    "nextAction": "Define the first safe agentic execution loop: plan, patch, test, report, and require approval before merge."
+  },
+  "objective": "Create the first safe Hermes execution loop that converts Sentra-selected work into a bounded plan, patch proposal, checks, and report without merging automatically.",
+  "scope": {
+    "mode": "repo-local",
+    "autonomy": "semi-autonomous",
+    "mergePolicy": "human-approval-required",
+    "allowedActions": [
+      "read Sentra-selected project context",
+      "write execution plan artifact",
+      "write patch proposal artifact",
+      "define validation commands",
+      "write execution report"
+    ],
+    "disallowedActions": [
+      "auto-merge",
+      "push without review",
+      "modify secrets",
+      "perform external side effects",
+      "hide domain logic inside framework code"
+    ]
+  },
+  "steps": [
+    {
+      "id": "read-context",
+      "action": "Read Sentra snapshot and selected project.",
+      "output": "Selected project context is available to Hermes."
+    },
+    {
+      "id": "plan",
+      "action": "Generate a bounded execution plan.",
+      "output": "reports/agentic-workflow/hermes-agentic-execution-plan.json"
+    },
+    {
+      "id": "patch-proposal",
+      "action": "Generate a patch proposal rather than directly applying broad repo changes.",
+      "output": "reports/agentic-workflow/hermes-agentic-patch-proposal.md"
+    },
+    {
+      "id": "checks",
+      "action": "Define validation commands required before approval.",
+      "output": "npm run check && npm run mastra:check"
+    },
+    {
+      "id": "report",
+      "action": "Write execution report with status, risks, checks, and approval requirement.",
+      "output": "reports/agentic-workflow/hermes-agentic-execution-report.json"
+    }
+  ],
+  "validationCommands": [
+    "npm run check",
+    "npm run mastra:check"
+  ],
+  "approvalRequired": true,
+  "successCriteria": [
+    "A selected Sentra project is used as execution input.",
+    "Hermes creates a bounded execution plan.",
+    "Hermes creates a patch proposal artifact.",
+    "Hermes defines validation commands.",
+    "Hermes writes an execution report.",
+    "Human approval remains required before merge."
+  ]
+}
