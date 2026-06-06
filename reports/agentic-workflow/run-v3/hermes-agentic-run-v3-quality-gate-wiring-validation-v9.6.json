@@ -1,0 +1,101 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-wiring-validation-v9.6",
+  "generatedAt": "2026-06-06T10:11:26.352Z",
+  "status": "validated",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9.5.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-wiring-validation/v9.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-validation-v9.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-validation-v9.6.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceWiringImplementation": "hermes-agentic-run-v3-quality-gate-wiring-implementation-v9.5"
+  },
+  "validation": {
+    "qualityGateShapePresent": true,
+    "requiredOutputFields": [
+      "status",
+      "requiredChecks",
+      "results",
+      "generatedArtifactDrift",
+      "timestampChurn",
+      "noOpPatchClaims",
+      "humanBoundaryPreserved",
+      "declaredTargetOnlyChanges",
+      "passed"
+    ],
+    "missingOutputFields": [],
+    "requiredChecks": [
+      "generated-artifact-drift",
+      "stale-timestamp-churn",
+      "no-op-patch-claims",
+      "human-boundary-preservation",
+      "declared-target-only-changes"
+    ],
+    "missingRequiredChecks": [],
+    "wiredPhases": [
+      "source-patch-proposal",
+      "source-patch-apply",
+      "source-patch-validation",
+      "branch-prepare",
+      "pr-draft",
+      "post-merge-ledger",
+      "run-index"
+    ],
+    "missingWiredPhases": [],
+    "reusableContractPresent": true,
+    "failClosedPolicyPresent": true,
+    "validationReady": true
+  },
+  "safetyBoundary": {
+    "validationOnly": true,
+    "patchAppliedByThisStep": false,
+    "broadSourceRewrite": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-wiring-implementation:v9.5:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-wiring-proposal:v9.3:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusValidated": true,
+    "wiringImplementationReady": true,
+    "qualityGateShapePresent": true,
+    "requiredOutputFieldsPresent": true,
+    "requiredChecksPresent": true,
+    "wiredPhasesPresent": true,
+    "reusableContractPresent": true,
+    "failClosedPolicyPresent": true,
+    "validationsPassed": true,
+    "validationOnly": true,
+    "noBroadSourceRewrite": true,
+    "noPatchAppliedByThisStep": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This validates the v9.5 qualityGate wiring implementation.",
+    "It confirms required outputs, required checks, wired phases, reusable contract, and fail-closed policy.",
+    "It does not rewrite workflow scripts, apply a patch, create a branch, push, merge, or open a PR."
+  ]
+}
