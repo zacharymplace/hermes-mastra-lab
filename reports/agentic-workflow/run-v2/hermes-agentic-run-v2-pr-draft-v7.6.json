@@ -1,0 +1,58 @@
+{
+  "runtime": "hermes-agentic-run-v2-pr-draft-v7.6",
+  "generatedAt": "2026-06-06T07:21:18.917Z",
+  "status": "drafted-for-human-review",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-validation-v7.5.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v2/pr-draft-v7.6.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-pr-draft-v7.6.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-pr-draft-v7.6.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v2",
+    "sourceValidation": "hermes-agentic-run-v2-source-patch-validation-v7.5",
+    "sourceValidationStatus": "validated"
+  },
+  "prDraft": {
+    "branchName": "hermes/agentic-run-v2-pr-draft-v7-6",
+    "title": "Add Hermes agentic run v2 source patch validation v7.5",
+    "body": "# Summary\n\nAdds the validated v2 source patch application chain through v7.5.\n\nThis PR draft artifact does not create a branch, push, open a PR, or merge.\n\n## Chain\n\n- v6.9 target contract\n- v7.0 run v2 plan\n- v7.1 patch intent\n- v7.2 target selection\n- v7.3 source patch proposal\n- v7.4 approval-gated source patch apply\n- v7.5 source patch validation\n- v7.6 PR draft metadata\n\n## Validation\n\n- `npm run hermes:agentic-run-v2-source-patch-validation:v7.5:gate`\n- `npm run check`\n- `npm run mastra:check`\n\n## Safety\n\n- No auto-branch.\n- No auto-push.\n- No automatic PR creation.\n- No auto-merge.\n- Human operator remains responsible for GitHub lifecycle actions.",
+    "commandsForHuman": [
+      "git switch -c hermes/agentic-run-v2-pr-draft-v7-6",
+      "npm run hermes:agentic-run-v2-pr-draft:v7.6:check",
+      "git add .",
+      "git commit -m \"Add Hermes agentic run v2 PR draft v7.6\"",
+      "git push origin hermes/agentic-run-v2-pr-draft-v7-6",
+      "gh pr create --draft --base main --head hermes/agentic-run-v2-pr-draft-v7-6 --title \"Add Hermes agentic run v2 PR draft v7.6\" --body-file reports/agentic-workflow/run-v2/hermes-agentic-run-v2-pr-draft-v7.6.md"
+    ]
+  },
+  "safetyBoundary": {
+    "prDraftOnly": true,
+    "branchCreated": false,
+    "pushed": false,
+    "prOpened": false,
+    "merged": false,
+    "externalSideEffects": false,
+    "humanApprovalRequiredForGithubActions": true
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "sourceValidationReady": true,
+    "prDraftWritten": true,
+    "bodyWritten": true,
+    "commandsDeclared": true,
+    "prDraftOnly": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noPrOpened": true,
+    "noMerge": true,
+    "humanApprovalRequiredForGithubActions": true
+  },
+  "notes": [
+    "This drafts PR metadata only.",
+    "It does not create a branch, push, open a PR, or merge.",
+    "The next safe step is operator-approved branch preparation or manual PR creation."
+  ]
+}
