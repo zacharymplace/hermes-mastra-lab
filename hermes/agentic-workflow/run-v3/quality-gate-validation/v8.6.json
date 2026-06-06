@@ -1,0 +1,101 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-validation-v8.6",
+  "generatedAt": "2026-06-06T08:36:03.159Z",
+  "status": "validated",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-validation/v8.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-validation-v8.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-validation-v8.6.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "sourceImplementation": "hermes-agentic-run-v3-quality-gate-implementation-v8.5",
+    "selectedTarget": "loop-quality-hardening"
+  },
+  "validation": {
+    "implementationStatus": "implemented",
+    "declaredTargetsClean": true,
+    "pathNormalizationFixed": true,
+    "priorFailureResolved": true,
+    "qualityChecksImplemented": [
+      {
+        "id": "generated-artifact-drift",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "stale-timestamp-churn",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "no-op-patch-claims",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "human-boundary-preservation",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "declared-target-only-changes",
+        "implemented": true,
+        "passed": true
+      }
+    ]
+  },
+  "safetyBoundary": {
+    "validationOnly": true,
+    "patchAppliedByThisStep": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-implementation:v8.5:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-implementation:v8.5:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"intent-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"contract-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-loop-quality\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"generated-artifact-drift-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"timestamp-churn-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-op-patch-claims-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-boundary-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"declared-target-only-changes-implemented\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"implementation-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"declared-targets-clean\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-intent:v8.4:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-intent:v8.4:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-implementation-intent-v8-4-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-intent-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"plan-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-loop-quality\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"implementation-intent-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposed-patch-shape-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"planned-checks-carried-forward\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"implementation-rules-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"intent-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-implementation-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-plan:v8.3:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-plan:v8.3:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-plan-v8-3-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"contract-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-loop-quality\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"gates-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"generated-artifact-drift-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"timestamp-churn-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-op-patch-claims-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-boundary-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"declared-target-only-changes-planned\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"planning-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-target:v8.2:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-target:v8.2:gate\n> tsx evaluations/hermes-agentic-run-v3-target-contract-v8-2-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-contracted\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selector-chose-loop-quality\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"target-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gates-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"generated-drift-gate-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"timestamp-churn-gate-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-op-patch-gate-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-boundary-gate-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"declared-targets-gate-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"allowed-targets-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"disallowed-targets-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"contract-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusValidated": true,
+    "implementationReady": true,
+    "implementationGatePassed": true,
+    "priorDeclaredTargetFailureResolved": true,
+    "pathNormalizationFixed": true,
+    "validationsPassed": true,
+    "validationOnly": true,
+    "noPatchAppliedByThisStep": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This validates the v8.5 loop-quality gate implementation.",
+    "It confirms the declared-target path normalization fix resolved the false undeclared-target failure.",
+    "It does not apply a patch, create a branch, push, merge, or open a PR."
+  ]
+}
