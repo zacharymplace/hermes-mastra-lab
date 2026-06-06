@@ -153,7 +153,10 @@
     "hermes:agentic-run-v2-source-patch-proposal:v7.3:check": "npm run hermes:agentic-run-v2-source-patch-proposal:v7.3 && npm run hermes:agentic-run-v2-source-patch-proposal:v7.3:gate",
     "hermes:agentic-run-v2-source-patch-apply:v7.4": "tsx scripts/apply-hermes-agentic-run-v2-source-patch-v7-4.ts",
     "hermes:agentic-run-v2-source-patch-apply:v7.4:gate": "tsx evaluations/hermes-agentic-run-v2-source-patch-apply-v7-4-gate.ts",
-    "hermes:agentic-run-v2-source-patch-apply:v7.4:check": "npm run hermes:agentic-run-v2-source-patch-apply:v7.4 && npm run hermes:agentic-run-v2-source-patch-apply:v7.4:gate"
+    "hermes:agentic-run-v2-source-patch-apply:v7.4:check": "npm run hermes:agentic-run-v2-source-patch-apply:v7.4 && npm run hermes:agentic-run-v2-source-patch-apply:v7.4:gate",
+    "hermes:agentic-run-v2-source-patch-validation:v7.5": "tsx scripts/write-hermes-agentic-run-v2-source-patch-validation-v7-5.ts",
+    "hermes:agentic-run-v2-source-patch-validation:v7.5:gate": "tsx evaluations/hermes-agentic-run-v2-source-patch-validation-v7-5-gate.ts",
+    "hermes:agentic-run-v2-source-patch-validation:v7.5:check": "npm run hermes:agentic-run-v2-source-patch-validation:v7.5 && npm run hermes:agentic-run-v2-source-patch-validation:v7.5:gate"
   },
   "keywords": [],
   "author": "",

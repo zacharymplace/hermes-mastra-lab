@@ -1,0 +1,72 @@
+{
+  "runtime": "hermes-agentic-run-v2-source-patch-validation-v7.5",
+  "generatedAt": "2026-06-06T07:16:53.478Z",
+  "status": "validated",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-apply-v7.4.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v2/source-patch-validation-v7.5.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-validation-v7.5.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-validation-v7.5.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v2",
+    "sourcePatchApply": "hermes-agentic-run-v2-source-patch-apply-v7.4",
+    "sourcePatchApplyStatus": "ready-for-human-review"
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v2-source-patch-apply:v7.4:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v2-source-patch-apply:v7.4:gate\n> tsx evaluations/hermes-agentic-run-v2-source-patch-apply-v7-4-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"ready-for-human-review\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"approval-granted\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"reviewer-captured\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"reason-captured\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"source-proposal-ready\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"diff-captured\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"constrained-patch-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v2-source-patch-proposal:v7.3:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v2-source-patch-proposal:v7.3:gate\n> tsx evaluations/hermes-agentic-run-v2-source-patch-proposal-v7-3-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-patch-proposed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"target-selection-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"patch-intent-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"plan-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-target-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposal-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposed-files-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validation-commands-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposal-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-approval-required-before-patch\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v2-target-selection:v7.2:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v2-target-selection:v7.2:gate\n> tsx evaluations/hermes-agentic-run-v2-target-selection-v7-2-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-target-selected\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"intent-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"plan-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"run-index-complete\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"ledger-has-entry\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"targets-ranked\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-target-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-target-has-files\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"target-selection-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-approval-required-before-patch\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run check",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 check\n> tsc --noEmit && npm run experiment:idea && npm run experiment:report && npm run promotion:gate && npm run doctor\n\n\n> hermes-mastra-lab@1.0.0 experiment:idea\n> tsx workflows/idea-recommendation.ts\n\n{\n  \"generatedAt\": \"2026-06-06T07:16:52.516Z\",\n  \"goal\": \"Generate the next best Hermes push\",\n  \"recommendation\": {\n    \"title\": \"Hermes Idea Recommendation Workflow\",\n    \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n    \"rationale\": [\n      \"Proves the orchestration shape first\",\n      \"Creates a baseline for later Mastra comparison\",\n      \"Keeps the experiment auditable\"\n    ],\n    \"risks\": [\n      \"May be too deterministic to test real agent behavior\"\n    ],\n    \"verdict\": \"advance\",\n    \"score\": 19,\n    \"scoring\": {\n      \"shipSize\": 5,\n      \"strategicFit\": 5,\n      \"learningValue\": 4,\n      \"reversibility\": 5\n    }\n  },\n  \"candidates\": [\n    {\n      \"title\": \"Hermes Idea Recommendation Workflow\",\n      \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n      \"rationale\": [\n        \"Proves the orchestration shape first\",\n        \"Creates a baseline for later Mastra comparison\",\n        \"Keeps the experiment auditable\"\n      ],\n      \"risks\": [\n        \"May be too deterministic to test real agent behavior\"\n      ],\n      \"verdict\": \"advance\",\n      \"score\": 19,\n      \"scoring\": {\n        \"shipSize\": 5,\n        \"strategicFit\": 5,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Mastra Runtime Adapter Spike\",\n      \"summary\": \"Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.\",\n      \"rationale\": [\n        \"Reduces framework lock-in\",\n        \"Keeps Hermes portable\",\n        \"Creates a clear comparison point\"\n      ],\n      \"risks\": [\n        \"May add abstraction before the runtime is understood\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 17,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 5,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Langfuse Trace Contract\",\n      \"summary\": \"Define the minimum trace fields Hermes must emit regardless of runtime.\",\n      \"rationale\": [\n        \"Preserves observability\",\n        \"Makes runtime swaps measurable\",\n        \"Supports regression review\"\n      ],\n      \"risks\": [\n        \"May be premature before workflow behavior exists\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 16,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    }\n  ]\n}\n\n> hermes-mastra-lab@1.0.0 experiment:report\n> tsx workflows/write-experiment-report.ts\n\nWrote /Users/zplace/dev/hermes-mastra-lab/hermes/idea-recommendation.md\n\n> hermes-mastra-lab@1.0.0 promotion:gate\n> tsx evaluations/promotion-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"has-recommendation\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"score-threshold\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"verdict-advance\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"has-risks\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"has-candidate-comparison\",\n      \"pass\": true\n    }\n  ]\n}\n\n> hermes-mastra-lab@1.0.0 doctor\n> tsx evaluations/doctor.ts\n\n{\n  \"name\": \"hermes-mastra-lab\",\n  \"status\": \"healthy\",\n  \"requiredFiles\": 10,\n  \"missing\": []\n}\n"
+    },
+    {
+      "command": "npm run mastra:check",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 mastra:check\n> npm run mastra:spike && npm run mastra:gate\n\n\n> hermes-mastra-lab@1.0.0 mastra:spike\n> tsx adapters/mastra/run-spike.ts\n\n{\n  \"runtime\": \"mastra-adapter-spike\",\n  \"mode\": \"local-deterministic\",\n  \"recommendation\": {\n    \"title\": \"Hermes Idea Recommendation Workflow\",\n    \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n    \"rationale\": [\n      \"Proves the orchestration shape first\",\n      \"Creates a baseline for later Mastra comparison\",\n      \"Keeps the experiment auditable\"\n    ],\n    \"risks\": [\n      \"May be too deterministic to test real agent behavior\"\n    ],\n    \"verdict\": \"advance\",\n    \"score\": 19,\n    \"scoring\": {\n      \"shipSize\": 5,\n      \"strategicFit\": 5,\n      \"learningValue\": 4,\n      \"reversibility\": 5\n    }\n  },\n  \"candidates\": [\n    {\n      \"title\": \"Hermes Idea Recommendation Workflow\",\n      \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n      \"rationale\": [\n        \"Proves the orchestration shape first\",\n        \"Creates a baseline for later Mastra comparison\",\n        \"Keeps the experiment auditable\"\n      ],\n      \"risks\": [\n        \"May be too deterministic to test real agent behavior\"\n      ],\n      \"verdict\": \"advance\",\n      \"score\": 19,\n      \"scoring\": {\n        \"shipSize\": 5,\n        \"strategicFit\": 5,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Mastra Runtime Adapter Spike\",\n      \"summary\": \"Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.\",\n      \"rationale\": [\n        \"Reduces framework lock-in\",\n        \"Keeps Hermes portable\",\n        \"Creates a clear comparison point\"\n      ],\n      \"risks\": [\n        \"May add abstraction before the runtime is understood\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 17,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 5,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Langfuse Trace Contract\",\n      \"summary\": \"Define the minimum trace fields Hermes must emit regardless of runtime.\",\n      \"rationale\": [\n        \"Preserves observability\",\n        \"Makes runtime swaps measurable\",\n        \"Supports regression review\"\n      ],\n      \"risks\": [\n        \"May be premature before workflow behavior exists\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 16,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    }\n  ],\n  \"notes\": [\n    \"This is the adapter boundary Mastra must satisfy.\",\n    \"No live LLM calls are used yet.\",\n    \"Hermes core logic remains framework-independent.\"\n  ]\n}\n\n> hermes-mastra-lab@1.0.0 mastra:gate\n> tsx evaluations/mastra-adapter-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deterministic-mode\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"has-recommendation\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"candidate-count\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"framework-independent-note\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    }
+  ],
+  "safetyBoundary": {
+    "validationOnly": true,
+    "patchAppliedByThisStep": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "externalSideEffects": false
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "sourcePatchApplyReady": true,
+    "sourcePatchApplyGatePassed": true,
+    "validationRan": true,
+    "validationsPassed": true,
+    "validationOnly": true,
+    "noPatchAppliedByThisStep": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This validates the approved v7.4 source patch apply artifact.",
+    "It does not apply another patch or perform any GitHub lifecycle action.",
+    "The next safe step is a run-v2 PR draft or branch preparation artifact."
+  ]
+}
