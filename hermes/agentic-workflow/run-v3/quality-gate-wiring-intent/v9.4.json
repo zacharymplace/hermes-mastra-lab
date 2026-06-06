@@ -1,0 +1,160 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-wiring-intent-v9.4",
+  "generatedAt": "2026-06-06T10:04:11.825Z",
+  "status": "intent-declared",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-proposal-v9.3.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-validation-v9.2.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-wiring-intent/v9.4.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-intent-v9.4.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-intent-v9.4.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceWiringProposal": "hermes-agentic-run-v3-quality-gate-wiring-proposal-v9.3",
+    "sourceEnforcementValidation": "hermes-agentic-run-v3-quality-gate-enforcement-validation-v9.2"
+  },
+  "wiringIntent": {
+    "id": "run-v3-quality-gate-wiring-intent-v9.4",
+    "title": "Hermes Agentic Loop Quality Gate Wiring Intent",
+    "type": "quality-gate-wiring-intent",
+    "summary": "Declare the bounded implementation intent for wiring validated qualityGate enforcement into future Hermes agentic workflow artifacts.",
+    "proposedPatchShape": {
+      "generator": "scripts/write-hermes-agentic-run-v3-quality-gate-wiring-implementation-v9-5.ts",
+      "gate": "evaluations/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9-5-gate.ts",
+      "machineArtifact": "hermes/agentic-workflow/run-v3/quality-gate-wiring-implementation/v9.5.json",
+      "reportJson": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9.5.json",
+      "reportMarkdown": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9.5.md"
+    },
+    "wiringScope": [
+      {
+        "phase": "source-patch-proposal",
+        "target": "future source patch proposal generators",
+        "required": true,
+        "patchNow": false,
+        "intent": "Add qualityGate.applicability and expectedChangedPaths metadata."
+      },
+      {
+        "phase": "source-patch-apply",
+        "target": "future source patch apply generators",
+        "required": true,
+        "patchNow": false,
+        "intent": "Add complete qualityGate status before ready-for-human-review."
+      },
+      {
+        "phase": "source-patch-validation",
+        "target": "future source patch validation gates",
+        "required": true,
+        "patchNow": false,
+        "intent": "Fail closed when qualityGate is missing, failed, null, or incomplete."
+      },
+      {
+        "phase": "branch-prepare",
+        "target": "future branch preparation artifacts",
+        "required": true,
+        "patchNow": false,
+        "intent": "Require clean or declared generated drift before branch preparation."
+      },
+      {
+        "phase": "pr-draft",
+        "target": "future PR draft artifacts",
+        "required": true,
+        "patchNow": false,
+        "intent": "Include qualityGate status in PR draft validation metadata."
+      },
+      {
+        "phase": "post-merge-ledger",
+        "target": "future post-merge ledger entries",
+        "required": true,
+        "patchNow": false,
+        "intent": "Record qualityGate status with post-merge validation results."
+      },
+      {
+        "phase": "run-index",
+        "target": "future run index artifacts",
+        "required": true,
+        "patchNow": false,
+        "intent": "Expose qualityGate status as durable run-level state."
+      }
+    ],
+    "requiredGateOutputs": [
+      "status",
+      "requiredChecks",
+      "results",
+      "generatedArtifactDrift",
+      "timestampChurn",
+      "noOpPatchClaims",
+      "humanBoundaryPreserved",
+      "declaredTargetOnlyChanges",
+      "passed"
+    ],
+    "failClosedPolicy": [
+      "Future source-patch-validation gates fail when qualityGate is required and absent.",
+      "Future source-patch-validation gates fail when qualityGate.passed is false or null.",
+      "Future readiness reports fail when required qualityGate output fields are missing.",
+      "Future apply reports fail when applied, changed, diffOutput, or semanticChange are missing.",
+      "Future branch preparation fails when generated drift is neither clean nor declared."
+    ],
+    "implementationRules": [
+      "Read v9.3 wiring proposal as the source of truth.",
+      "Do not broadly rewrite existing workflow scripts in v9.4.",
+      "Declare wiring intent before modifying future patch/apply generators.",
+      "Future source-patch-apply artifacts must include complete qualityGate status before readiness.",
+      "Future source-patch-validation artifacts must fail closed when qualityGate is missing, failed, null, or incomplete.",
+      "Future branch preparation must confirm generated drift is clean or declared.",
+      "Future PR draft, post-merge ledger, and run-index artifacts must carry qualityGate status."
+    ],
+    "expectedNextStep": "Generate v9.5 quality gate wiring implementation artifact and gate; do not perform a broad source rewrite."
+  },
+  "safetyBoundary": {
+    "intentOnly": true,
+    "broadSourceRewrite": false,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-wiring-proposal:v9.3:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-validation:v9.2:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-implementation:v9.1:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusIntentDeclared": true,
+    "wiringProposalReady": true,
+    "enforcementValidationReady": true,
+    "proposedPatchShapeDeclared": true,
+    "wiringScopeDeclared": true,
+    "requiredGateOutputsCarriedForward": true,
+    "failClosedPolicyCarriedForward": true,
+    "implementationRulesDeclared": true,
+    "validationsPassed": true,
+    "intentOnly": true,
+    "noBroadSourceRewrite": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This declares wiring intent for qualityGate enforcement.",
+    "It does not modify future workflow scripts yet.",
+    "The next safe step is v9.5 wiring implementation."
+  ]
+}
