@@ -1,0 +1,111 @@
+{
+  "runtime": "hermes-agentic-run-v2-target-contract-v6.9",
+  "generatedAt": "2026-06-06T06:44:21.943Z",
+  "status": "contracted",
+  "inputArtifacts": [
+    "reports/agentic-workflow/next-run/hermes-agentic-next-run-selector-v6.8.json",
+    "reports/agentic-workflow/run-index/hermes-agentic-run-index-v6.7.json",
+    "sentra/ledger/post-merge-validation.json"
+  ],
+  "selectedNextRun": {
+    "id": "agentic-next-run",
+    "title": "Start Next Agentic Run",
+    "summary": "Use the completed v1-v6.7 run index to start a second controlled agentic workflow cycle.",
+    "signals": {
+      "strategicFit": 5,
+      "learningValue": 5,
+      "operatingLeverage": 5,
+      "riskReduction": 4,
+      "autonomyLeverage": 5,
+      "effort": 3
+    },
+    "risks": [
+      "Could repeat the same artifact loop without adding autonomy",
+      "Needs clearer target selection before applying more repo changes"
+    ],
+    "scoring": {
+      "gross": 87,
+      "effortPenalty": 6,
+      "final": 81
+    },
+    "score": 81
+  },
+  "runV2": {
+    "id": "hermes-agentic-run-v2",
+    "purpose": "Start the second controlled Hermes agentic run using the completed v1-v6.7 chain as operating context.",
+    "targetType": "workflow-improvement-contract",
+    "targetName": "Hermes Agentic Run v2 Target Contract",
+    "objective": "Define the allowed target, constraints, success criteria, and safety boundaries before any v2 patching is allowed.",
+    "sourceRun": "hermes-agentic-workflow-v1-through-v6.7",
+    "sourceLedgerEntry": "pr-1-post-merge-v6.6"
+  },
+  "allowedTargets": [
+    {
+      "path": "hermes/agentic-workflow/run-v2/target-contract-v6.9.json",
+      "reason": "Machine-readable contract for the second controlled agentic run."
+    },
+    {
+      "path": "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-target-contract-v6.9.json",
+      "reason": "Report artifact for audit and gates."
+    },
+    {
+      "path": "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-target-contract-v6.9.md",
+      "reason": "Human-readable review artifact."
+    },
+    {
+      "path": "scripts/write-hermes-agentic-run-v2-target-contract-v6-9.ts",
+      "reason": "Generator for the target contract."
+    },
+    {
+      "path": "evaluations/hermes-agentic-run-v2-target-contract-v6-9-gate.ts",
+      "reason": "Gate for contract validity."
+    },
+    {
+      "path": "package.json",
+      "reason": "Expose v6.9 commands."
+    }
+  ],
+  "disallowedTargets": [
+    "secrets",
+    ".env files",
+    "credential stores",
+    "destructive git operations",
+    "auto-push",
+    "auto-merge",
+    "opening GitHub PRs without explicit operator approval",
+    "broad source rewrites outside the declared contract"
+  ],
+  "safetyBoundary": {
+    "requiresHumanApprovalBeforePatch": true,
+    "requiresGateBeforeCommit": true,
+    "autoPush": false,
+    "autoMerge": false,
+    "externalSideEffects": false,
+    "allowedToModifyOnlyDeclaredTargets": true
+  },
+  "successCriteria": [
+    "v6.8 selected Start Next Agentic Run.",
+    "v6.7 source run is complete.",
+    "v6.6 post-merge ledger has at least one entry.",
+    "Run v2 has a declared target before patching.",
+    "Allowed and disallowed targets are explicit.",
+    "Human approval remains required before patch application."
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "selectorChoseNextRun": true,
+    "sourceRunComplete": true,
+    "ledgerHasEntry": true,
+    "targetDeclared": true,
+    "allowedTargetsDeclared": true,
+    "disallowedTargetsDeclared": true,
+    "humanApprovalRequired": true,
+    "noAutoPush": true,
+    "noAutoMerge": true
+  },
+  "notes": [
+    "This prevents the second agentic run from becoming an unconstrained patch loop.",
+    "The run can plan next, but patch application must be separately approved.",
+    "This becomes the contract v2 must satisfy before source edits."
+  ]
+}
