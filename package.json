@@ -165,7 +165,10 @@
     "hermes:agentic-run-v2-branch:v7.7:check": "npm run hermes:agentic-run-v2-branch:v7.7 && npm run hermes:agentic-run-v2-branch:v7.7:gate",
     "hermes:agentic-run-v2-pr-lifecycle:v7.8": "tsx scripts/write-hermes-agentic-run-v2-pr-lifecycle-v7-8.ts",
     "hermes:agentic-run-v2-pr-lifecycle:v7.8:gate": "tsx evaluations/hermes-agentic-run-v2-pr-lifecycle-v7-8-gate.ts",
-    "hermes:agentic-run-v2-pr-lifecycle:v7.8:check": "npm run hermes:agentic-run-v2-pr-lifecycle:v7.8 && npm run hermes:agentic-run-v2-pr-lifecycle:v7.8:gate"
+    "hermes:agentic-run-v2-pr-lifecycle:v7.8:check": "npm run hermes:agentic-run-v2-pr-lifecycle:v7.8 && npm run hermes:agentic-run-v2-pr-lifecycle:v7.8:gate",
+    "hermes:agentic-run-v2-post-merge-ledger:v7.9": "tsx scripts/write-hermes-agentic-run-v2-post-merge-ledger-v7-9.ts",
+    "hermes:agentic-run-v2-post-merge-ledger:v7.9:gate": "tsx evaluations/hermes-agentic-run-v2-post-merge-ledger-v7-9-gate.ts",
+    "hermes:agentic-run-v2-post-merge-ledger:v7.9:check": "npm run hermes:agentic-run-v2-post-merge-ledger:v7.9 && npm run hermes:agentic-run-v2-post-merge-ledger:v7.9:gate"
   },
   "keywords": [],
   "author": "",
