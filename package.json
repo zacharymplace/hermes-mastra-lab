@@ -57,7 +57,10 @@
     "mastra:external-human:check": "npm run mastra:external-human && npm run mastra:external-human:gate",
     "mastra:failure-recovery": "tsx adapters/mastra/native/failure-recovery/run-qualification.ts",
     "mastra:failure-recovery:gate": "tsx evaluations/mastra-failure-recovery-gate.ts",
-    "mastra:failure-recovery:check": "npm run mastra:failure-recovery && npm run mastra:failure-recovery:gate"
+    "mastra:failure-recovery:check": "npm run mastra:failure-recovery && npm run mastra:failure-recovery:gate",
+    "mastra:promotion:v3": "tsx scripts/write-mastra-promotion-v3.ts",
+    "mastra:promotion:v3:gate": "tsx evaluations/mastra-promotion-v3-gate.ts",
+    "mastra:promotion:v3:check": "npm run mastra:promotion:v3 && npm run mastra:promotion:v3:gate"
   },
   "keywords": [],
   "author": "",

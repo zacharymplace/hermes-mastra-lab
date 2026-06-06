@@ -1,0 +1,149 @@
+{
+  "runtime": "mastra-promotion-report-v3",
+  "generatedAt": "2026-06-06T04:23:35.718Z",
+  "decision": "promote-for-controlled-use",
+  "recommendation": "Use Mastra as the Hermes orchestration runtime for qualified workflows, while keeping Hermes domain logic, scoring, promotion rules, and artifacts framework-independent.",
+  "score": {
+    "total": 27,
+    "max": 30,
+    "percentage": 90
+  },
+  "criteria": [
+    {
+      "id": "clarity",
+      "score": 4,
+      "max": 5,
+      "rationale": "Mastra makes multi-step orchestration, suspend/resume, and review boundaries explicit. Plain TypeScript remains clearer for simple deterministic logic."
+    },
+    {
+      "id": "type-safety",
+      "score": 4,
+      "max": 5,
+      "rationale": "Workflow schemas improve runtime boundaries while Hermes domain scoring and recommendation types stay framework-independent."
+    },
+    {
+      "id": "observability-handoff",
+      "score": 5,
+      "max": 5,
+      "rationale": "Langfuse SDK, OTEL export, and UI visibility are verified. Hermes artifacts can be tied to runtime traces."
+    },
+    {
+      "id": "human-review-flow",
+      "score": 5,
+      "max": 5,
+      "rationale": "Suspend/resume, persisted snapshots, and external review artifacts are all qualified."
+    },
+    {
+      "id": "retry-error-handling",
+      "score": 4,
+      "max": 5,
+      "rationale": "Controlled failure recovery is qualified. Built-in automatic retry policy behavior remains a future refinement."
+    },
+    {
+      "id": "workflow-composition",
+      "score": 5,
+      "max": 5,
+      "rationale": "Native workflow, fan-out/fan-in critique, persisted review, and recovery paths show strong composition fit."
+    }
+  ],
+  "evidence": {
+    "mastraQualification": {
+      "recommendation": "continue-evaluation",
+      "score": {
+        "total": 20,
+        "max": 30,
+        "percentage": 67
+      },
+      "stages": [
+        {
+          "id": "core",
+          "status": "pass",
+          "runtime": "plain-typescript"
+        },
+        {
+          "id": "adapter",
+          "status": "pass",
+          "runtime": "mastra-adapter-spike"
+        },
+        {
+          "id": "native",
+          "status": "pass",
+          "runtime": "mastra-native-workflow"
+        },
+        {
+          "id": "parallel",
+          "status": "pass",
+          "runtime": "mastra-native-parallel-critique"
+        },
+        {
+          "id": "human-review",
+          "status": "pass",
+          "runtime": "mastra-native-human-review"
+        },
+        {
+          "id": "suspend-resume",
+          "status": "pass"
+        }
+      ]
+    },
+    "langfuse": {
+      "localContract": "local-deterministic-no-network",
+      "sdkMode": "sdk-emission",
+      "eventsEmitted": 7,
+      "artifactsLinked": true
+    },
+    "suspendResume": {
+      "realSuspend": true,
+      "resumeInitiallyBlockedByPersistence": true,
+      "persistenceQualified": true,
+      "externalHumanInputQualified": true
+    },
+    "failureRecovery": {
+      "qualified": true,
+      "firstRunStatus": "failed",
+      "secondRunStatus": "success",
+      "recoveredOutputValid": true
+    }
+  },
+  "closedBlockers": [
+    "real-langfuse-sdk",
+    "langfuse-ui-visibility",
+    "real-mastra-suspend",
+    "snapshot-persistence",
+    "external-human-input",
+    "failure-recovery"
+  ],
+  "remainingBlockers": [
+    {
+      "id": "automatic-retry-policy",
+      "status": "open-refinement",
+      "severity": "medium",
+      "note": "Explicit rerun-based recovery is qualified, but Mastra-native automatic retry policy behavior has not been isolated."
+    },
+    {
+      "id": "production-storage-choice",
+      "status": "open-refinement",
+      "severity": "medium",
+      "note": "Local LibSQL persistence is qualified. Production deployment still needs a storage choice and backup policy."
+    },
+    {
+      "id": "runtime-cost-and-complexity",
+      "status": "watch",
+      "severity": "low",
+      "note": "Mastra adds framework surface area. Keep Hermes domain logic framework-independent to preserve reversibility."
+    }
+  ],
+  "guardrails": [
+    "Hermes domain logic must remain outside Mastra workflow definitions.",
+    "Mastra should orchestrate; Hermes should decide.",
+    "All promotion decisions must remain explicit and artifact-backed.",
+    "Local storage artifacts must remain ignored.",
+    "Langfuse traces should support review, not replace committed artifacts."
+  ],
+  "nextActions": [
+    "Add Mastra promotion v3 gate.",
+    "Wire the qualified path into a single end-to-end Hermes promotion workflow.",
+    "Add a production storage decision record before using this outside local development.",
+    "Optionally isolate Mastra-native automatic retry policy behavior."
+  ]
+}
