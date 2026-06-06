@@ -1,0 +1,254 @@
+{
+  "runtime": "mastra-persistence-qualification",
+  "mode": "local-libsql-storage",
+  "passed": true,
+  "runId": "f8efa47c-30d0-4bbd-9be9-dd9501819291",
+  "startStatus": "suspended",
+  "persistedStateFound": true,
+  "suspendedStep": {
+    "stepId": "approval-step",
+    "path": [
+      "approval-step"
+    ],
+    "executionPath": [
+      1
+    ],
+    "step": {
+      "payload": {
+        "recommendation": {
+          "title": "Hermes Idea Recommendation Workflow",
+          "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+          "rationale": [
+            "Proves the orchestration shape first",
+            "Creates a baseline for later Mastra comparison",
+            "Keeps the experiment auditable"
+          ],
+          "risks": [
+            "May be too deterministic to test real agent behavior"
+          ],
+          "verdict": "advance",
+          "score": 19,
+          "scoring": {
+            "shipSize": 5,
+            "strategicFit": 5,
+            "learningValue": 4,
+            "reversibility": 5
+          }
+        },
+        "candidates": [
+          {
+            "title": "Hermes Idea Recommendation Workflow",
+            "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+            "rationale": [
+              "Proves the orchestration shape first",
+              "Creates a baseline for later Mastra comparison",
+              "Keeps the experiment auditable"
+            ],
+            "risks": [
+              "May be too deterministic to test real agent behavior"
+            ],
+            "verdict": "advance",
+            "score": 19,
+            "scoring": {
+              "shipSize": 5,
+              "strategicFit": 5,
+              "learningValue": 4,
+              "reversibility": 5
+            }
+          },
+          {
+            "title": "Mastra Runtime Adapter Spike",
+            "summary": "Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.",
+            "rationale": [
+              "Reduces framework lock-in",
+              "Keeps Hermes portable",
+              "Creates a clear comparison point"
+            ],
+            "risks": [
+              "May add abstraction before the runtime is understood"
+            ],
+            "verdict": "hold",
+            "score": 17,
+            "scoring": {
+              "shipSize": 3,
+              "strategicFit": 4,
+              "learningValue": 5,
+              "reversibility": 5
+            }
+          },
+          {
+            "title": "Langfuse Trace Contract",
+            "summary": "Define the minimum trace fields Hermes must emit regardless of runtime.",
+            "rationale": [
+              "Preserves observability",
+              "Makes runtime swaps measurable",
+              "Supports regression review"
+            ],
+            "risks": [
+              "May be premature before workflow behavior exists"
+            ],
+            "verdict": "hold",
+            "score": 16,
+            "scoring": {
+              "shipSize": 3,
+              "strategicFit": 4,
+              "learningValue": 4,
+              "reversibility": 5
+            }
+          }
+        ]
+      },
+      "startedAt": 1780719084836,
+      "status": "suspended",
+      "suspendPayload": {
+        "reason": "Human approval required before Hermes promotion.",
+        "recommendationTitle": "Hermes Idea Recommendation Workflow",
+        "recommendationScore": 19,
+        "requiredDecision": [
+          "approve",
+          "reject"
+        ]
+      },
+      "suspendedAt": 1780719084837
+    },
+    "payload": {
+      "recommendation": {
+        "title": "Hermes Idea Recommendation Workflow",
+        "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+        "rationale": [
+          "Proves the orchestration shape first",
+          "Creates a baseline for later Mastra comparison",
+          "Keeps the experiment auditable"
+        ],
+        "risks": [
+          "May be too deterministic to test real agent behavior"
+        ],
+        "verdict": "advance",
+        "score": 19,
+        "scoring": {
+          "shipSize": 5,
+          "strategicFit": 5,
+          "learningValue": 4,
+          "reversibility": 5
+        }
+      },
+      "candidates": [
+        {
+          "title": "Hermes Idea Recommendation Workflow",
+          "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+          "rationale": [
+            "Proves the orchestration shape first",
+            "Creates a baseline for later Mastra comparison",
+            "Keeps the experiment auditable"
+          ],
+          "risks": [
+            "May be too deterministic to test real agent behavior"
+          ],
+          "verdict": "advance",
+          "score": 19,
+          "scoring": {
+            "shipSize": 5,
+            "strategicFit": 5,
+            "learningValue": 4,
+            "reversibility": 5
+          }
+        },
+        {
+          "title": "Mastra Runtime Adapter Spike",
+          "summary": "Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.",
+          "rationale": [
+            "Reduces framework lock-in",
+            "Keeps Hermes portable",
+            "Creates a clear comparison point"
+          ],
+          "risks": [
+            "May add abstraction before the runtime is understood"
+          ],
+          "verdict": "hold",
+          "score": 17,
+          "scoring": {
+            "shipSize": 3,
+            "strategicFit": 4,
+            "learningValue": 5,
+            "reversibility": 5
+          }
+        },
+        {
+          "title": "Langfuse Trace Contract",
+          "summary": "Define the minimum trace fields Hermes must emit regardless of runtime.",
+          "rationale": [
+            "Preserves observability",
+            "Makes runtime swaps measurable",
+            "Supports regression review"
+          ],
+          "risks": [
+            "May be premature before workflow behavior exists"
+          ],
+          "verdict": "hold",
+          "score": 16,
+          "scoring": {
+            "shipSize": 3,
+            "strategicFit": 4,
+            "learningValue": 4,
+            "reversibility": 5
+          }
+        }
+      ]
+    },
+    "suspendPayload": {
+      "reason": "Human approval required before Hermes promotion.",
+      "recommendationTitle": "Hermes Idea Recommendation Workflow",
+      "recommendationScore": 19,
+      "requiredDecision": [
+        "approve",
+        "reject"
+      ]
+    },
+    "resumeLabels": {}
+  },
+  "resumeStatus": "success",
+  "result": {
+    "runtime": "mastra-real-suspend-resume",
+    "status": "approved",
+    "review": {
+      "approved": true,
+      "reviewer": "local-mastra-persistence-qualification",
+      "reason": "Recovered persisted snapshot and resumed with explicit approval."
+    },
+    "recommendation": {
+      "title": "Hermes Idea Recommendation Workflow",
+      "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+      "rationale": [
+        "Proves the orchestration shape first",
+        "Creates a baseline for later Mastra comparison",
+        "Keeps the experiment auditable"
+      ],
+      "risks": [
+        "May be too deterministic to test real agent behavior"
+      ],
+      "verdict": "advance",
+      "score": 19,
+      "scoring": {
+        "shipSize": 5,
+        "strategicFit": 5,
+        "learningValue": 4,
+        "reversibility": 5
+      }
+    },
+    "suspendReason": "Human approval required before Hermes promotion."
+  },
+  "checks": {
+    "usedConfiguredStorage": true,
+    "suspendedBeforeReview": true,
+    "recoveredPersistedState": true,
+    "recoveredSuspendedStep": true,
+    "resumedFromRecoveredRun": true,
+    "approvalApplied": true,
+    "reviewerCaptured": true
+  },
+  "notes": [
+    "This uses a Mastra instance with LibSQLStore configured.",
+    "The workflow suspends, persists a snapshot, recovers by runId, and resumes from the recovered run.",
+    "This qualifies the persistence-backed suspend/resume path for local development."
+  ]
+}

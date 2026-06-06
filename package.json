@@ -48,7 +48,10 @@
     "langfuse:otel-smoke:check": "npm run langfuse:otel-smoke && npm run langfuse:otel-smoke:gate",
     "mastra:real-suspend": "tsx adapters/mastra/native/suspend-resume-real/run-qualification.ts",
     "mastra:real-suspend:gate": "tsx evaluations/mastra-real-suspend-resume-gate.ts",
-    "mastra:real-suspend:check": "npm run mastra:real-suspend && npm run mastra:real-suspend:gate"
+    "mastra:real-suspend:check": "npm run mastra:real-suspend && npm run mastra:real-suspend:gate",
+    "mastra:persistence": "tsx adapters/mastra/native/suspend-resume-real/run-persistence-qualification.ts",
+    "mastra:persistence:gate": "tsx evaluations/mastra-persistence-gate.ts",
+    "mastra:persistence:check": "npm run mastra:persistence && npm run mastra:persistence:gate"
   },
   "keywords": [],
   "author": "",
@@ -57,6 +60,7 @@
   "dependencies": {
     "@langfuse/otel": "^5.4.1",
     "@langfuse/tracing": "^5.4.1",
+    "@mastra/libsql": "^1.12.1",
     "@opentelemetry/sdk-node": "^0.218.0",
     "mastra": "^1.12.2",
     "zod": "^4.4.3"
