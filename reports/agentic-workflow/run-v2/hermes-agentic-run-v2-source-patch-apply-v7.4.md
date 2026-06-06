@@ -12,7 +12,7 @@ Status: ready-for-human-review
 
 - Target: hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json
 - Applied: true
-- Changed: false
+- Changed: true
 
 ## Safety
 

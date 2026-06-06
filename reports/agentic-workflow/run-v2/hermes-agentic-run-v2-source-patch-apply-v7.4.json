@@ -1,6 +1,6 @@
 {
   "runtime": "hermes-agentic-run-v2-source-patch-apply-v7.4",
-  "generatedAt": "2026-06-06T07:10:31.059Z",
+  "generatedAt": "2026-06-06T07:10:35.613Z",
   "status": "ready-for-human-review",
   "inputArtifacts": [
     "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-proposal-v7.3.json",
@@ -19,9 +19,9 @@
   "patch": {
     "targetPath": "hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json",
     "applied": true,
-    "changed": false,
+    "changed": true,
     "diffCommand": "git diff -- hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json",
-    "diffOutput": ""
+    "diffOutput": "diff --git a/hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json b/hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json\nindex ec4fd905..c9316a60 100644\n--- a/hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json\n+++ b/hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json\n@@ -1,6 +1,6 @@\n {\n   \"runtime\": \"hermes-agentic-run-v2-source-patch-apply-v7.4\",\n-  \"generatedAt\": \"2026-06-06T07:10:31.059Z\",\n+  \"generatedAt\": \"2026-06-06T07:10:35.613Z\",\n   \"status\": \"source-patch-applied\",\n   \"sourceProposal\": \"hermes-agentic-run-v2-source-patch-proposal-v7.3\",\n   \"approval\": {\n"
   },
   "validationResults": [
     {
