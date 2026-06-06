@@ -1,0 +1,140 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-implementation-v8.5",
+  "generatedAt": "2026-06-06T08:30:01.634Z",
+  "status": "implemented",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-intent-v8.4.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-target-contract-v8.2.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-implementation/v8.5.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceIntent": "hermes-agentic-run-v3-quality-gate-implementation-intent-v8.4",
+    "sourceContract": "hermes-agentic-run-v3-target-contract-v8.2"
+  },
+  "qualityGateImplementation": {
+    "id": "run-v3-loop-quality-gate-implementation",
+    "title": "Hermes Agentic Loop Quality Gate",
+    "summary": "Implements deterministic quality checks for generated drift, timestamp churn, no-op patch claims, human-boundary preservation, and declared-target-only changes.",
+    "checks": [
+      {
+        "id": "generated-artifact-drift",
+        "implemented": true,
+        "result": {
+          "statusBefore": "## main...origin/main\n M package.json\n?? evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts\n?? scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts\n",
+          "generatedArtifactDrift": [],
+          "passed": true,
+          "classification": "none"
+        }
+      },
+      {
+        "id": "stale-timestamp-churn",
+        "implemented": true,
+        "result": {
+          "passed": true,
+          "classification": "timestamp churn must be classified separately from semantic changes in patch reports"
+        }
+      },
+      {
+        "id": "no-op-patch-claims",
+        "implemented": true,
+        "result": {
+          "passed": true,
+          "requiredFields": [
+            "applied",
+            "changed",
+            "diffOutput",
+            "semanticChange"
+          ]
+        }
+      },
+      {
+        "id": "human-boundary-preservation",
+        "implemented": true,
+        "result": {
+          "passed": true,
+          "branchCreated": false,
+          "pushed": false,
+          "merged": false,
+          "prOpened": false
+        }
+      },
+      {
+        "id": "declared-target-only-changes",
+        "implemented": true,
+        "result": {
+          "passed": false,
+          "allowedTargets": [
+            "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts",
+            "evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts",
+            "hermes/agentic-workflow/run-v3/quality-gate-implementation/v8.5.json",
+            "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json",
+            "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.md",
+            "package.json"
+          ],
+          "changedFiles": [
+            "M package.json",
+            "evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts",
+            "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts"
+          ],
+          "undeclaredChanges": [
+            "M package.json"
+          ]
+        }
+      }
+    ]
+  },
+  "safetyBoundary": {
+    "implementationOnly": true,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-intent:v8.4:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-plan:v8.3:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-target:v8.2:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusImplemented": true,
+    "intentValid": true,
+    "contractValid": true,
+    "selectedLoopQuality": true,
+    "generatedArtifactDriftImplemented": true,
+    "timestampChurnImplemented": true,
+    "noOpPatchClaimsImplemented": true,
+    "humanBoundaryImplemented": true,
+    "declaredTargetOnlyChangesImplemented": true,
+    "validationsPassed": true,
+    "implementationOnly": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true,
+    "declaredTargetsClean": false
+  },
+  "notes": [
+    "This implements the run v3 loop-quality gate as an artifact and gate.",
+    "It does not apply a patch, create a branch, push, merge, or open a PR.",
+    "The next safe step is v8.6 quality gate validation or a bounded source patch proposal."
+  ]
+}
