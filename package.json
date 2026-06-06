@@ -114,7 +114,10 @@
     "hermes:agentic-execution:v2:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-execution:v2:gate",
     "hermes:agentic-patch:v3": "tsx scripts/run-hermes-agentic-patch-apply-v3.ts",
     "hermes:agentic-patch:v3:gate": "tsx evaluations/hermes-agentic-patch-apply-v3-gate.ts",
-    "hermes:agentic-patch:v3:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-patch:v3:gate"
+    "hermes:agentic-patch:v3:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-patch:v3:gate",
+    "hermes:agentic-pr-draft:v4": "tsx scripts/run-hermes-agentic-pr-draft-v4.ts",
+    "hermes:agentic-pr-draft:v4:gate": "tsx evaluations/hermes-agentic-pr-draft-v4-gate.ts",
+    "hermes:agentic-pr-draft:v4:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-pr-draft:v4 && npm run hermes:agentic-pr-draft:v4:gate"
   },
   "keywords": [],
   "author": "",

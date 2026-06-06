@@ -1,13 +1,13 @@
 # Hermes Agentic Patch Apply v3 Report
 
-Generated: 2026-06-06T05:48:49.196Z
+Generated: 2026-06-06T05:52:52.782Z
 Status: ready-for-human-review
 
 ## Patch
 
 - Target: `hermes/agentic-workflow/patches/patch-apply-v3.md`
 - Applied: true
-- Changed: true
+- Changed: false
 
 ## Validation
 
