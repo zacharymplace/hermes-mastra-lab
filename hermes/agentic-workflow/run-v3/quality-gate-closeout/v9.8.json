@@ -1,0 +1,179 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-closeout-v9.8",
+  "generatedAt": "2026-06-06T10:36:05.049Z",
+  "status": "closed-out",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-selector-v8.1.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-target-contract-v8.2.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-plan-v8.3.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-validation-v8.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-contract-v8.7.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-report-v8.8.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-plan-v8.9.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-implementation-v9.1.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-validation-v9.2.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-proposal-v9.3.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9.5.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-wiring-validation-v9.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-index-v9.7.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-closeout/v9.8.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-closeout-v9.8.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-closeout-v9.8.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "finalState": "quality-gate-hardening-complete",
+    "sourceIndex": "hermes-agentic-run-v3-quality-gate-index-v9.7"
+  },
+  "closeout": {
+    "title": "Hermes Agentic Run v3 Quality Gate Closeout",
+    "summary": "Closes out run v3 quality-gate hardening from selector through durable index and marks the validated qualityGate shape ready for the next patch/apply cycle.",
+    "chain": [
+      "v8.1 selector",
+      "v8.2 target contract",
+      "v8.3 quality gate plan",
+      "v8.4 implementation intent",
+      "v8.5 implementation",
+      "v8.6 validation",
+      "v8.7 adoption contract",
+      "v8.8 adoption report",
+      "v8.9 enforcement plan",
+      "v9.0 enforcement intent",
+      "v9.1 enforcement implementation",
+      "v9.2 enforcement validation",
+      "v9.3 wiring proposal",
+      "v9.4 wiring intent",
+      "v9.5 wiring implementation",
+      "v9.6 wiring validation",
+      "v9.7 quality gate index",
+      "v9.8 closeout"
+    ],
+    "qualityGate": {
+      "status": "validated-for-future-use",
+      "fieldName": "qualityGate",
+      "requiredGateOutputs": [
+        "status",
+        "requiredChecks",
+        "results",
+        "generatedArtifactDrift",
+        "timestampChurn",
+        "noOpPatchClaims",
+        "humanBoundaryPreserved",
+        "declaredTargetOnlyChanges",
+        "passed"
+      ],
+      "requiredChecks": [
+        "generated-artifact-drift",
+        "stale-timestamp-churn",
+        "no-op-patch-claims",
+        "human-boundary-preservation",
+        "declared-target-only-changes"
+      ],
+      "wiredPhases": [
+        "source-patch-proposal",
+        "source-patch-apply",
+        "source-patch-validation",
+        "branch-prepare",
+        "pr-draft",
+        "post-merge-ledger",
+        "run-index"
+      ],
+      "reusableContract": {
+        "fieldName": "qualityGate",
+        "failClosedWhenRequired": true,
+        "requiredWhen": [
+          "source-patch-apply",
+          "source-patch-validation",
+          "branch-prepare",
+          "pr-draft",
+          "post-merge-ledger",
+          "run-index"
+        ],
+        "optionalButDeclaredWhen": [
+          "patch-intent",
+          "target-selection",
+          "source-patch-proposal",
+          "pr-lifecycle"
+        ],
+        "requiredApplyFields": [
+          "applied",
+          "changed",
+          "diffOutput",
+          "semanticChange"
+        ],
+        "humanBoundaryFields": [
+          "branchCreated",
+          "pushed",
+          "prOpened",
+          "merged"
+        ]
+      },
+      "failClosedPolicy": [
+        "Future source-patch-validation gates fail when qualityGate is required and absent.",
+        "Future source-patch-validation gates fail when qualityGate.passed is false or null.",
+        "Future readiness reports fail when required qualityGate output fields are missing.",
+        "Future apply reports fail when applied, changed, diffOutput, or semanticChange are missing.",
+        "Future branch preparation fails when generated drift is neither clean nor declared."
+      ],
+      "passed": true
+    },
+    "outcome": "Run v3 produced a validated reusable qualityGate shape, fail-closed policy, future phase wiring map, and durable index.",
+    "nextRecommendedStep": {
+      "id": "run-v4-quality-gated-source-patch-proposal-v10.0",
+      "title": "First Quality-Gated Source Patch Proposal",
+      "summary": "Start the next cycle by proposing a bounded source patch that uses the v9.7 qualityGate contract before any apply step."
+    }
+  },
+  "safetyBoundary": {
+    "closeoutOnly": true,
+    "broadSourceRewrite": false,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-index:v9.7:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-wiring-validation:v9.6:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-validation:v9.2:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-validation:v8.6:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusClosedOut": true,
+    "inputArtifactsPresent": true,
+    "indexReady": true,
+    "qualityGateValidated": true,
+    "qualityGatePassed": true,
+    "validationsPassed": true,
+    "closeoutOnly": true,
+    "noBroadSourceRewrite": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This closes out Hermes agentic run v3 quality-gate hardening.",
+    "It does not apply a patch or rewrite existing workflow scripts.",
+    "The next safe step is the first quality-gated source patch proposal."
+  ]
+}
