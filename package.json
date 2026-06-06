@@ -213,7 +213,10 @@
     "hermes:agentic-run-v3-quality-gate-wiring-proposal:v9.3:check": "npm run hermes:agentic-run-v3-quality-gate-wiring-proposal:v9.3 && npm run hermes:agentic-run-v3-quality-gate-wiring-proposal:v9.3:gate",
     "hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4": "tsx scripts/write-hermes-agentic-run-v3-quality-gate-wiring-intent-v9-4.ts",
     "hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4:gate": "tsx evaluations/hermes-agentic-run-v3-quality-gate-wiring-intent-v9-4-gate.ts",
-    "hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4:check": "npm run hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4 && npm run hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4:gate"
+    "hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4:check": "npm run hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4 && npm run hermes:agentic-run-v3-quality-gate-wiring-intent:v9.4:gate",
+    "hermes:agentic-run-v3-quality-gate-wiring-implementation:v9.5": "tsx scripts/write-hermes-agentic-run-v3-quality-gate-wiring-implementation-v9-5.ts",
+    "hermes:agentic-run-v3-quality-gate-wiring-implementation:v9.5:gate": "tsx evaluations/hermes-agentic-run-v3-quality-gate-wiring-implementation-v9-5-gate.ts",
+    "hermes:agentic-run-v3-quality-gate-wiring-implementation:v9.5:check": "npm run hermes:agentic-run-v3-quality-gate-wiring-implementation:v9.5 && npm run hermes:agentic-run-v3-quality-gate-wiring-implementation:v9.5:gate"
   },
   "keywords": [],
   "author": "",
