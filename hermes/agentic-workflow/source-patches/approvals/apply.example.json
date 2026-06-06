@@ -1,0 +1,5 @@
+{
+  "approved": true,
+  "reviewer": "external-human-reviewer",
+  "reason": "Source patch is constrained to approved target prefixes, includes rollback notes, and does not push or merge."
+}

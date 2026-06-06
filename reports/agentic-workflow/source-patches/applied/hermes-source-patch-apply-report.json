@@ -1,0 +1,35 @@
+{
+  "runtime": "hermes-source-patch-apply-v1",
+  "generatedAt": "2026-06-06T05:36:03.174Z",
+  "status": "applied",
+  "approvalArtifact": "hermes/agentic-workflow/source-patches/approvals/apply.json",
+  "proposalArtifact": "hermes/agentic-workflow/source-patches/v1.json",
+  "appliedTargets": [
+    "docs/hermes-agentic-workflow.md"
+  ],
+  "approval": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Source patch is constrained to approved target prefixes, includes rollback notes, and does not push or merge."
+  },
+  "checks": {
+    "approvalGranted": true,
+    "reviewerCaptured": true,
+    "reasonCaptured": true,
+    "proposalStatusValid": true,
+    "proposalOnlyConfirmed": true,
+    "sourceChangesPreviouslyNotApplied": true,
+    "humanApprovalRequired": true,
+    "noAutoMerge": true,
+    "noPush": true,
+    "approvedTargetsOnly": true,
+    "rollbackNotesPresent": true,
+    "sourcePatchApplied": true
+  },
+  "notes": [
+    "This applies the first constrained source patch after approval.",
+    "The patch is limited to docs/hermes-agentic-workflow.md.",
+    "No push or merge is performed.",
+    "Future versions should add generated unified diff validation before applying broader source patches."
+  ]
+}

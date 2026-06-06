@@ -66,3 +66,19 @@ The source patch proposal step must:
 - avoid push
 
 This creates a safe bridge from artifact-only execution toward source-code execution.
+
+## Source Patch Apply v1
+
+Hermes may apply narrowly constrained source patches only after explicit approval.
+
+The source patch apply step must:
+
+- read a source patch proposal artifact
+- verify all target files are inside approved prefixes
+- verify approval was granted
+- write an apply report
+- avoid push
+- avoid auto-merge
+- preserve rollback notes
+
+This is the first controlled bridge from source patch proposal to source patch application.

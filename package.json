@@ -102,7 +102,10 @@
     "hermes:agentic-patch-apply:check": "npm run hermes:agentic-workflow:check && npm run hermes:agentic-patch-apply && npm run hermes:agentic-patch-apply:gate",
     "hermes:source-patch-proposal": "tsx scripts/write-hermes-source-patch-proposal.ts",
     "hermes:source-patch-proposal:gate": "tsx evaluations/hermes-source-patch-proposal-gate.ts",
-    "hermes:source-patch-proposal:check": "npm run hermes:agentic-workflow:check && npm run hermes:source-patch-proposal && npm run hermes:source-patch-proposal:gate"
+    "hermes:source-patch-proposal:check": "npm run hermes:agentic-workflow:check && npm run hermes:source-patch-proposal && npm run hermes:source-patch-proposal:gate",
+    "hermes:source-patch-apply": "tsx scripts/apply-hermes-source-patch.ts",
+    "hermes:source-patch-apply:gate": "tsx evaluations/hermes-source-patch-apply-gate.ts",
+    "hermes:source-patch-apply:check": "npm run hermes:source-patch-proposal:check && npm run hermes:source-patch-apply && npm run hermes:source-patch-apply:gate"
   },
   "keywords": [],
   "author": "",
