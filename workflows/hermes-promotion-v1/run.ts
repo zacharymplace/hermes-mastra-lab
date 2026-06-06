@@ -41,9 +41,9 @@ const report = await startActiveObservation(
       },
       metadata: {
         runtime: "plain-typescript-with-langfuse-trace",
-        workflow: "hermes-promotion-v1"
-      },
-      tags: ["hermes", "promotion", "v1"]
+        workflow: "hermes-promotion-v1",
+        tags: ["hermes", "promotion", "v1"]
+      }
     });
 
     const candidates = generateIdeas(input)
