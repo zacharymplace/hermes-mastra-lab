@@ -1,0 +1,132 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-adoption-report-v8.8",
+  "generatedAt": "2026-06-06T09:36:10.605Z",
+  "status": "reported",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-contract-v8.7.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-validation-v8.6.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-adoption-report/v8.8.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-report-v8.8.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-report-v8.8.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceAdoptionContract": "hermes-agentic-run-v3-quality-gate-adoption-contract-v8.7",
+    "sourceValidation": "hermes-agentic-run-v3-quality-gate-validation-v8.6",
+    "sourceImplementation": "hermes-agentic-run-v3-quality-gate-implementation-v8.5"
+  },
+  "adoptionReport": {
+    "id": "run-v3-quality-gate-adoption-report-v8.8",
+    "title": "Hermes Agentic Loop Quality Gate Adoption Report",
+    "summary": "Reports where the validated loop-quality gate is now required in future Hermes agentic workflow phases.",
+    "requiredBeforePatchApply": [
+      "generated-artifact-drift",
+      "stale-timestamp-churn",
+      "no-op-patch-claims",
+      "human-boundary-preservation",
+      "declared-target-only-changes"
+    ],
+    "appliesToFuturePhases": [
+      "patch-intent",
+      "target-selection",
+      "source-patch-proposal",
+      "source-patch-apply",
+      "source-patch-validation",
+      "branch-prepare",
+      "pr-draft",
+      "pr-lifecycle",
+      "post-merge-ledger",
+      "run-index"
+    ],
+    "adoptionRules": [
+      "Every future source patch proposal must declare whether it is subject to the loop-quality gate.",
+      "Every future source patch apply step must include quality gate status before reporting readiness.",
+      "Patch apply reports must include applied, changed, diffOutput, and semanticChange fields.",
+      "Timestamp-only changes must be classified separately from semantic changes.",
+      "Generated artifact drift must be either committed as a declared output or restored before final clean state.",
+      "Branch, push, PR creation, and merge remain operator-controlled unless a later explicit contract changes that boundary.",
+      "Changed paths must be compared against declared targets before a patch is considered clean."
+    ],
+    "validatedChecks": [
+      {
+        "id": "generated-artifact-drift",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "stale-timestamp-churn",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "no-op-patch-claims",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "human-boundary-preservation",
+        "implemented": true,
+        "passed": true
+      },
+      {
+        "id": "declared-target-only-changes",
+        "implemented": true,
+        "passed": true
+      }
+    ],
+    "nextRecommendedStep": {
+      "id": "run-v3-quality-gate-enforcement-plan-v8.9",
+      "title": "Quality Gate Enforcement Plan v8.9",
+      "summary": "Define how future patch/apply scripts will call and enforce the adopted loop-quality gate."
+    }
+  },
+  "safetyBoundary": {
+    "reportOnly": true,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-adoption:v8.7:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-validation:v8.6:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-implementation:v8.5:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusReported": true,
+    "adoptionContractReady": true,
+    "implementationReady": true,
+    "validationReady": true,
+    "requiredChecksDeclared": true,
+    "futurePhasesDeclared": true,
+    "adoptionRulesDeclared": true,
+    "qualityChecksValidated": true,
+    "validationsPassed": true,
+    "reportOnly": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This report makes v8.7 adoption visible as an operating artifact.",
+    "It does not enforce the gate yet; it reports the adoption surface.",
+    "The next safe step is v8.9 enforcement planning."
+  ]
+}

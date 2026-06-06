@@ -192,7 +192,10 @@
     "hermes:agentic-run-v3-quality-gate-validation:v8.6:check": "npm run hermes:agentic-run-v3-quality-gate-validation:v8.6 && npm run hermes:agentic-run-v3-quality-gate-validation:v8.6:gate",
     "hermes:agentic-run-v3-quality-gate-adoption:v8.7": "tsx scripts/write-hermes-agentic-run-v3-quality-gate-adoption-contract-v8-7.ts",
     "hermes:agentic-run-v3-quality-gate-adoption:v8.7:gate": "tsx evaluations/hermes-agentic-run-v3-quality-gate-adoption-contract-v8-7-gate.ts",
-    "hermes:agentic-run-v3-quality-gate-adoption:v8.7:check": "npm run hermes:agentic-run-v3-quality-gate-adoption:v8.7 && npm run hermes:agentic-run-v3-quality-gate-adoption:v8.7:gate"
+    "hermes:agentic-run-v3-quality-gate-adoption:v8.7:check": "npm run hermes:agentic-run-v3-quality-gate-adoption:v8.7 && npm run hermes:agentic-run-v3-quality-gate-adoption:v8.7:gate",
+    "hermes:agentic-run-v3-quality-gate-adoption-report:v8.8": "tsx scripts/write-hermes-agentic-run-v3-quality-gate-adoption-report-v8-8.ts",
+    "hermes:agentic-run-v3-quality-gate-adoption-report:v8.8:gate": "tsx evaluations/hermes-agentic-run-v3-quality-gate-adoption-report-v8-8-gate.ts",
+    "hermes:agentic-run-v3-quality-gate-adoption-report:v8.8:check": "npm run hermes:agentic-run-v3-quality-gate-adoption-report:v8.8 && npm run hermes:agentic-run-v3-quality-gate-adoption-report:v8.8:gate"
   },
   "keywords": [],
   "author": "",
