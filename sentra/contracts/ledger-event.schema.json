@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.ledgerEvent.v1",
+  "title": "Sentra Ledger Event",
+  "type": "object",
+  "required": ["type", "summary"],
+  "properties": {
+    "type": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

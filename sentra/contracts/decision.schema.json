@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.decision.v1",
+  "title": "Sentra Decision",
+  "type": "object",
+  "required": ["id", "status", "decision", "rationale"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["proposed", "accepted", "rejected", "superseded"] },
+    "decision": { "type": "string", "minLength": 1 },
+    "rationale": { "type": "string", "minLength": 1 },
+    "guardrails": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

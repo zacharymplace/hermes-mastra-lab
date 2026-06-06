@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.promotionInput.v1",
+  "title": "Sentra Promotion Input",
+  "type": "object",
+  "required": ["runtime", "generatedAt", "sourceArtifact", "goal", "constraints", "context", "notes"],
+  "properties": {
+    "runtime": { "const": "sentra-promotion-input-v1" },
+    "generatedAt": { "type": "string" },
+    "sourceArtifact": { "type": "string", "minLength": 1 },
+    "goal": { "type": "string", "minLength": 1 },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "context": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

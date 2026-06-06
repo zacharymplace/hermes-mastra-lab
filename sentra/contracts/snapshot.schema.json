@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.snapshot.v1",
+  "title": "Sentra Snapshot",
+  "type": "object",
+  "required": [
+    "runtime",
+    "generatedAt",
+    "activeProjects",
+    "acceptedDecisions",
+    "recentReviews",
+    "priorities",
+    "topPriority",
+    "staleRisks",
+    "hermesPrompt"
+  ],
+  "properties": {
+    "runtime": { "const": "sentra-context-generator-v1" },
+    "generatedAt": { "type": "string" },
+    "activeProjects": { "type": "array" },
+    "acceptedDecisions": { "type": "array" },
+    "recentReviews": { "type": "array" },
+    "priorities": { "type": "array" },
+    "topPriority": { "type": "object" },
+    "projectPrioritization": { "type": ["object", "null"] },
+    "staleRisks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "hermesPrompt": {
+      "type": "object",
+      "required": ["goal", "constraints", "context"],
+      "properties": {
+        "goal": { "type": "string", "minLength": 1 },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "context": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,73 @@
+{
+  "runtime": "sentra-contracts-v1",
+  "generatedAt": "2026-06-06T05:10:58.309Z",
+  "passed": true,
+  "schemaCount": 8,
+  "schemaPaths": [
+    "sentra/contracts/project.schema.json",
+    "sentra/contracts/decision.schema.json",
+    "sentra/contracts/review.schema.json",
+    "sentra/contracts/priority.schema.json",
+    "sentra/contracts/snapshot.schema.json",
+    "sentra/contracts/promotion-input.schema.json",
+    "sentra/contracts/ledger-event.schema.json",
+    "sentra/contracts/plan.schema.json"
+  ],
+  "checks": [
+    {
+      "id": "schemas-present",
+      "pass": true,
+      "detail": [
+        "sentra/contracts/project.schema.json",
+        "sentra/contracts/decision.schema.json",
+        "sentra/contracts/review.schema.json",
+        "sentra/contracts/priority.schema.json",
+        "sentra/contracts/snapshot.schema.json",
+        "sentra/contracts/promotion-input.schema.json",
+        "sentra/contracts/ledger-event.schema.json",
+        "sentra/contracts/plan.schema.json"
+      ]
+    },
+    {
+      "id": "docs-present",
+      "pass": true
+    },
+    {
+      "id": "project-contract",
+      "pass": true
+    },
+    {
+      "id": "decision-contract",
+      "pass": true
+    },
+    {
+      "id": "review-contract",
+      "pass": true
+    },
+    {
+      "id": "priority-contract",
+      "pass": true
+    },
+    {
+      "id": "snapshot-contract",
+      "pass": true
+    },
+    {
+      "id": "promotion-input-contract",
+      "pass": true
+    },
+    {
+      "id": "ledger-event-contract",
+      "pass": true
+    },
+    {
+      "id": "plan-contract",
+      "pass": true
+    }
+  ],
+  "notes": [
+    "This validates Sentra artifacts against the v1 contract expectations.",
+    "The validator intentionally uses lightweight structural checks before adding a JSON Schema runtime dependency.",
+    "Sentra contracts must remain framework-independent."
+  ]
+}

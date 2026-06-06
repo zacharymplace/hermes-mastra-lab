@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-os-extraction-planner-v1",
-  "generatedAt": "2026-06-06T05:04:21.164Z",
+  "generatedAt": "2026-06-06T05:10:58.073Z",
   "sourceArtifact": "reports/priorities/sentra-project-prioritization.json",
   "selectedProject": {
     "id": "sentra-os",

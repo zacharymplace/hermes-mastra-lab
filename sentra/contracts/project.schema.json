@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.project.v1",
+  "title": "Sentra Project",
+  "type": "object",
+  "required": ["id", "name", "status", "summary", "nextAction", "risks"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["active", "candidate", "paused", "done"] },
+    "priority": { "type": "string" },
+    "summary": { "type": "string", "minLength": 1 },
+    "nextAction": { "type": "string", "minLength": 1 },
+    "signals": {
+      "type": "object",
+      "properties": {
+        "strategicFit": { "type": "number" },
+        "urgency": { "type": "number" },
+        "learningValue": { "type": "number" },
+        "operatingLeverage": { "type": "number" },
+        "riskReduction": { "type": "number" },
+        "effort": { "type": "number" }
+      },
+      "additionalProperties": true
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.review.v1",
+  "title": "Sentra Review",
+  "type": "object",
+  "required": ["id", "status", "summary"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["draft", "complete", "needs-review"] },
+    "summary": { "type": "string", "minLength": 1 },
+    "followUp": { "type": "string" }
+  },
+  "additionalProperties": true
+}

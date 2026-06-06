@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sentra.plan.v1",
+  "title": "Sentra Plan",
+  "type": "object",
+  "required": [
+    "runtime",
+    "generatedAt",
+    "selectedProject",
+    "objective",
+    "milestones",
+    "dependencies",
+    "risks",
+    "successCriteria",
+    "nextAction"
+  ],
+  "properties": {
+    "runtime": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string" },
+    "selectedProject": { "type": "object" },
+    "objective": { "type": "string", "minLength": 1 },
+    "milestones": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "successCriteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "nextAction": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}
