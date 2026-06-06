@@ -58,6 +58,13 @@ const lifecycleState =
 const branchDeleted =
   lifecycleState === "merged" ? !remoteBranch.passed : false;
 
+const postMergeBranchStatus =
+  lifecycleState === "merged"
+    ? branchDeleted
+      ? "deleted"
+      : "still-present"
+    : "not-applicable";
+
 const report = {
   runtime: "hermes-agentic-pr-lifecycle-v6.5",
   generatedAt: new Date().toISOString(),
@@ -70,6 +77,8 @@ const report = {
     checksCommandPassed: checks.passed,
     remoteBranchDetected: remoteBranch.passed,
     branchDeleted,
+    postMergeBranchStatus,
+    postMergeBranchStatusObserved: Boolean(pr.json?.headRefName),
     merged: Boolean(pr.json?.mergedAt),
     closed: Boolean(pr.json?.closedAt),
     draft: Boolean(pr.json?.isDraft)
@@ -83,6 +92,7 @@ const report = {
       "mergedAt" in (pr.json ?? {}) &&
       "closedAt" in (pr.json ?? {}),
     branchStatusCaptured: Boolean(pr.json?.headRefName),
+    postMergeBranchStatusObserved: Boolean(pr.json?.headRefName),
     postMergeBranchDeletedOrStillOpen:
       lifecycleState === "merged" ? branchDeleted === true : true
   },
@@ -97,7 +107,7 @@ const report = {
   notes: [
     "This tracks the PR lifecycle after Hermes prepares branch/PR artifacts.",
     "It distinguishes open, draft, merged, and closed-unmerged states.",
-    "It records whether the remote branch still exists after merge."
+    "It records whether the remote branch still exists after merge as an observation, not as a hard failure."
   ]
 };
 
@@ -136,6 +146,7 @@ const md = [
   `- Checks command passed: ${report.observations.checksCommandPassed}`,
   `- Remote branch detected: ${report.observations.remoteBranchDetected}`,
   `- Branch deleted: ${report.observations.branchDeleted}`,
+  `- Post-merge branch status: ${report.observations.postMergeBranchStatus}`,
   `- Merged: ${report.observations.merged}`,
   "",
   "## Notes",

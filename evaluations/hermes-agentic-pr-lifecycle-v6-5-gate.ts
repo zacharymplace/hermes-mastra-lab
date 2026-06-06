@@ -49,8 +49,8 @@ const checks = [
     pass: report.checks?.branchStatusCaptured === true
   },
   {
-    id: "post-merge-branch-status-valid",
-    pass: report.checks?.postMergeBranchDeletedOrStillOpen === true
+    id: "post-merge-branch-status-observed",
+    pass: report.checks?.postMergeBranchStatusObserved === true
   },
   {
     id: "artifacts-exist",

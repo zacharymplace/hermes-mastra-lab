@@ -1,6 +1,6 @@
 # Hermes Agentic PR Lifecycle v6.5
 
-Generated: 2026-06-06T06:26:54.719Z
+Generated: 2026-06-06T06:28:24.228Z
 Status: tracked
 PR: #1
 Lifecycle state: merged
@@ -22,10 +22,11 @@ Lifecycle state: merged
 - Checks command passed: true
 - Remote branch detected: true
 - Branch deleted: false
+- Post-merge branch status: still-present
 - Merged: true
 
 ## Notes
 
 - This tracks the PR lifecycle after Hermes prepares branch/PR artifacts.
 - It distinguishes open, draft, merged, and closed-unmerged states.
-- It records whether the remote branch still exists after merge.
+- It records whether the remote branch still exists after merge as an observation, not as a hard failure.

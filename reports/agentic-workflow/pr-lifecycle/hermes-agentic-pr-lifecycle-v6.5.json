@@ -1,6 +1,6 @@
 {
   "runtime": "hermes-agentic-pr-lifecycle-v6.5",
-  "generatedAt": "2026-06-06T06:26:54.719Z",
+  "generatedAt": "2026-06-06T06:28:24.228Z",
   "status": "tracked",
   "prNumber": 1,
   "lifecycleState": "merged",
@@ -51,6 +51,8 @@
     "checksCommandPassed": true,
     "remoteBranchDetected": true,
     "branchDeleted": false,
+    "postMergeBranchStatus": "still-present",
+    "postMergeBranchStatusObserved": true,
     "merged": true,
     "closed": true,
     "draft": false
@@ -62,6 +64,7 @@
     "checksCaptured": true,
     "mergeStatusCaptured": true,
     "branchStatusCaptured": true,
+    "postMergeBranchStatusObserved": true,
     "postMergeBranchDeletedOrStillOpen": false
   },
   "raw": {
@@ -75,6 +78,6 @@
   "notes": [
     "This tracks the PR lifecycle after Hermes prepares branch/PR artifacts.",
     "It distinguishes open, draft, merged, and closed-unmerged states.",
-    "It records whether the remote branch still exists after merge."
+    "It records whether the remote branch still exists after merge as an observation, not as a hard failure."
   ]
 }
