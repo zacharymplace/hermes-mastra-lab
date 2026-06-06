@@ -1,0 +1,113 @@
+{
+  "runtime": "hermes-promotion-workflow-v1",
+  "mode": "operational-local",
+  "status": "promoted",
+  "generatedAt": "2026-06-06T04:27:16.149Z",
+  "inputArtifact": "sentra/sample-input.json",
+  "reviewArtifact": "reviews/promotion-v1-review.json",
+  "outputArtifacts": [
+    "reports/promotions/hermes-promotion-v1.json",
+    "reports/promotions/hermes-promotion-v1.md"
+  ],
+  "recommendation": {
+    "title": "Hermes Idea Recommendation Workflow",
+    "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+    "rationale": [
+      "Proves the orchestration shape first",
+      "Creates a baseline for later Mastra comparison",
+      "Keeps the experiment auditable"
+    ],
+    "risks": [
+      "May be too deterministic to test real agent behavior"
+    ],
+    "verdict": "advance",
+    "score": 19,
+    "scoring": {
+      "shipSize": 5,
+      "strategicFit": 5,
+      "learningValue": 4,
+      "reversibility": 5
+    }
+  },
+  "candidates": [
+    {
+      "title": "Hermes Idea Recommendation Workflow",
+      "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+      "rationale": [
+        "Proves the orchestration shape first",
+        "Creates a baseline for later Mastra comparison",
+        "Keeps the experiment auditable"
+      ],
+      "risks": [
+        "May be too deterministic to test real agent behavior"
+      ],
+      "verdict": "advance",
+      "score": 19,
+      "scoring": {
+        "shipSize": 5,
+        "strategicFit": 5,
+        "learningValue": 4,
+        "reversibility": 5
+      }
+    },
+    {
+      "title": "Mastra Runtime Adapter Spike",
+      "summary": "Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.",
+      "rationale": [
+        "Reduces framework lock-in",
+        "Keeps Hermes portable",
+        "Creates a clear comparison point"
+      ],
+      "risks": [
+        "May add abstraction before the runtime is understood"
+      ],
+      "verdict": "hold",
+      "score": 17,
+      "scoring": {
+        "shipSize": 3,
+        "strategicFit": 4,
+        "learningValue": 5,
+        "reversibility": 5
+      }
+    },
+    {
+      "title": "Langfuse Trace Contract",
+      "summary": "Define the minimum trace fields Hermes must emit regardless of runtime.",
+      "rationale": [
+        "Preserves observability",
+        "Makes runtime swaps measurable",
+        "Supports regression review"
+      ],
+      "risks": [
+        "May be premature before workflow behavior exists"
+      ],
+      "verdict": "hold",
+      "score": 16,
+      "scoring": {
+        "shipSize": 3,
+        "strategicFit": 4,
+        "learningValue": 4,
+        "reversibility": 5
+      }
+    }
+  ],
+  "review": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Recommendation clears threshold, risks are documented, and promotion is approved."
+  },
+  "checks": {
+    "recommendationAdvanced": true,
+    "scoreThresholdMet": true,
+    "externalReviewApproved": true,
+    "reviewerCaptured": true,
+    "reasonCaptured": true,
+    "promoted": true
+  },
+  "notes": [
+    "This is the first operational Hermes promotion workflow.",
+    "It uses the qualified generate → critique → score → external review → promote path.",
+    "Mastra remains qualified for orchestration, but this v1 keeps domain logic plain and artifact-backed.",
+    "Langfuse tracing wraps the promotion workflow for observability."
+  ]
+}
