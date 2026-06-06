@@ -1,0 +1,82 @@
+{
+  "runtime": "hermes-agentic-run-v2-pr-lifecycle-v7.8",
+  "generatedAt": "2026-06-06T07:54:07.272Z",
+  "status": "tracked",
+  "prNumber": 2,
+  "lifecycleState": "merged",
+  "pr": {
+    "author": {
+      "id": "MDQ6VXNlcjc1MTg3MDY2",
+      "is_bot": false,
+      "login": "zacharymplace",
+      "name": "Z"
+    },
+    "baseRefName": "main",
+    "closedAt": "2026-06-06T07:37:11Z",
+    "headRefName": "hermes/agentic-run-v2-pr-draft-v7-6",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "4dca27537be71c78f9141cef7895c39ba6ca88f6"
+    },
+    "mergedAt": "2026-06-06T07:37:11Z",
+    "number": 2,
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-06-06T07:29:20Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27056232557/job/79861062947",
+        "name": "check",
+        "startedAt": "2026-06-06T07:28:58Z",
+        "status": "COMPLETED",
+        "workflowName": "Check"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-06-06T07:28:24Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27056212893/job/79861004916",
+        "name": "check",
+        "startedAt": "2026-06-06T07:28:02Z",
+        "status": "COMPLETED",
+        "workflowName": "Check"
+      }
+    ],
+    "title": "Add Hermes agentic run v2 PR draft v7.6",
+    "url": "https://github.com/zacharymplace/hermes-mastra-lab/pull/2"
+  },
+  "observations": {
+    "prDetected": true,
+    "checksCommandPassed": true,
+    "remoteBranchDetected": false,
+    "branchDeleted": true,
+    "postMergeBranchStatus": "deleted",
+    "postMergeBranchStatusObserved": true,
+    "merged": true,
+    "closed": true,
+    "draft": false
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "prDetected": true,
+    "lifecycleStateComputed": true,
+    "checksCaptured": true,
+    "mergeStatusCaptured": true,
+    "branchStatusCaptured": true,
+    "postMergeBranchStatusObserved": true
+  },
+  "raw": {
+    "prViewCommand": "gh pr view 2 --json number,state,isDraft,url,headRefName,baseRefName,mergedAt,closedAt,mergeCommit,author,title,statusCheckRollup --jq '.'",
+    "prViewOutput": "{\"author\":{\"id\":\"MDQ6VXNlcjc1MTg3MDY2\",\"is_bot\":false,\"login\":\"zacharymplace\",\"name\":\"Z\"},\"baseRefName\":\"main\",\"closedAt\":\"2026-06-06T07:37:11Z\",\"headRefName\":\"hermes/agentic-run-v2-pr-draft-v7-6\",\"isDraft\":false,\"mergeCommit\":{\"oid\":\"4dca27537be71c78f9141cef7895c39ba6ca88f6\"},\"mergedAt\":\"2026-06-06T07:37:11Z\",\"number\":2,\"state\":\"MERGED\",\"statusCheckRollup\":[{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-06-06T07:29:20Z\",\"conclusion\":\"SUCCESS\",\"detailsUrl\":\"https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27056232557/job/79861062947\",\"name\":\"check\",\"startedAt\":\"2026-06-06T07:28:58Z\",\"status\":\"COMPLETED\",\"workflowName\":\"Check\"},{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-06-06T07:28:24Z\",\"conclusion\":\"SUCCESS\",\"detailsUrl\":\"https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27056212893/job/79861004916\",\"name\":\"check\",\"startedAt\":\"2026-06-06T07:28:02Z\",\"status\":\"COMPLETED\",\"workflowName\":\"Check\"}],\"title\":\"Add Hermes agentic run v2 PR draft v7.6\",\"url\":\"https://github.com/zacharymplace/hermes-mastra-lab/pull/2\"}\n",
+    "checksCommand": "gh pr checks 2",
+    "checksOutput": "check\tpass\t22s\thttps://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27056212893/job/79861004916\t\ncheck\tpass\t22s\thttps://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27056232557/job/79861062947\t\n",
+    "remoteBranchCommand": "git ls-remote --heads origin hermes/agentic-run-v2-pr-draft-v7-6",
+    "remoteBranchOutput": ""
+  },
+  "notes": [
+    "This tracks the PR lifecycle after Hermes agentic run v2 branch preparation.",
+    "It distinguishes open, draft, merged, and closed-unmerged states.",
+    "It records whether the remote branch still exists after merge as an observation, not as a hard failure."
+  ]
+}

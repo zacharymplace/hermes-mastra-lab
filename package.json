@@ -162,7 +162,10 @@
     "hermes:agentic-run-v2-pr-draft:v7.6:check": "npm run hermes:agentic-run-v2-pr-draft:v7.6 && npm run hermes:agentic-run-v2-pr-draft:v7.6:gate",
     "hermes:agentic-run-v2-branch:v7.7": "tsx scripts/prepare-hermes-agentic-run-v2-branch-v7-7.ts",
     "hermes:agentic-run-v2-branch:v7.7:gate": "tsx evaluations/hermes-agentic-run-v2-branch-prepare-v7-7-gate.ts",
-    "hermes:agentic-run-v2-branch:v7.7:check": "npm run hermes:agentic-run-v2-branch:v7.7 && npm run hermes:agentic-run-v2-branch:v7.7:gate"
+    "hermes:agentic-run-v2-branch:v7.7:check": "npm run hermes:agentic-run-v2-branch:v7.7 && npm run hermes:agentic-run-v2-branch:v7.7:gate",
+    "hermes:agentic-run-v2-pr-lifecycle:v7.8": "tsx scripts/write-hermes-agentic-run-v2-pr-lifecycle-v7-8.ts",
+    "hermes:agentic-run-v2-pr-lifecycle:v7.8:gate": "tsx evaluations/hermes-agentic-run-v2-pr-lifecycle-v7-8-gate.ts",
+    "hermes:agentic-run-v2-pr-lifecycle:v7.8:check": "npm run hermes:agentic-run-v2-pr-lifecycle:v7.8 && npm run hermes:agentic-run-v2-pr-lifecycle:v7.8:gate"
   },
   "keywords": [],
   "author": "",
