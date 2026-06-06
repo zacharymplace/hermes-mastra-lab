@@ -69,7 +69,10 @@
     "sentra:promotion-input:check": "npm run sentra:promotion-input && npm run sentra:promotion-input:gate",
     "sentra:context": "tsx scripts/write-sentra-context.ts",
     "sentra:context:gate": "tsx evaluations/sentra-context-gate.ts",
-    "sentra:context:check": "npm run sentra:context && npm run sentra:context:gate"
+    "sentra:context:check": "npm run sentra:context && npm run sentra:context:gate",
+    "sentra:ledger": "tsx scripts/write-sentra-ledger-report.ts",
+    "sentra:ledger:gate": "tsx evaluations/sentra-ledger-gate.ts",
+    "sentra:ledger:check": "npm run sentra:ledger && npm run sentra:ledger:gate"
   },
   "keywords": [],
   "author": "",

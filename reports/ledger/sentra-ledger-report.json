@@ -1,0 +1,49 @@
+{
+  "runtime": "sentra-operating-ledger-v1",
+  "generatedAt": "2026-06-06T04:36:58.957Z",
+  "ledgerArtifact": "sentra/ledger/events.jsonl",
+  "eventCount": 3,
+  "latestEvent": {
+    "index": 3,
+    "type": "sentra.context.v1",
+    "summary": "Sentra context generator v1 created projects, decisions, reviews, priorities, snapshot, and promotion input."
+  },
+  "linkedArtifacts": {
+    "snapshot": {
+      "artifact": "sentra/snapshot.json",
+      "exists": true,
+      "runtime": "sentra-context-generator-v1",
+      "generatedAt": "2026-06-06T04:36:57.751Z"
+    },
+    "promotion": {
+      "artifact": "reports/promotions/hermes-promotion-v1.json",
+      "exists": true,
+      "runtime": "hermes-promotion-workflow-v1",
+      "status": "promoted",
+      "generatedAt": "2026-06-06T04:36:58.335Z"
+    }
+  },
+  "checks": {
+    "hasEvents": true,
+    "hasSnapshotLink": true,
+    "hasPromotionLink": true,
+    "latestEventIsSentraContext": true
+  },
+  "events": [
+    {
+      "index": 1,
+      "type": "repo.initialized",
+      "summary": "Initialized Hermes Mastra Lab."
+    },
+    {
+      "index": 2,
+      "type": "mastra.promoted",
+      "summary": "Mastra promoted for controlled Hermes orchestration use."
+    },
+    {
+      "index": 3,
+      "type": "sentra.context.v1",
+      "summary": "Sentra context generator v1 created projects, decisions, reviews, priorities, snapshot, and promotion input."
+    }
+  ]
+}
