@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check": "tsc --noEmit && npm run experiment:idea && npm run promotion:gate",
+    "check": "tsc --noEmit && npm run experiment:idea && npm run experiment:report && npm run promotion:gate",
     "experiment:idea": "tsx workflows/idea-recommendation.ts",
-    "promotion:gate": "tsx evaluations/promotion-gate.ts"
+    "promotion:gate": "tsx evaluations/promotion-gate.ts",
+    "experiment:report": "tsx workflows/write-experiment-report.ts"
   },
   "keywords": [],
   "author": "",
