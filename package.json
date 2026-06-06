@@ -180,7 +180,10 @@
     "hermes:agentic-run-v3-target:v8.2:check": "npm run hermes:agentic-run-v3-target:v8.2 && npm run hermes:agentic-run-v3-target:v8.2:gate",
     "hermes:agentic-run-v3-quality-gate-plan:v8.3": "tsx scripts/write-hermes-agentic-run-v3-quality-gate-plan-v8-3.ts",
     "hermes:agentic-run-v3-quality-gate-plan:v8.3:gate": "tsx evaluations/hermes-agentic-run-v3-quality-gate-plan-v8-3-gate.ts",
-    "hermes:agentic-run-v3-quality-gate-plan:v8.3:check": "npm run hermes:agentic-run-v3-quality-gate-plan:v8.3 && npm run hermes:agentic-run-v3-quality-gate-plan:v8.3:gate"
+    "hermes:agentic-run-v3-quality-gate-plan:v8.3:check": "npm run hermes:agentic-run-v3-quality-gate-plan:v8.3 && npm run hermes:agentic-run-v3-quality-gate-plan:v8.3:gate",
+    "hermes:agentic-run-v3-quality-gate-intent:v8.4": "tsx scripts/write-hermes-agentic-run-v3-quality-gate-implementation-intent-v8-4.ts",
+    "hermes:agentic-run-v3-quality-gate-intent:v8.4:gate": "tsx evaluations/hermes-agentic-run-v3-quality-gate-implementation-intent-v8-4-gate.ts",
+    "hermes:agentic-run-v3-quality-gate-intent:v8.4:check": "npm run hermes:agentic-run-v3-quality-gate-intent:v8.4 && npm run hermes:agentic-run-v3-quality-gate-intent:v8.4:gate"
   },
   "keywords": [],
   "author": "",

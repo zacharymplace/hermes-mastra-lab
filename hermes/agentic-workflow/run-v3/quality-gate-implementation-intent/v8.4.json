@@ -1,0 +1,115 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-implementation-intent-v8.4",
+  "generatedAt": "2026-06-06T08:26:04.217Z",
+  "status": "intent-declared",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-plan-v8.3.json"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "sourcePlan": "hermes-agentic-run-v3-quality-gate-plan-v8.3",
+    "selectedTarget": "loop-quality-hardening",
+    "objective": "Declare the implementation intent for executable loop-quality gates before writing source gate logic."
+  },
+  "implementationIntent": {
+    "id": "run-v3-loop-quality-gate-implementation",
+    "title": "Implement Hermes Agentic Loop Quality Gate",
+    "type": "quality-gate-implementation-intent",
+    "summary": "Prepare a bounded implementation that evaluates generated drift, timestamp churn, no-op patch claims, human-boundary preservation, and declared-target-only changes.",
+    "proposedPatchShape": {
+      "generator": "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts",
+      "gate": "evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts",
+      "machineArtifact": "hermes/agentic-workflow/run-v3/quality-gate-implementation/v8.5.json",
+      "reportJson": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.json",
+      "reportMarkdown": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-v8.5.md"
+    },
+    "plannedChecks": [
+      {
+        "id": "generated-artifact-drift",
+        "purpose": "Detect whether validation commands leave generated artifacts dirty without being declared outputs.",
+        "proposedCheck": "Capture git status before and after validation, then classify generated artifact drift."
+      },
+      {
+        "id": "stale-timestamp-churn",
+        "purpose": "Distinguish timestamp-only rewrites from semantic artifact changes.",
+        "proposedCheck": "Inspect changed JSON/Markdown artifacts for generatedAt-only or timestamp-only diffs."
+      },
+      {
+        "id": "no-op-patch-claims",
+        "purpose": "Prevent apply steps from claiming meaningful source changes when only metadata changed or no diff exists.",
+        "proposedCheck": "Require patch reports to expose applied, changed, diffOutput, and semanticChange fields."
+      },
+      {
+        "id": "human-boundary-preservation",
+        "purpose": "Preserve the line between workflow preparation and operator GitHub actions.",
+        "proposedCheck": "Assert no branch push, PR open, merge, or destructive git operation occurs inside workflow scripts."
+      },
+      {
+        "id": "declared-target-only-changes",
+        "purpose": "Ensure source edits stay inside the active contract or approval artifact target list.",
+        "proposedCheck": "Compare changed paths against the contract's allowedTargets list."
+      }
+    ],
+    "implementationRules": [
+      "Read the v8.3 quality gate plan as the source of truth.",
+      "Produce one machine-readable quality gate implementation artifact.",
+      "Classify drift separately from semantic changes.",
+      "Treat timestamp-only churn as noise unless explicitly declared.",
+      "Require no-op patch claims to expose applied, changed, diffOutput, and semanticChange.",
+      "Preserve the human/operator boundary for branch, push, PR, and merge actions.",
+      "Reject changes outside the declared target set."
+    ],
+    "expectedNextStep": "Generate v8.5 quality gate implementation artifact and gate; do not apply broad source changes yet."
+  },
+  "allowedTargets": [
+    "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-intent-v8-4.ts",
+    "evaluations/hermes-agentic-run-v3-quality-gate-implementation-intent-v8-4-gate.ts",
+    "hermes/agentic-workflow/run-v3/quality-gate-implementation-intent/v8.4.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-intent-v8.4.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-intent-v8.4.md",
+    "package.json"
+  ],
+  "safetyBoundary": {
+    "intentOnly": true,
+    "implementationGenerated": false,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-plan:v8.3:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-target:v8.2:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusIntentDeclared": true,
+    "planValid": true,
+    "selectedLoopQuality": true,
+    "implementationIntentPresent": true,
+    "proposedPatchShapeDeclared": true,
+    "plannedChecksCarriedForward": true,
+    "implementationRulesDeclared": true,
+    "validationsPassed": true,
+    "intentOnly": true,
+    "noImplementationGenerated": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This declares the implementation intent for run v3 loop-quality gates.",
+    "It does not implement or apply the quality gate yet.",
+    "The next safe step is v8.5 quality gate implementation."
+  ]
+}
