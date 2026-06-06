@@ -1,0 +1,80 @@
+{
+  "runtime": "hermes-agentic-pr-lifecycle-v6.5",
+  "generatedAt": "2026-06-06T06:26:54.719Z",
+  "status": "tracked",
+  "prNumber": 1,
+  "lifecycleState": "merged",
+  "pr": {
+    "author": {
+      "id": "MDQ6VXNlcjc1MTg3MDY2",
+      "is_bot": false,
+      "login": "zacharymplace",
+      "name": "Z"
+    },
+    "baseRefName": "main",
+    "closedAt": "2026-06-06T06:12:51Z",
+    "headRefName": "hermes/agentic-pr-draft-v4",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "b054fa26a255927e0e736196576a6223bc227dff"
+    },
+    "mergedAt": "2026-06-06T06:12:51Z",
+    "number": 1,
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-06-06T06:12:05Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27054656615/job/79856617822",
+        "name": "check",
+        "startedAt": "2026-06-06T06:11:42Z",
+        "status": "COMPLETED",
+        "workflowName": "Check"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-06-06T06:12:03Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27054656142/job/79856616226",
+        "name": "check",
+        "startedAt": "2026-06-06T06:11:41Z",
+        "status": "COMPLETED",
+        "workflowName": "Check"
+      }
+    ],
+    "title": "Add Hermes agentic branch prepare v5",
+    "url": "https://github.com/zacharymplace/hermes-mastra-lab/pull/1"
+  },
+  "observations": {
+    "prDetected": true,
+    "checksCommandPassed": true,
+    "remoteBranchDetected": true,
+    "branchDeleted": false,
+    "merged": true,
+    "closed": true,
+    "draft": false
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "prDetected": true,
+    "lifecycleStateComputed": true,
+    "checksCaptured": true,
+    "mergeStatusCaptured": true,
+    "branchStatusCaptured": true,
+    "postMergeBranchDeletedOrStillOpen": false
+  },
+  "raw": {
+    "prViewCommand": "gh pr view 1 --json number,state,isDraft,url,headRefName,baseRefName,mergedAt,closedAt,mergeCommit,author,title,statusCheckRollup --jq '.'",
+    "prViewOutput": "{\"author\":{\"id\":\"MDQ6VXNlcjc1MTg3MDY2\",\"is_bot\":false,\"login\":\"zacharymplace\",\"name\":\"Z\"},\"baseRefName\":\"main\",\"closedAt\":\"2026-06-06T06:12:51Z\",\"headRefName\":\"hermes/agentic-pr-draft-v4\",\"isDraft\":false,\"mergeCommit\":{\"oid\":\"b054fa26a255927e0e736196576a6223bc227dff\"},\"mergedAt\":\"2026-06-06T06:12:51Z\",\"number\":1,\"state\":\"MERGED\",\"statusCheckRollup\":[{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-06-06T06:12:05Z\",\"conclusion\":\"SUCCESS\",\"detailsUrl\":\"https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27054656615/job/79856617822\",\"name\":\"check\",\"startedAt\":\"2026-06-06T06:11:42Z\",\"status\":\"COMPLETED\",\"workflowName\":\"Check\"},{\"__typename\":\"CheckRun\",\"completedAt\":\"2026-06-06T06:12:03Z\",\"conclusion\":\"SUCCESS\",\"detailsUrl\":\"https://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27054656142/job/79856616226\",\"name\":\"check\",\"startedAt\":\"2026-06-06T06:11:41Z\",\"status\":\"COMPLETED\",\"workflowName\":\"Check\"}],\"title\":\"Add Hermes agentic branch prepare v5\",\"url\":\"https://github.com/zacharymplace/hermes-mastra-lab/pull/1\"}\n",
+    "checksCommand": "gh pr checks 1",
+    "checksOutput": "check\tpass\t22s\thttps://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27054656142/job/79856616226\t\ncheck\tpass\t23s\thttps://github.com/zacharymplace/hermes-mastra-lab/actions/runs/27054656615/job/79856617822\t\n",
+    "remoteBranchCommand": "git ls-remote --heads origin hermes/agentic-pr-draft-v4",
+    "remoteBranchOutput": ""
+  },
+  "notes": [
+    "This tracks the PR lifecycle after Hermes prepares branch/PR artifacts.",
+    "It distinguishes open, draft, merged, and closed-unmerged states.",
+    "It records whether the remote branch still exists after merge."
+  ]
+}
