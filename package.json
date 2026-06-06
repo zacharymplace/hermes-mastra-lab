@@ -33,7 +33,10 @@
     "langfuse:qualification:check": "npm run mastra:qualification:check && npm run langfuse:qualification && npm run langfuse:qualification:gate",
     "failure:qualification": "tsx scripts/write-failure-qualification.ts",
     "failure:qualification:gate": "tsx evaluations/failure-qualification-gate.ts",
-    "failure:qualification:check": "npm run failure:qualification && npm run failure:qualification:gate"
+    "failure:qualification:check": "npm run failure:qualification && npm run failure:qualification:gate",
+    "mastra:promotion": "tsx scripts/write-mastra-promotion-report.ts",
+    "mastra:promotion:gate": "tsx evaluations/mastra-promotion-gate.ts",
+    "mastra:promotion:check": "npm run langfuse:qualification:check && npm run failure:qualification:check && npm run mastra:promotion && npm run mastra:promotion:gate"
   },
   "keywords": [],
   "author": "",

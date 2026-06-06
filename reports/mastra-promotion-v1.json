@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-06-06T02:57:43.114Z",
+  "decision": "continue-evaluation",
+  "summary": "Mastra remains a strong runtime candidate but should not be promoted until high-severity integration blockers are resolved.",
+  "inputs": {
+    "mastraQualification": "reports/mastra-qualification.json",
+    "langfuseQualification": "reports/langfuse-qualification.json",
+    "failureQualification": "reports/failure-qualification.json"
+  },
+  "scores": {
+    "mastraQualification": {
+      "total": 20,
+      "max": 30,
+      "percentage": 67
+    },
+    "langfuseEvents": 7,
+    "failureScenarios": 4
+  },
+  "evidence": [
+    {
+      "id": "workflow-composition",
+      "status": "strong",
+      "source": "reports/mastra-qualification.json",
+      "reason": "Parallel critique and fan-out/fan-in passed."
+    },
+    {
+      "id": "governance-flow",
+      "status": "strong",
+      "source": "reports/mastra-qualification.json",
+      "reason": "Human review and suspend/resume contract passed."
+    },
+    {
+      "id": "traceability-model",
+      "status": "promising",
+      "source": "reports/langfuse-qualification.json",
+      "reason": "Every major stage has a local trace event linked to an artifact."
+    },
+    {
+      "id": "failure-model",
+      "status": "promising",
+      "source": "reports/failure-qualification.json",
+      "reason": "Retry/recovery and safe-failure scenarios passed as local contracts."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "real-langfuse-sdk",
+      "status": "open",
+      "severity": "high",
+      "reason": "Langfuse qualification is still a local trace contract, not SDK emission."
+    },
+    {
+      "id": "real-mastra-suspend-resume",
+      "status": "open",
+      "severity": "high",
+      "reason": "Suspend/resume is modeled as a contract, not verified against real Mastra runtime API."
+    },
+    {
+      "id": "real-retry-behavior",
+      "status": "open",
+      "severity": "medium",
+      "reason": "Failure qualification defines retry expectations but does not execute real Mastra retry behavior."
+    },
+    {
+      "id": "external-human-input",
+      "status": "open",
+      "severity": "medium",
+      "reason": "Human review is simulated locally rather than injected from an external decision source."
+    }
+  ],
+  "requiredForPromotion": [
+    "emit real Langfuse SDK traces",
+    "verify real Mastra suspend/resume API",
+    "verify real Mastra retry/error behavior",
+    "inject human review decision from external input",
+    "regenerate promotion report with no open high-severity blockers"
+  ],
+  "decisionBoundary": "Mastra may become the Hermes runtime layer, but Hermes domain logic, scoring, promotion criteria, and artifacts must remain framework-independent."
+}
