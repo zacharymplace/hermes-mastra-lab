@@ -15,7 +15,10 @@
     "mastra:check": "npm run mastra:spike && npm run mastra:gate",
     "mastra:native": "tsx adapters/mastra/native/run-native-workflow.ts",
     "mastra:native:gate": "tsx evaluations/mastra-native-gate.ts",
-    "mastra:native:check": "npm run mastra:native && npm run mastra:native:gate"
+    "mastra:native:check": "npm run mastra:native && npm run mastra:native:gate",
+    "mastra:parallel": "tsx adapters/mastra/native/parallel/run-parallel-critique.ts",
+    "mastra:parallel:gate": "tsx evaluations/mastra-parallel-critique-gate.ts",
+    "mastra:parallel:check": "npm run mastra:parallel && npm run mastra:parallel:gate"
   },
   "keywords": [],
   "author": "",

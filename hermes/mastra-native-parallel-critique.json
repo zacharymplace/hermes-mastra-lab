@@ -1,0 +1,191 @@
+{
+  "runtime": "mastra-native-parallel-critique",
+  "mode": "local-deterministic",
+  "recommendation": {
+    "title": "Hermes Idea Recommendation Workflow",
+    "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+    "rationale": [
+      "Proves the orchestration shape first",
+      "Creates a baseline for later Mastra comparison",
+      "Keeps the experiment auditable"
+    ],
+    "risks": [
+      "May be too deterministic to test real agent behavior",
+      "Implementation is shippable but may still hide runtime tradeoffs",
+      "Architecture impact needs comparison against plain TypeScript"
+    ],
+    "verdict": "advance",
+    "score": 19,
+    "scoring": {
+      "shipSize": 5,
+      "strategicFit": 5,
+      "learningValue": 4,
+      "reversibility": 5
+    },
+    "critiques": [
+      {
+        "lane": "strategy",
+        "risks": [
+          "May be too deterministic to test real agent behavior"
+        ],
+        "verdict": "advance"
+      },
+      {
+        "lane": "execution",
+        "risks": [
+          "Implementation is shippable but may still hide runtime tradeoffs"
+        ],
+        "verdict": "advance"
+      },
+      {
+        "lane": "architecture",
+        "risks": [
+          "Architecture impact needs comparison against plain TypeScript"
+        ],
+        "verdict": "advance"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Hermes Idea Recommendation Workflow",
+      "summary": "Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.",
+      "rationale": [
+        "Proves the orchestration shape first",
+        "Creates a baseline for later Mastra comparison",
+        "Keeps the experiment auditable"
+      ],
+      "risks": [
+        "May be too deterministic to test real agent behavior",
+        "Implementation is shippable but may still hide runtime tradeoffs",
+        "Architecture impact needs comparison against plain TypeScript"
+      ],
+      "verdict": "advance",
+      "score": 19,
+      "scoring": {
+        "shipSize": 5,
+        "strategicFit": 5,
+        "learningValue": 4,
+        "reversibility": 5
+      },
+      "critiques": [
+        {
+          "lane": "strategy",
+          "risks": [
+            "May be too deterministic to test real agent behavior"
+          ],
+          "verdict": "advance"
+        },
+        {
+          "lane": "execution",
+          "risks": [
+            "Implementation is shippable but may still hide runtime tradeoffs"
+          ],
+          "verdict": "advance"
+        },
+        {
+          "lane": "architecture",
+          "risks": [
+            "Architecture impact needs comparison against plain TypeScript"
+          ],
+          "verdict": "advance"
+        }
+      ]
+    },
+    {
+      "title": "Mastra Runtime Adapter Spike",
+      "summary": "Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.",
+      "rationale": [
+        "Reduces framework lock-in",
+        "Keeps Hermes portable",
+        "Creates a clear comparison point"
+      ],
+      "risks": [
+        "May add abstraction before the runtime is understood",
+        "May expand scope before the core workflow proves value",
+        "Abstraction may become permanent before Mastra earns promotion"
+      ],
+      "verdict": "hold",
+      "score": 17,
+      "scoring": {
+        "shipSize": 3,
+        "strategicFit": 4,
+        "learningValue": 5,
+        "reversibility": 5
+      },
+      "critiques": [
+        {
+          "lane": "strategy",
+          "risks": [
+            "May add abstraction before the runtime is understood"
+          ],
+          "verdict": "hold"
+        },
+        {
+          "lane": "execution",
+          "risks": [
+            "May expand scope before the core workflow proves value"
+          ],
+          "verdict": "hold"
+        },
+        {
+          "lane": "architecture",
+          "risks": [
+            "Abstraction may become permanent before Mastra earns promotion"
+          ],
+          "verdict": "hold"
+        }
+      ]
+    },
+    {
+      "title": "Langfuse Trace Contract",
+      "summary": "Define the minimum trace fields Hermes must emit regardless of runtime.",
+      "rationale": [
+        "Preserves observability",
+        "Makes runtime swaps measurable",
+        "Supports regression review"
+      ],
+      "risks": [
+        "May be premature before workflow behavior exists",
+        "May expand scope before the core workflow proves value",
+        "Architecture impact needs comparison against plain TypeScript"
+      ],
+      "verdict": "hold",
+      "score": 16,
+      "scoring": {
+        "shipSize": 3,
+        "strategicFit": 4,
+        "learningValue": 4,
+        "reversibility": 5
+      },
+      "critiques": [
+        {
+          "lane": "strategy",
+          "risks": [
+            "May be premature before workflow behavior exists"
+          ],
+          "verdict": "hold"
+        },
+        {
+          "lane": "execution",
+          "risks": [
+            "May expand scope before the core workflow proves value"
+          ],
+          "verdict": "hold"
+        },
+        {
+          "lane": "architecture",
+          "risks": [
+            "Architecture impact needs comparison against plain TypeScript"
+          ],
+          "verdict": "hold"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "This tests fan-out/fan-in critique shape.",
+    "Mastra only earns promotion if this is clearer than plain TypeScript.",
+    "Hermes domain logic remains outside the runtime."
+  ]
+}
