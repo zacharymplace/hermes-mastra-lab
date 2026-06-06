@@ -54,7 +54,10 @@
     "mastra:persistence:check": "npm run mastra:persistence && npm run mastra:persistence:gate",
     "mastra:external-human": "tsx adapters/mastra/native/suspend-resume-real/run-external-human-input.ts",
     "mastra:external-human:gate": "tsx evaluations/mastra-external-human-input-gate.ts",
-    "mastra:external-human:check": "npm run mastra:external-human && npm run mastra:external-human:gate"
+    "mastra:external-human:check": "npm run mastra:external-human && npm run mastra:external-human:gate",
+    "mastra:failure-recovery": "tsx adapters/mastra/native/failure-recovery/run-qualification.ts",
+    "mastra:failure-recovery:gate": "tsx evaluations/mastra-failure-recovery-gate.ts",
+    "mastra:failure-recovery:check": "npm run mastra:failure-recovery && npm run mastra:failure-recovery:gate"
   },
   "keywords": [],
   "author": "",

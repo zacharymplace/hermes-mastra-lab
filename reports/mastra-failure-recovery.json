@@ -1,0 +1,32 @@
+{
+  "runtime": "mastra-failure-recovery-qualification",
+  "mode": "local-real-mastra-api",
+  "passed": false,
+  "firstRun": {
+    "status": "failed",
+    "error": ""
+  },
+  "secondRun": {
+    "status": "success",
+    "result": {
+      "runtime": "mastra-failure-recovery",
+      "status": "recovered",
+      "attempts": 2,
+      "markerPath": "/Users/zplace/dev/hermes-mastra-lab/tmp/failure-recovery-attempts.txt"
+    }
+  },
+  "checks": {
+    "firstAttemptFailed": false,
+    "failureReasonCaptured": false,
+    "attemptStateRecorded": true,
+    "secondAttemptSucceeded": true,
+    "recoveryStateRecorded": true,
+    "outputArtifactWritten": true,
+    "recoveredOutputValid": true
+  },
+  "notes": [
+    "This qualifies explicit failure recovery by rerunning a failed workflow after persisted attempt state exists.",
+    "It does not yet prove built-in automatic retry policy behavior.",
+    "The next test should inspect Mastra-native retry configuration if available."
+  ]
+}
