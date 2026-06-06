@@ -33,6 +33,10 @@ const checks = [
   {
     id: "artifacts-linked",
     pass: report.artifactsLinked === true
+  },
+  {
+    id: "no-sdk-warnings-recorded",
+    pass: Array.isArray(report.warnings) && report.warnings.length === 0
   }
 ];
 

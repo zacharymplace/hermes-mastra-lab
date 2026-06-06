@@ -1,14 +1,13 @@
 {
   "runtime": "langfuse-sdk-emission-spike",
-  "mode": "dry-run",
+  "mode": "sdk-emission",
   "traceId": "hermes-mastra-1780714986964",
   "attemptedEvents": 7,
-  "emittedEvents": 0,
-  "skippedReason": "Missing LANGFUSE_PUBLIC_KEY and/or LANGFUSE_SECRET_KEY. No network emission attempted.",
+  "emittedEvents": 7,
   "artifactsLinked": true,
   "notes": [
-    "Dry-run mode validates the SDK emission payload without sending network traces.",
-    "Set LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY to attempt real SDK emission.",
-    "LANGFUSE_BASE_URL may be set for self-hosted Langfuse."
+    "Attempted real Langfuse SDK emission through @langfuse/tracing.",
+    "Verify trace visibility in the Langfuse UI before removing the blocker.",
+    "This does not yet prove Mastra-native automatic tracing."
   ]
 }
