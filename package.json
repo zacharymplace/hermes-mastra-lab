@@ -85,7 +85,10 @@
     "hermes:promotion-history:check": "npm run hermes:promotion-history && npm run hermes:promotion-history:gate",
     "sentra:project-prioritization": "tsx scripts/write-sentra-project-prioritization.ts",
     "sentra:project-prioritization:gate": "tsx evaluations/sentra-project-prioritization-gate.ts",
-    "sentra:project-prioritization:check": "npm run sentra:project-prioritization && npm run sentra:project-prioritization:gate"
+    "sentra:project-prioritization:check": "npm run sentra:project-prioritization && npm run sentra:project-prioritization:gate",
+    "sentra:extraction-plan": "tsx scripts/write-sentra-extraction-plan.ts",
+    "sentra:extraction-plan:gate": "tsx evaluations/sentra-extraction-plan-gate.ts",
+    "sentra:extraction-plan:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run sentra:extraction-plan && npm run sentra:extraction-plan:gate"
   },
   "keywords": [],
   "author": "",
