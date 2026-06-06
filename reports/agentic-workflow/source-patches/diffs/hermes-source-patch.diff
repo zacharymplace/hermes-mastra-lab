@@ -1,0 +1,9 @@
+diff --git a/docs/hermes-agentic-workflow.md b/docs/hermes-agentic-workflow.md
+--- a/docs/hermes-agentic-workflow.md
++++ b/docs/hermes-agentic-workflow.md
+@@
++## Source Patch Apply v1
++
++Hermes may apply narrowly constrained source patches only after explicit approval.
++
++The source patch apply step must validate allowed paths before applying broader patches.
