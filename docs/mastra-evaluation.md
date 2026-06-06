@@ -35,3 +35,7 @@ Do not promote Mastra if it creates:
 - unclear execution traces
 - harder testing
 - more ceremony than value
+
+## API exploration
+
+See `docs/mastra-api-exploration.md` before wiring framework code.
