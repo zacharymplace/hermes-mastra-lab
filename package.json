@@ -18,7 +18,10 @@
     "mastra:native:check": "npm run mastra:native && npm run mastra:native:gate",
     "mastra:parallel": "tsx adapters/mastra/native/parallel/run-parallel-critique.ts",
     "mastra:parallel:gate": "tsx evaluations/mastra-parallel-critique-gate.ts",
-    "mastra:parallel:check": "npm run mastra:parallel && npm run mastra:parallel:gate"
+    "mastra:parallel:check": "npm run mastra:parallel && npm run mastra:parallel:gate",
+    "mastra:human-review": "tsx adapters/mastra/native/human-review/run-human-review.ts",
+    "mastra:human-review:gate": "tsx evaluations/mastra-human-review-gate.ts",
+    "mastra:human-review:check": "npm run mastra:human-review && npm run mastra:human-review:gate"
   },
   "keywords": [],
   "author": "",
