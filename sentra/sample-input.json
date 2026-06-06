@@ -1,0 +1,15 @@
+{
+  "goal": "Generate the next best Hermes push",
+  "constraints": [
+    "small enough to ship in one session",
+    "improves agent workflow quality",
+    "creates durable operating structure",
+    "does not add dashboard/UI yet"
+  ],
+  "context": [
+    "Sentra is the personal operating layer",
+    "Hermes routes and evaluates work",
+    "Mastra may become the agent/workflow runtime",
+    "Langfuse remains the observability layer"
+  ]
+}
