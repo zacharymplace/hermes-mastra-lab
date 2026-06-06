@@ -1,0 +1,134 @@
+{
+  "runtime": "hermes-agentic-run-v2-source-patch-proposal-v7.3",
+  "generatedAt": "2026-06-06T07:05:29.157Z",
+  "status": "patch-proposed",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-target-selection-v7.2.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-patch-intent-v7.1.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-plan-v7.0.json"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v2",
+    "sourceTargetSelection": "hermes-agentic-run-v2-target-selection-v7.2",
+    "sourcePatchIntent": "hermes-agentic-run-v2-patch-intent-v7.1",
+    "sourcePlan": "hermes-agentic-run-v2-plan-v7.0"
+  },
+  "selectedTarget": {
+    "id": "target-selection-artifact",
+    "title": "Target Selection Artifact",
+    "targetType": "generated-artifact-and-gate",
+    "summary": "Create a deterministic target-selection artifact that chooses the concrete next patch target before any source patch proposal.",
+    "proposedFiles": [
+      "scripts/write-hermes-agentic-run-v2-target-selection-v7-2.ts",
+      "evaluations/hermes-agentic-run-v2-target-selection-v7-2-gate.ts",
+      "hermes/agentic-workflow/run-v2/target-selection-v7.2.json",
+      "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-target-selection-v7.2.json",
+      "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-target-selection-v7.2.md",
+      "package.json"
+    ],
+    "signals": {
+      "autonomyLeverage": 5,
+      "safety": 5,
+      "auditability": 5,
+      "reversibility": 5,
+      "executionValue": 4,
+      "effort": 2
+    },
+    "risks": [
+      "Could remain meta-work if not followed by a concrete patch proposal",
+      "Needs a clear handoff to v7.3"
+    ],
+    "scoring": {
+      "gross": 101,
+      "effortPenalty": 6,
+      "final": 95
+    },
+    "score": 95
+  },
+  "sourcePatchProposal": {
+    "id": "run-v2-source-patch-proposal-v7.3",
+    "title": "Hermes Agentic Run v2 Source Patch Proposal",
+    "summary": "Propose the concrete v7.3 source patch needed to move from target selection into an approval-gated patch application step.",
+    "objective": "Create a bounded source patch proposal for the next run-v2 step without applying the patch, creating branches, pushing, merging, or opening PRs.",
+    "proposedNextStep": {
+      "id": "run-v2-approved-source-patch-apply-v7.4",
+      "title": "Approved Source Patch Apply v7.4",
+      "approvalArtifact": "hermes/agentic-workflow/approvals/run-v2-source-patch-apply-v7.4.json",
+      "expectedCommand": "npm run hermes:agentic-run-v2-source-patch-apply:v7.4:check"
+    },
+    "proposedFiles": [
+      "scripts/write-hermes-agentic-run-v2-source-patch-proposal-v7-3.ts",
+      "evaluations/hermes-agentic-run-v2-source-patch-proposal-v7-3-gate.ts",
+      "hermes/agentic-workflow/run-v2/source-patch-proposal-v7.3.json",
+      "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-proposal-v7.3.json",
+      "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-proposal-v7.3.md",
+      "package.json"
+    ],
+    "validationCommands": [
+      "npm run hermes:agentic-run-v2-target-selection:v7.2:gate",
+      "npm run hermes:agentic-run-v2-patch-intent:v7.1:gate",
+      "npm run hermes:agentic-run-v2-plan:v7.0:gate",
+      "npm run check",
+      "npm run mastra:check"
+    ],
+    "patchBoundaries": {
+      "proposalOnly": true,
+      "patchApplied": false,
+      "branchCreated": false,
+      "pushed": false,
+      "merged": false,
+      "prOpened": false,
+      "requiresHumanApprovalBeforeApply": true
+    }
+  },
+  "safetyBoundary": {
+    "proposalOnly": true,
+    "patchGenerated": false,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true,
+    "allowedToModifyOnlyDeclaredTargets": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v2-target-selection:v7.2:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v2-patch-intent:v7.1:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v2-plan:v7.0:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusPatchProposed": true,
+    "targetSelectionValid": true,
+    "patchIntentValid": true,
+    "planValid": true,
+    "selectedTargetPresent": true,
+    "proposalPresent": true,
+    "proposedFilesDeclared": true,
+    "validationCommandsDeclared": true,
+    "validationsPassed": true,
+    "proposalOnly": true,
+    "noPatchGenerated": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "notes": [
+    "This proposes the v2 source patch shape but does not apply it.",
+    "The next safe step is v7.4 approval-gated source patch apply.",
+    "The workflow still cannot push, merge, open PRs, or modify undeclared targets."
+  ]
+}
