@@ -1,0 +1,29 @@
+{
+  "runtime": "hermes-agentic-run-v2-source-patch-apply-v7.4",
+  "generatedAt": "2026-06-06T07:10:31.059Z",
+  "status": "source-patch-applied",
+  "sourceProposal": "hermes-agentic-run-v2-source-patch-proposal-v7.3",
+  "approval": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Approve v7.4 source patch application for Hermes Agentic Run v2. No branch, push, PR, or merge is authorized."
+  },
+  "appliedPatch": {
+    "targetPath": "hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json",
+    "type": "approved-generated-artifact",
+    "summary": "Records that the v7.3 source patch proposal was approved for a constrained v7.4 application step.",
+    "sourcePatchProposalStatus": "patch-proposed",
+    "selectedTargetId": "target-selection-artifact",
+    "nextStep": "Generate v7.5 validation report before any branch, push, PR, or merge action."
+  },
+  "safetyBoundary": {
+    "approvalRequired": true,
+    "approved": true,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "externalSideEffects": false,
+    "constrainedToDeclaredTargets": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "runtime": "hermes-agentic-run-v2-source-patch-apply-v7.4",
+  "generatedAt": "2026-06-06T07:10:31.059Z",
+  "status": "ready-for-human-review",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-proposal-v7.3.json",
+    "hermes/agentic-workflow/approvals/run-v2-source-patch-apply-v7.4.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-apply-v7.4.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-source-patch-apply-v7.4.md"
+  ],
+  "approval": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Approve v7.4 source patch application for Hermes Agentic Run v2. No branch, push, PR, or merge is authorized."
+  },
+  "patch": {
+    "targetPath": "hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json",
+    "applied": true,
+    "changed": false,
+    "diffCommand": "git diff -- hermes/agentic-workflow/run-v2/source-patch-applied-v7.4.json",
+    "diffOutput": ""
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v2-source-patch-proposal:v7.3:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v2-source-patch-proposal:v7.3:gate\n> tsx evaluations/hermes-agentic-run-v2-source-patch-proposal-v7-3-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-patch-proposed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"target-selection-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"patch-intent-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"plan-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-target-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposal-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposed-files-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validation-commands-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposal-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-approval-required-before-patch\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v2-target-selection:v7.2:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v2-target-selection:v7.2:gate\n> tsx evaluations/hermes-agentic-run-v2-target-selection-v7-2-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-target-selected\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"intent-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"plan-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"run-index-complete\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"ledger-has-entry\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"targets-ranked\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-target-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"selected-target-has-files\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"target-selection-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-approval-required-before-patch\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v2-patch-intent:v7.1:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v2-patch-intent:v7.1:gate\n> tsx evaluations/hermes-agentic-run-v2-patch-intent-v7-1-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-intent-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"plan-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"contract-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"next-run-selected\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"patch-intent-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposed-patch-shape-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"target-selection-rules-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"intent-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-approval-required-before-patch\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    }
+  ],
+  "safetyBoundary": {
+    "approvalRequired": true,
+    "approved": true,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "externalSideEffects": false,
+    "constrainedToDeclaredTargets": true
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "approvalGranted": true,
+    "reviewerCaptured": true,
+    "reasonCaptured": true,
+    "sourceProposalReady": true,
+    "patchApplied": true,
+    "diffCaptured": true,
+    "validationRan": true,
+    "validationsPassed": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true,
+    "constrainedPatchOnly": true
+  },
+  "notes": [
+    "This applies the approved v7.4 generated source patch artifact only.",
+    "It does not create a branch, push, merge, or open a PR.",
+    "The next safe step is v7.5 validation/reporting before any GitHub lifecycle action."
+  ]
+}
