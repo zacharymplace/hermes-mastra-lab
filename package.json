@@ -41,7 +41,8 @@
     "langfuse:sdk-spike:gate": "tsx evaluations/langfuse-sdk-spike-gate.ts",
     "langfuse:sdk-spike:check": "npm run langfuse:qualification:check && npm run langfuse:sdk-spike && npm run langfuse:sdk-spike:gate",
     "langfuse:real-emission:verify": "tsx scripts/verify-real-langfuse-emission.ts",
-    "langfuse:real-emission:check": "npm run langfuse:sdk-spike && npm run langfuse:real-emission:verify"
+    "langfuse:real-emission:check": "npm run langfuse:sdk-spike && npm run langfuse:real-emission:verify",
+    "langfuse:api-probe": "tsx scripts/langfuse-api-shape-probe.ts"
   },
   "keywords": [],
   "author": "",
