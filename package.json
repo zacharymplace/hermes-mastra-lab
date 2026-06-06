@@ -9,7 +9,9 @@
     "experiment:idea": "tsx workflows/idea-recommendation.ts",
     "promotion:gate": "tsx evaluations/promotion-gate.ts",
     "experiment:report": "tsx workflows/write-experiment-report.ts",
-    "doctor": "tsx evaluations/doctor.ts"
+    "doctor": "tsx evaluations/doctor.ts",
+    "mastra:spike": "tsx adapters/mastra/run-spike.ts",
+    "mastra:gate": "tsx evaluations/mastra-adapter-gate.ts"
   },
   "keywords": [],
   "author": "",
