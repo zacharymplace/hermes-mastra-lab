@@ -1,0 +1,84 @@
+{
+  "runtime": "langfuse-qualification-local-contract",
+  "mode": "local-deterministic-no-network",
+  "traceId": "hermes-mastra-1780714436138",
+  "events": [
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "core",
+      "name": "Hermes core recommendation",
+      "inputArtifact": "sentra/sample-input.json",
+      "outputArtifact": "hermes/idea-recommendation.json",
+      "status": "success",
+      "metadata": {
+        "artifactExists": true
+      }
+    },
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "native",
+      "name": "Mastra native workflow",
+      "inputArtifact": "sentra/sample-input.json",
+      "outputArtifact": "hermes/mastra-native-workflow.json",
+      "status": "success",
+      "metadata": {
+        "artifactExists": true
+      }
+    },
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "parallel",
+      "name": "Mastra parallel critique",
+      "outputArtifact": "hermes/mastra-native-parallel-critique.json",
+      "status": "success",
+      "metadata": {
+        "artifactExists": true
+      }
+    },
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "human-review",
+      "name": "Mastra human review",
+      "outputArtifact": "hermes/mastra-native-human-review.json",
+      "status": "approved",
+      "metadata": {
+        "artifactExists": true
+      }
+    },
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "suspend",
+      "name": "Suspend packet",
+      "outputArtifact": "hermes/mastra-suspend-packet.json",
+      "status": "suspended",
+      "metadata": {
+        "artifactExists": true
+      }
+    },
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "resume",
+      "name": "Resume result",
+      "outputArtifact": "hermes/mastra-resume-result.json",
+      "status": "approved",
+      "metadata": {
+        "artifactExists": true
+      }
+    },
+    {
+      "traceId": "hermes-mastra-1780714436138",
+      "stage": "qualification",
+      "name": "Mastra qualification report",
+      "outputArtifact": "reports/mastra-qualification.json",
+      "status": "success",
+      "metadata": {
+        "artifactExists": true
+      }
+    }
+  ],
+  "notes": [
+    "This is a local Langfuse trace contract, not a network integration.",
+    "Every Hermes/Mastra stage must be traceable to an artifact.",
+    "Next step is replacing this local contract with real Langfuse SDK emission."
+  ]
+}
