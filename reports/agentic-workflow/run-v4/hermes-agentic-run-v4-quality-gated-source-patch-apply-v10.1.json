@@ -1,0 +1,186 @@
+{
+  "runtime": "hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1",
+  "generatedAt": "2026-06-06T21:23:02.645Z",
+  "status": "ready-for-human-review",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-proposal-v10.0.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+    "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+    "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v4",
+    "sourceProposal": "hermes-agentic-run-v4-quality-gated-source-patch-proposal-v10.0",
+    "selectedTarget": "first-quality-gated-source-patch-apply"
+  },
+  "sourcePatchApply": {
+    "id": "run-v4-first-quality-gated-source-patch-apply-v10.1",
+    "title": "First Quality-Gated Source Patch Apply",
+    "summary": "Applies the first bounded quality-gated source patch artifact chain while carrying qualityGate before readiness.",
+    "applied": true,
+    "changed": true,
+    "semanticChange": true,
+    "diffOutput": "Generated v10.1 apply artifact, report, gate, and package script wiring.",
+    "readiness": "ready-for-human-review"
+  },
+  "qualityGate": {
+    "status": "passed-before-readiness",
+    "sourceContract": "hermes-agentic-run-v3-quality-gate-index-v9.7",
+    "sourceCloseout": "hermes-agentic-run-v3-quality-gate-closeout-v9.8",
+    "applicability": "applies-to-this-proposal-before-any-apply-step",
+    "expectedChangedPaths": [
+      "scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
+      "evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
+      "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+      "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+      "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md",
+      "package.json"
+    ],
+    "requiredChecks": [
+      "generated-artifact-drift",
+      "stale-timestamp-churn",
+      "no-op-patch-claims",
+      "human-boundary-preservation",
+      "declared-target-only-changes"
+    ],
+    "requiredGateOutputs": [
+      "status",
+      "requiredChecks",
+      "results",
+      "generatedArtifactDrift",
+      "timestampChurn",
+      "noOpPatchClaims",
+      "humanBoundaryPreserved",
+      "declaredTargetOnlyChanges",
+      "passed"
+    ],
+    "results": [
+      {
+        "id": "generated-artifact-drift",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "stale-timestamp-churn",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "no-op-patch-claims",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "human-boundary-preservation",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      },
+      {
+        "id": "declared-target-only-changes",
+        "required": true,
+        "passed": true,
+        "evidence": "Inherited from validated v9.7 qualityGate index before proposal."
+      }
+    ],
+    "generatedArtifactDrift": {
+      "status": "checked-at-proposal",
+      "classification": "none",
+      "driftPaths": []
+    },
+    "timestampChurn": {
+      "status": "classified",
+      "classification": "not-applicable-to-proposal",
+      "timestampOnly": false
+    },
+    "noOpPatchClaims": {
+      "status": "classified",
+      "applied": true,
+      "changed": true,
+      "diffOutput": "bounded apply artifact, gate, reports, and package script wiring generated",
+      "semanticChange": true
+    },
+    "humanBoundaryPreserved": {
+      "status": "preserved",
+      "branchCreated": false,
+      "pushed": false,
+      "prOpened": false,
+      "merged": false
+    },
+    "declaredTargetOnlyChanges": {
+      "status": "declared",
+      "allowedTargets": [
+        "scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
+        "evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
+        "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md",
+        "package.json"
+      ],
+      "changedFiles": [
+        "scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
+        "evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
+        "hermes/agentic-workflow/run-v4/source-patch-apply/v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.json",
+        "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10.1.md",
+        "package.json"
+      ],
+      "undeclaredChanges": []
+    },
+    "passed": true
+  },
+  "safetyBoundary": {
+    "applyArtifactOnly": true,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredForGitHubActions": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v4-quality-gated-source-patch-proposal:v10.0:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v4-quality-gated-source-patch-proposal:v10.0:gate\n> tsx evaluations/hermes-agentic-run-v4-quality-gated-source-patch-proposal-v10-0-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-proposed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"source-index-ready\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"source-closeout-ready\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gate-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gate-required-before-apply\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gate-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"expected-changed-paths-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposed-patch-shape-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"proposal-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-generated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"human-approval-before-apply\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-index:v9.7:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-index:v9.7:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-index-v9-7-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-indexed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"run-v3-indexed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gate-validated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"required-gate-outputs-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"required-checks-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"wired-phases-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"reusable-contract-valid\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"fail-closed-policy-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"required-artifacts-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"index-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-broad-source-rewrite\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-closeout:v9.8:gate",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 hermes:agentic-run-v3-quality-gate-closeout:v9.8:gate\n> tsx evaluations/hermes-agentic-run-v3-quality-gate-closeout-v9-8-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"status-closed-out\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"input-artifacts-present\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"index-ready\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gate-validated\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"quality-gate-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"validations-passed\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"next-step-declared\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"closeout-only\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-broad-source-rewrite\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-patch-applied\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-branch-created\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-push\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-merge\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"no-pr-opened\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"artifacts-exist\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusReadyForHumanReview": true,
+    "proposalReady": true,
+    "qualityGatePresent": true,
+    "qualityGatePassed": true,
+    "qualityGateCarriedFromProposal": true,
+    "appliedDeclared": true,
+    "changedDeclared": true,
+    "diffOutputDeclared": true,
+    "semanticChangeDeclared": true,
+    "declaredTargetsClean": true,
+    "validationsPassed": true,
+    "applyArtifactOnly": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This is the first apply artifact that carries the v9.7 qualityGate contract.",
+    "It reports applied, changed, diffOutput, and semanticChange before readiness.",
+    "It does not create a branch, push, merge, or open a PR."
+  ]
+}
