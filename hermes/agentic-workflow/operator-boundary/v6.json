@@ -1,0 +1,52 @@
+{
+  "runtime": "hermes-agentic-operator-boundary-v6",
+  "generatedAt": "2026-06-06T06:11:34.143Z",
+  "status": "documented",
+  "sourceEvent": "Hermes Agentic Branch Prepare v5 created a local branch inside the workflow, then the outer operator terminal command pushed that branch and opened a draft PR.",
+  "distinction": {
+    "workflowActions": [
+      "selected project context",
+      "generated execution plan",
+      "generated patch candidate",
+      "applied constrained local patch",
+      "ran validation",
+      "drafted PR metadata",
+      "created or switched local branch after approval"
+    ],
+    "operatorActions": [
+      "pushed local branch to origin",
+      "opened GitHub draft pull request"
+    ]
+  },
+  "semantics": {
+    "workflowDidPush": false,
+    "operatorDidPush": true,
+    "workflowOpenedPr": false,
+    "operatorOpenedPr": true
+  },
+  "linkedArtifacts": {
+    "branchName": "hermes/agentic-pr-draft-v4",
+    "prNumber": 1,
+    "prView": {
+      "baseRefName": "main",
+      "headRefName": "hermes/agentic-pr-draft-v4",
+      "isDraft": false,
+      "number": 1,
+      "state": "OPEN",
+      "url": "https://github.com/zacharymplace/hermes-mastra-lab/pull/1"
+    }
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "remoteBranchDetected": true,
+    "prDetected": true,
+    "workflowPushSeparatedFromOperatorPush": true,
+    "workflowPrSeparatedFromOperatorPr": true,
+    "humanBoundaryPreserved": true
+  },
+  "notes": [
+    "This artifact corrects the v5 reporting ambiguity.",
+    "Hermes workflow reports must distinguish workflow actions from operator actions.",
+    "The workflow did not push or open a PR; the outer terminal commands did."
+  ]
+}
