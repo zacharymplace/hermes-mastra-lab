@@ -1,0 +1,59 @@
+{
+  "runtime": "hermes-agentic-run-v2-branch-prepare-v7.7",
+  "generatedAt": "2026-06-06T07:27:55.291Z",
+  "status": "ready-for-human-review",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-pr-draft-v7.6.json",
+    "hermes/agentic-workflow/approvals/run-v2-branch-prepare-v7.7.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v2/branch-prep/v7.7.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-branch-prepare-v7.7.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-branch-prepare-v7.7.md"
+  ],
+  "approval": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Approve local branch preparation for Hermes Agentic Run v2 v7.7. No push or PR creation is authorized."
+  },
+  "branch": {
+    "requested": "hermes/agentic-run-v2-pr-draft-v7-6",
+    "before": "main",
+    "after": "hermes/agentic-run-v2-pr-draft-v7-6",
+    "existedBefore": false,
+    "prepared": true,
+    "command": "git switch -c hermes/agentic-run-v2-pr-draft-v7-6"
+  },
+  "gitStatus": {
+    "before": "## main...origin/main\n M package.json\n?? evaluations/hermes-agentic-run-v2-branch-prepare-v7-7-gate.ts\n?? hermes/agentic-workflow/approvals/run-v2-branch-prepare-v7.7.example.json\n?? hermes/agentic-workflow/approvals/run-v2-branch-prepare-v7.7.json\n?? scripts/prepare-hermes-agentic-run-v2-branch-v7-7.ts",
+    "after": "## hermes/agentic-run-v2-pr-draft-v7-6\n M package.json\n?? evaluations/hermes-agentic-run-v2-branch-prepare-v7-7-gate.ts\n?? hermes/agentic-workflow/approvals/run-v2-branch-prepare-v7.7.example.json\n?? hermes/agentic-workflow/approvals/run-v2-branch-prepare-v7.7.json\n?? scripts/prepare-hermes-agentic-run-v2-branch-v7-7.ts"
+  },
+  "safetyBoundary": {
+    "localBranchOnly": true,
+    "pushed": false,
+    "prOpened": false,
+    "merged": false,
+    "externalSideEffects": false,
+    "humanOperatorRequiredForPushAndPr": true
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "approvalGranted": true,
+    "reviewerCaptured": true,
+    "reasonCaptured": true,
+    "sourcePrDraftReady": true,
+    "branchPrepared": true,
+    "branchNameMatches": true,
+    "localBranchOnly": true,
+    "notPushed": true,
+    "prNotOpened": true,
+    "noMerge": true,
+    "humanOperatorRequiredForPushAndPr": true
+  },
+  "notes": [
+    "This prepares a local branch for Hermes agentic run v2 after explicit approval.",
+    "It does not push the branch.",
+    "It does not create a GitHub PR.",
+    "The next safe step is operator-controlled push and draft PR creation."
+  ]
+}
