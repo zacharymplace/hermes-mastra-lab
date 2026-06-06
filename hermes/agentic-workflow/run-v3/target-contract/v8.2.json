@@ -1,0 +1,154 @@
+{
+  "runtime": "hermes-agentic-run-v3-target-contract-v8.2",
+  "generatedAt": "2026-06-06T08:17:29.351Z",
+  "status": "contracted",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-selector-v8.1.json",
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-index-v8.0.json",
+    "sentra/ledger/post-merge-validation.json"
+  ],
+  "selectedRunV3Target": {
+    "id": "loop-quality-hardening",
+    "title": "Harden Agentic Loop Quality",
+    "summary": "Add explicit quality gates for generated artifact drift, stale timestamps, and no-op source patch claims before starting another patch loop.",
+    "signals": {
+      "strategicFit": 5,
+      "learningValue": 5,
+      "operatingLeverage": 5,
+      "riskReduction": 5,
+      "autonomyLeverage": 4,
+      "effort": 2
+    },
+    "risks": [
+      "Could slow forward motion if overbuilt",
+      "Needs to stay focused on practical failure modes"
+    ],
+    "scoring": {
+      "gross": 110,
+      "effortPenalty": 6,
+      "final": 104
+    },
+    "score": 104
+  },
+  "runV3": {
+    "id": "hermes-agentic-run-v3",
+    "purpose": "Harden the Hermes agentic loop before starting another broad patch cycle.",
+    "targetType": "loop-quality-hardening-contract",
+    "targetName": "Hermes Agentic Run v3 Loop Quality Contract",
+    "objective": "Define required quality checks for generated drift, stale timestamp churn, no-op patch claims, and human-boundary preservation before run v3 can propose source changes.",
+    "sourceRun": "hermes-agentic-run-v2",
+    "sourceSelector": "hermes-agentic-run-v3-selector-v8.1"
+  },
+  "qualityGates": [
+    {
+      "id": "generated-artifact-drift",
+      "name": "Generated Artifact Drift",
+      "requirement": "Generated reports must not leave unstaged drift after validation unless explicitly committed as a declared output.",
+      "failureMode": "Running checks rewrites report artifacts and leaves the repo dirty."
+    },
+    {
+      "id": "stale-timestamp-churn",
+      "name": "Stale Timestamp Churn",
+      "requirement": "Timestamp-only rewrites must be classified separately from semantic changes.",
+      "failureMode": "Repeated commands create noisy commits that only update generatedAt fields."
+    },
+    {
+      "id": "no-op-patch-claims",
+      "name": "No-op Patch Claims",
+      "requirement": "Patch apply reports must distinguish changed=true from applied=true.",
+      "failureMode": "A patch step claims success even when no meaningful file diff exists."
+    },
+    {
+      "id": "human-boundary-preservation",
+      "name": "Human Boundary Preservation",
+      "requirement": "Workflow artifacts may prepare metadata, but branch push, PR creation, and merge remain operator-controlled.",
+      "failureMode": "The workflow reports or performs GitHub lifecycle actions as if autonomous."
+    },
+    {
+      "id": "declared-target-only-changes",
+      "name": "Declared Target Only Changes",
+      "requirement": "Run v3 may only modify files declared in the active contract or approval artifact.",
+      "failureMode": "Patch logic edits broad source files outside the declared target set."
+    }
+  ],
+  "allowedTargets": [
+    {
+      "path": "scripts/write-hermes-agentic-run-v3-target-contract-v8-2.ts",
+      "reason": "Generator for the v8.2 loop quality contract."
+    },
+    {
+      "path": "evaluations/hermes-agentic-run-v3-target-contract-v8-2-gate.ts",
+      "reason": "Gate for contract validity."
+    },
+    {
+      "path": "hermes/agentic-workflow/run-v3/target-contract/v8.2.json",
+      "reason": "Machine-readable contract artifact."
+    },
+    {
+      "path": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-target-contract-v8.2.json",
+      "reason": "Audit report artifact."
+    },
+    {
+      "path": "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-target-contract-v8.2.md",
+      "reason": "Human-readable review artifact."
+    },
+    {
+      "path": "package.json",
+      "reason": "Expose v8.2 commands."
+    }
+  ],
+  "disallowedTargets": [
+    "secrets",
+    ".env files",
+    "credential stores",
+    "destructive git operations",
+    "auto-push",
+    "auto-merge",
+    "auto PR creation",
+    "broad source rewrites outside declared targets",
+    "timestamp-only commits without semantic justification"
+  ],
+  "successCriteria": [
+    "v8.1 selected loop-quality hardening.",
+    "Run v2 index is complete.",
+    "Sentra post-merge ledger has at least two entries.",
+    "Quality gates are explicit and testable.",
+    "Allowed and disallowed targets are explicit.",
+    "Run v3 remains contract-only before any patch proposal."
+  ],
+  "safetyBoundary": {
+    "contractOnly": true,
+    "patchGenerated": false,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "selectorChoseLoopQuality": true,
+    "targetDeclared": true,
+    "qualityGatesDeclared": true,
+    "generatedDriftGateDeclared": true,
+    "timestampChurnGateDeclared": true,
+    "noOpPatchGateDeclared": true,
+    "humanBoundaryGateDeclared": true,
+    "declaredTargetsGateDeclared": true,
+    "allowedTargetsDeclared": true,
+    "disallowedTargetsDeclared": true,
+    "contractOnly": true,
+    "noPatchGenerated": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This contract prevents run v3 from becoming another unconstrained artifact loop.",
+    "The selected target is loop-quality hardening, not another full patch cycle.",
+    "The next safe step is a v8.3 quality-gate plan or patch intent."
+  ]
+}

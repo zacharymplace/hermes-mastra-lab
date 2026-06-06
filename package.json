@@ -174,7 +174,10 @@
     "hermes:agentic-run-v2-index:v8.0:check": "npm run hermes:agentic-run-v2-index:v8.0 && npm run hermes:agentic-run-v2-index:v8.0:gate",
     "hermes:agentic-run-v3-selector:v8.1": "tsx scripts/write-hermes-agentic-run-v3-selector-v8-1.ts",
     "hermes:agentic-run-v3-selector:v8.1:gate": "tsx evaluations/hermes-agentic-run-v3-selector-v8-1-gate.ts",
-    "hermes:agentic-run-v3-selector:v8.1:check": "npm run hermes:agentic-run-v3-selector:v8.1 && npm run hermes:agentic-run-v3-selector:v8.1:gate"
+    "hermes:agentic-run-v3-selector:v8.1:check": "npm run hermes:agentic-run-v3-selector:v8.1 && npm run hermes:agentic-run-v3-selector:v8.1:gate",
+    "hermes:agentic-run-v3-target:v8.2": "tsx scripts/write-hermes-agentic-run-v3-target-contract-v8-2.ts",
+    "hermes:agentic-run-v3-target:v8.2:gate": "tsx evaluations/hermes-agentic-run-v3-target-contract-v8-2-gate.ts",
+    "hermes:agentic-run-v3-target:v8.2:check": "npm run hermes:agentic-run-v3-target:v8.2 && npm run hermes:agentic-run-v3-target:v8.2:gate"
   },
   "keywords": [],
   "author": "",
