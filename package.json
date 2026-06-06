@@ -231,7 +231,10 @@
     "hermes:agentic-run-v4-quality-gated-source-patch-proposal:v10.0:check": "npm run hermes:agentic-run-v4-quality-gated-source-patch-proposal:v10.0 && npm run hermes:agentic-run-v4-quality-gated-source-patch-proposal:v10.0:gate",
     "hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1": "tsx scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1.ts",
     "hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1:gate": "tsx evaluations/hermes-agentic-run-v4-quality-gated-source-patch-apply-v10-1-gate.ts",
-    "hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1:check": "npm run hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1 && npm run hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1:gate"
+    "hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1:check": "npm run hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1 && npm run hermes:agentic-run-v4-quality-gated-source-patch-apply:v10.1:gate",
+    "hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2": "tsx scripts/write-hermes-agentic-run-v4-quality-gated-source-patch-validation-v10-2.ts",
+    "hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2:gate": "tsx evaluations/hermes-agentic-run-v4-quality-gated-source-patch-validation-v10-2-gate.ts",
+    "hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2:check": "npm run hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2 && npm run hermes:agentic-run-v4-quality-gated-source-patch-validation:v10.2:gate"
   },
   "keywords": [],
   "author": "",
