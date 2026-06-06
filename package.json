@@ -240,7 +240,10 @@
     "hermes:agentic-run-v4-quality-gated-branch-prepare:v10.3:check": "npm run hermes:agentic-run-v4-quality-gated-branch-prepare:v10.3 && npm run hermes:agentic-run-v4-quality-gated-branch-prepare:v10.3:gate",
     "hermes:agentic-run-v4-quality-gated-pr-draft:v10.4": "tsx scripts/write-hermes-agentic-run-v4-quality-gated-pr-draft-v10-4.ts",
     "hermes:agentic-run-v4-quality-gated-pr-draft:v10.4:gate": "tsx evaluations/hermes-agentic-run-v4-quality-gated-pr-draft-v10-4-gate.ts",
-    "hermes:agentic-run-v4-quality-gated-pr-draft:v10.4:check": "npm run hermes:agentic-run-v4-quality-gated-pr-draft:v10.4 && npm run hermes:agentic-run-v4-quality-gated-pr-draft:v10.4:gate"
+    "hermes:agentic-run-v4-quality-gated-pr-draft:v10.4:check": "npm run hermes:agentic-run-v4-quality-gated-pr-draft:v10.4 && npm run hermes:agentic-run-v4-quality-gated-pr-draft:v10.4:gate",
+    "hermes:agentic-run-v4-quality-gated-pr-lifecycle-plan:v10.5": "tsx scripts/write-hermes-agentic-run-v4-quality-gated-pr-lifecycle-plan-v10-5.ts",
+    "hermes:agentic-run-v4-quality-gated-pr-lifecycle-plan:v10.5:gate": "tsx evaluations/hermes-agentic-run-v4-quality-gated-pr-lifecycle-plan-v10-5-gate.ts",
+    "hermes:agentic-run-v4-quality-gated-pr-lifecycle-plan:v10.5:check": "npm run hermes:agentic-run-v4-quality-gated-pr-lifecycle-plan:v10.5 && npm run hermes:agentic-run-v4-quality-gated-pr-lifecycle-plan:v10.5:gate"
   },
   "keywords": [],
   "author": "",
