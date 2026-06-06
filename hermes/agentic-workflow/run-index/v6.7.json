@@ -1,0 +1,143 @@
+{
+  "runtime": "hermes-agentic-run-index-v6.7",
+  "generatedAt": "2026-06-06T06:36:43.366Z",
+  "status": "complete",
+  "run": {
+    "id": "hermes-agentic-workflow-v1-through-v6.7",
+    "selectedProjectId": "hermes-agentic-workflow",
+    "selectedProjectName": "Hermes Agentic Workflow",
+    "startPhase": "plan",
+    "endPhase": "post-merge-ledger",
+    "currentState": "completed-and-recorded"
+  },
+  "artifacts": [
+    {
+      "id": "v1-workflow-plan",
+      "phase": "plan",
+      "path": "hermes/agentic-workflow/v1.json",
+      "required": true,
+      "present": true,
+      "runtime": null,
+      "status": null,
+      "generatedAt": null
+    },
+    {
+      "id": "v2-execution",
+      "phase": "execute",
+      "path": "reports/agentic-workflow/hermes-agentic-execution-v2.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-agentic-execution-v2",
+      "status": "ready-for-human-approval",
+      "generatedAt": "2026-06-06T05:57:07.668Z"
+    },
+    {
+      "id": "v3-patch-apply",
+      "phase": "patch",
+      "path": "reports/agentic-workflow/hermes-agentic-patch-apply-v3.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-agentic-patch-apply-v3",
+      "status": "ready-for-human-review",
+      "generatedAt": "2026-06-06T05:57:09.412Z"
+    },
+    {
+      "id": "v4-pr-draft",
+      "phase": "pr-draft",
+      "path": "reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4-report.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-agentic-pr-draft-v4-report",
+      "status": "ready-for-human-review",
+      "generatedAt": "2026-06-06T05:57:11.112Z"
+    },
+    {
+      "id": "v5-branch-prepare",
+      "phase": "branch",
+      "path": "reports/agentic-workflow/branch-prep/hermes-agentic-branch-prepare-v5.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-agentic-branch-prepare-v5",
+      "status": "ready-for-human-review",
+      "generatedAt": "2026-06-06T05:57:12.932Z"
+    },
+    {
+      "id": "v6-operator-boundary",
+      "phase": "operator-boundary",
+      "path": "reports/agentic-workflow/operator-boundary/hermes-agentic-operator-boundary-v6.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-agentic-operator-boundary-v6",
+      "status": "documented",
+      "generatedAt": "2026-06-06T06:11:34.143Z"
+    },
+    {
+      "id": "v6.5-pr-lifecycle",
+      "phase": "pr-lifecycle",
+      "path": "reports/agentic-workflow/pr-lifecycle/hermes-agentic-pr-lifecycle-v6.5.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-agentic-pr-lifecycle-v6.5",
+      "status": "tracked",
+      "generatedAt": "2026-06-06T06:28:24.228Z"
+    },
+    {
+      "id": "v6.6-post-merge-ledger",
+      "phase": "post-merge-ledger",
+      "path": "reports/agentic-workflow/post-merge/hermes-post-merge-validation-ledger-v6.6.json",
+      "required": true,
+      "present": true,
+      "runtime": "hermes-post-merge-validation-ledger-v6.6",
+      "status": "recorded",
+      "generatedAt": "2026-06-06T06:31:36.414Z"
+    },
+    {
+      "id": "sentra-ledger",
+      "phase": "operating-memory",
+      "path": "sentra/ledger/post-merge-validation.json",
+      "required": true,
+      "present": true,
+      "runtime": "sentra-post-merge-validation-ledger",
+      "status": null,
+      "generatedAt": "2026-06-06T06:31:36.414Z"
+    }
+  ],
+  "lifecycle": {
+    "prNumber": 1,
+    "prUrl": "https://github.com/zacharymplace/hermes-mastra-lab/pull/1",
+    "lifecycleState": "merged",
+    "mergedAt": "2026-06-06T06:12:51Z",
+    "mergeCommit": "b054fa26a255927e0e736196576a6223bc227dff",
+    "branchStatus": "still-present"
+  },
+  "ledger": {
+    "entryId": "pr-1-post-merge-v6.6",
+    "totalEntries": 1,
+    "recorded": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-pr-lifecycle:v6.5:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:post-merge-ledger:v6.6:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "requiredArtifactsPresent": true,
+    "validationsPassed": true,
+    "lifecycleMerged": true,
+    "postMergeLedgerRecorded": true,
+    "runStateComplete": true,
+    "prLinked": true,
+    "ledgerLinked": true
+  },
+  "notes": [
+    "This index ties together the Hermes agentic workflow chain from v1 through v6.6.",
+    "It gives Hermes one durable artifact for run-level status.",
+    "Future work can use this as the source for selecting the next agentic step."
+  ]
+}
