@@ -1,6 +1,6 @@
 {
   "runtime": "hermes-agentic-run-v4-quality-gated-pr-lifecycle-plan-v10.5",
-  "generatedAt": "2026-06-06T21:39:16.024Z",
+  "generatedAt": "2026-06-06T21:39:43.892Z",
   "status": "planned",
   "inputArtifacts": [
     "reports/agentic-workflow/run-v4/hermes-agentic-run-v4-quality-gated-pr-draft-v10.4.json"
@@ -190,7 +190,7 @@
       "passed": true
     }
   ],
-  "gitStatus": "## main...origin/main\n M package.json\n?? evaluations/hermes-agentic-run-v4-quality-gated-pr-lifecycle-plan-v10-5-gate.ts\n?? scripts/write-hermes-agentic-run-v4-quality-gated-pr-lifecycle-plan-v10-5.ts",
+  "gitStatus": "## main...origin/main",
   "checks": {
     "runtimeLabeled": true,
     "statusPlanned": true,
