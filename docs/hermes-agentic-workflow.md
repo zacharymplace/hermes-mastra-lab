@@ -50,3 +50,19 @@ The first implementation should support repo-local work only:
 - Hermes can run validation commands.
 - Hermes can classify the result as pass, blocked, or needs review.
 - Human approval remains required before merge.
+
+## Source Patch Proposal v1
+
+Hermes may propose source-code changes, but proposal is not application.
+
+The source patch proposal step must:
+
+- declare target files
+- describe proposed modifications
+- define validation commands
+- include rollback notes
+- require human approval before apply
+- avoid auto-merge
+- avoid push
+
+This creates a safe bridge from artifact-only execution toward source-code execution.

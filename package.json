@@ -99,7 +99,10 @@
     "hermes:agentic-workflow:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-workflow:gate",
     "hermes:agentic-patch-apply": "tsx scripts/apply-hermes-agentic-patch.ts",
     "hermes:agentic-patch-apply:gate": "tsx evaluations/hermes-agentic-patch-apply-gate.ts",
-    "hermes:agentic-patch-apply:check": "npm run hermes:agentic-workflow:check && npm run hermes:agentic-patch-apply && npm run hermes:agentic-patch-apply:gate"
+    "hermes:agentic-patch-apply:check": "npm run hermes:agentic-workflow:check && npm run hermes:agentic-patch-apply && npm run hermes:agentic-patch-apply:gate",
+    "hermes:source-patch-proposal": "tsx scripts/write-hermes-source-patch-proposal.ts",
+    "hermes:source-patch-proposal:gate": "tsx evaluations/hermes-source-patch-proposal-gate.ts",
+    "hermes:source-patch-proposal:check": "npm run hermes:agentic-workflow:check && npm run hermes:source-patch-proposal && npm run hermes:source-patch-proposal:gate"
   },
   "keywords": [],
   "author": "",
