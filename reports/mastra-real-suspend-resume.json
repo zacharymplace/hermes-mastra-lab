@@ -1,0 +1,27 @@
+{
+  "runtime": "mastra-real-suspend-resume-qualification",
+  "mode": "local-real-mastra-api",
+  "passed": false,
+  "suspendedBeforeReview": true,
+  "startStatus": "suspended",
+  "suspended": [
+    [
+      "approval-step"
+    ]
+  ],
+  "resumeStatus": "blocked",
+  "checks": {
+    "usedRealSuspend": true,
+    "usedRealResume": false,
+    "requiresSnapshotPersistence": true,
+    "approvalApplied": false,
+    "reviewerCaptured": false
+  },
+  "notes": [
+    "This uses Mastra's real suspend() API.",
+    "The workflow suspended before human review data existed.",
+    "Resume currently requires workflow snapshot persistence/configuration.",
+    "Resume failed because no snapshot was found for this workflow run."
+  ],
+  "error": "No snapshot found for this workflow run: real-suspend-resume-workflow 24e0818e-dfd5-43ea-b68d-77d50fd79a19"
+}

@@ -45,7 +45,10 @@
     "langfuse:api-probe": "tsx scripts/langfuse-api-shape-probe.ts",
     "langfuse:otel-smoke": "tsx scripts/langfuse-otel-smoke.ts",
     "langfuse:otel-smoke:gate": "tsx evaluations/langfuse-otel-smoke-gate.ts",
-    "langfuse:otel-smoke:check": "npm run langfuse:otel-smoke && npm run langfuse:otel-smoke:gate"
+    "langfuse:otel-smoke:check": "npm run langfuse:otel-smoke && npm run langfuse:otel-smoke:gate",
+    "mastra:real-suspend": "tsx adapters/mastra/native/suspend-resume-real/run-qualification.ts",
+    "mastra:real-suspend:gate": "tsx evaluations/mastra-real-suspend-resume-gate.ts",
+    "mastra:real-suspend:check": "npm run mastra:real-suspend && npm run mastra:real-suspend:gate"
   },
   "keywords": [],
   "author": "",
