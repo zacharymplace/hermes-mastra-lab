@@ -1,6 +1,6 @@
 {
   "runtime": "hermes-agentic-run-v3-quality-gate-implementation-v8.5",
-  "generatedAt": "2026-06-06T08:30:01.634Z",
+  "generatedAt": "2026-06-06T08:32:01.959Z",
   "status": "implemented",
   "inputArtifacts": [
     "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-implementation-intent-v8.4.json",
@@ -26,7 +26,7 @@
         "id": "generated-artifact-drift",
         "implemented": true,
         "result": {
-          "statusBefore": "## main...origin/main\n M package.json\n?? evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts\n?? scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts\n",
+          "statusBefore": "## main...origin/main\n M scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts\n",
           "generatedArtifactDrift": [],
           "passed": true,
           "classification": "none"
@@ -68,7 +68,7 @@
         "id": "declared-target-only-changes",
         "implemented": true,
         "result": {
-          "passed": false,
+          "passed": true,
           "allowedTargets": [
             "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts",
             "evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts",
@@ -78,13 +78,9 @@
             "package.json"
           ],
           "changedFiles": [
-            "M package.json",
-            "evaluations/hermes-agentic-run-v3-quality-gate-implementation-v8-5-gate.ts",
             "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts"
           ],
-          "undeclaredChanges": [
-            "M package.json"
-          ]
+          "undeclaredChanges": []
         }
       }
     ]
@@ -130,7 +126,7 @@
     "noPush": true,
     "noMerge": true,
     "noPrOpened": true,
-    "declaredTargetsClean": false
+    "declaredTargetsClean": true
   },
   "notes": [
     "This implements the run v3 loop-quality gate as an artifact and gate.",

@@ -35,9 +35,9 @@ const generatedAt = new Date().toISOString();
 const statusBefore = run("git status --short --branch");
 const changedFiles = run("git status --short")
   .split("\n")
-  .map((line) => line.trim())
+  .map((line) => line.trimEnd())
   .filter(Boolean)
-  .map((line) => line.replace(/^..\s+/, ""));
+  .map((line) => line.slice(3).trim());
 
 const allowedTargets = new Set<string>([
   "scripts/write-hermes-agentic-run-v3-quality-gate-implementation-v8-5.ts",
