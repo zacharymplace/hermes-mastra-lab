@@ -126,7 +126,10 @@
     "hermes:agentic-boundary:v6:check": "npm run hermes:agentic-boundary:v6 && npm run hermes:agentic-boundary:v6:gate",
     "hermes:agentic-pr-lifecycle:v6.5": "tsx scripts/write-hermes-agentic-pr-lifecycle-v6-5.ts",
     "hermes:agentic-pr-lifecycle:v6.5:gate": "tsx evaluations/hermes-agentic-pr-lifecycle-v6-5-gate.ts",
-    "hermes:agentic-pr-lifecycle:v6.5:check": "npm run hermes:agentic-pr-lifecycle:v6.5 && npm run hermes:agentic-pr-lifecycle:v6.5:gate"
+    "hermes:agentic-pr-lifecycle:v6.5:check": "npm run hermes:agentic-pr-lifecycle:v6.5 && npm run hermes:agentic-pr-lifecycle:v6.5:gate",
+    "hermes:post-merge-ledger:v6.6": "tsx scripts/write-hermes-post-merge-validation-ledger-v6-6.ts",
+    "hermes:post-merge-ledger:v6.6:gate": "tsx evaluations/hermes-post-merge-validation-ledger-v6-6-gate.ts",
+    "hermes:post-merge-ledger:v6.6:check": "npm run hermes:post-merge-ledger:v6.6 && npm run hermes:post-merge-ledger:v6.6:gate"
   },
   "keywords": [],
   "author": "",

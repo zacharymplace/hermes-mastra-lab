@@ -1,0 +1,74 @@
+{
+  "runtime": "hermes-post-merge-validation-ledger-v6.6",
+  "generatedAt": "2026-06-06T06:31:36.414Z",
+  "status": "recorded",
+  "inputArtifacts": [
+    "reports/agentic-workflow/pr-lifecycle/hermes-agentic-pr-lifecycle-v6.5.json"
+  ],
+  "outputArtifacts": [
+    "sentra/ledger/post-merge-validation.json",
+    "hermes/agentic-workflow/post-merge/v6.6.json",
+    "reports/agentic-workflow/post-merge/hermes-post-merge-validation-ledger-v6.6.json",
+    "reports/agentic-workflow/post-merge/hermes-post-merge-validation-ledger-v6.6.md"
+  ],
+  "entry": {
+    "id": "pr-1-post-merge-v6.6",
+    "generatedAt": "2026-06-06T06:31:36.414Z",
+    "sourceRuntime": "hermes-post-merge-validation-ledger-v6.6",
+    "prNumber": 1,
+    "prUrl": "https://github.com/zacharymplace/hermes-mastra-lab/pull/1",
+    "title": "Add Hermes agentic branch prepare v5",
+    "lifecycleState": "merged",
+    "mergedAt": "2026-06-06T06:12:51Z",
+    "closedAt": "2026-06-06T06:12:51Z",
+    "mergeCommit": "b054fa26a255927e0e736196576a6223bc227dff",
+    "branchName": "hermes/agentic-pr-draft-v4",
+    "baseRefName": "main",
+    "checks": {
+      "lifecycleMerged": true,
+      "lifecycleTracked": true,
+      "postMergeValidationRan": true,
+      "postMergeValidationPassed": true,
+      "mergeCommitCaptured": true,
+      "prUrlCaptured": true
+    },
+    "validationResults": [
+      {
+        "command": "npm run check",
+        "passed": true
+      },
+      {
+        "command": "npm run mastra:check",
+        "passed": true
+      },
+      {
+        "command": "npm run hermes:agentic-pr-lifecycle:v6.5:gate",
+        "passed": true
+      }
+    ],
+    "notes": [
+      "PR lifecycle was tracked after merge.",
+      "Post-merge validation ran against main.",
+      "This entry makes the merged agentic workflow result durable in Sentra."
+    ]
+  },
+  "ledgerSummary": {
+    "totalEntries": 1,
+    "latestEntryId": "pr-1-post-merge-v6.6"
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "lifecycleMerged": true,
+    "lifecycleTracked": true,
+    "validationRan": true,
+    "validationPassed": true,
+    "ledgerEntryWritten": true,
+    "mergeCommitCaptured": true,
+    "prUrlCaptured": true
+  },
+  "notes": [
+    "This is the post-merge durability layer for Hermes agentic workflow results.",
+    "It records PR lifecycle, merge metadata, and validation results into Sentra.",
+    "Future Sentra prioritization can use this ledger as operating memory."
+  ]
+}
