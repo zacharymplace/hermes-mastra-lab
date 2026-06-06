@@ -1,6 +1,6 @@
 {
   "runtime": "hermes-agentic-operator-boundary-v6",
-  "generatedAt": "2026-06-06T06:00:34.279Z",
+  "generatedAt": "2026-06-06T06:11:34.143Z",
   "status": "documented",
   "sourceEvent": "Hermes Agentic Branch Prepare v5 created a local branch inside the workflow, then the outer operator terminal command pushed that branch and opened a draft PR.",
   "distinction": {
@@ -30,7 +30,7 @@
     "prView": {
       "baseRefName": "main",
       "headRefName": "hermes/agentic-pr-draft-v4",
-      "isDraft": true,
+      "isDraft": false,
       "number": 1,
       "state": "OPEN",
       "url": "https://github.com/zacharymplace/hermes-mastra-lab/pull/1"
