@@ -1,0 +1,11 @@
+{
+  "status": "suspended",
+  "suspendReason": "Human promotion decision required before recommendation release.",
+  "recommendationTitle": "Hermes Idea Recommendation Workflow",
+  "recommendationScore": 19,
+  "requiredDecision": [
+    "approve",
+    "reject",
+    "revise"
+  ]
+}

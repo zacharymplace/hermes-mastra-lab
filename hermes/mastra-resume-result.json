@@ -1,0 +1,14 @@
+{
+  "runtime": "mastra-suspend-resume-contract",
+  "status": "approved",
+  "review": {
+    "decision": "approve",
+    "reviewer": "local-suspend-resume-simulation",
+    "reason": "Recommendation clears promotion threshold with documented risks."
+  },
+  "notes": [
+    "This contract defines the Hermes suspend/resume promotion boundary.",
+    "Mastra must preserve explicit review state.",
+    "Promotion cannot happen without a review decision."
+  ]
+}

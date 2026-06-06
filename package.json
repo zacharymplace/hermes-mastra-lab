@@ -21,7 +21,10 @@
     "mastra:parallel:check": "npm run mastra:parallel && npm run mastra:parallel:gate",
     "mastra:human-review": "tsx adapters/mastra/native/human-review/run-human-review.ts",
     "mastra:human-review:gate": "tsx evaluations/mastra-human-review-gate.ts",
-    "mastra:human-review:check": "npm run mastra:human-review && npm run mastra:human-review:gate"
+    "mastra:human-review:check": "npm run mastra:human-review && npm run mastra:human-review:gate",
+    "mastra:suspend-contract": "tsx adapters/mastra/native/suspend-resume/run-contract.ts",
+    "mastra:suspend-contract:gate": "tsx evaluations/mastra-suspend-resume-contract-gate.ts",
+    "mastra:suspend-contract:check": "npm run mastra:human-review:check && npm run mastra:suspend-contract && npm run mastra:suspend-contract:gate"
   },
   "keywords": [],
   "author": "",
