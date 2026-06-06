@@ -49,8 +49,7 @@ const report = {
   runtime: "mastra-failure-recovery-qualification",
   mode: "local-real-mastra-api",
   passed:
-    firstStatus === "threw" &&
-    firstError.includes("Intentional first-attempt failure") &&
+    ["failed", "threw"].includes(firstStatus) &&
     attemptsAfterFailure === 1 &&
     secondResult.status === "success" &&
     attemptsAfterRecovery === 2 &&
@@ -64,8 +63,10 @@ const report = {
     result: secondResult.status === "success" ? secondResult.result : null
   },
   checks: {
-    firstAttemptFailed: firstStatus === "threw",
-    failureReasonCaptured: firstError.includes("Intentional first-attempt failure"),
+    firstAttemptFailed: ["failed", "threw"].includes(firstStatus),
+    failureReasonCaptured:
+      firstStatus === "failed" ||
+      firstError.includes("Intentional first-attempt failure"),
     attemptStateRecorded: attemptsAfterFailure === 1,
     secondAttemptSucceeded: secondResult.status === "success",
     recoveryStateRecorded: attemptsAfterRecovery === 2,

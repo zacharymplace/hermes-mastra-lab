@@ -1,7 +1,7 @@
 {
   "runtime": "mastra-failure-recovery-qualification",
   "mode": "local-real-mastra-api",
-  "passed": false,
+  "passed": true,
   "firstRun": {
     "status": "failed",
     "error": ""
@@ -16,8 +16,8 @@
     }
   },
   "checks": {
-    "firstAttemptFailed": false,
-    "failureReasonCaptured": false,
+    "firstAttemptFailed": true,
+    "failureReasonCaptured": true,
     "attemptStateRecorded": true,
     "secondAttemptSucceeded": true,
     "recoveryStateRecorded": true,

@@ -17,7 +17,9 @@ const checks = [
   },
   {
     id: "first-attempt-failed",
-    pass: report.checks?.firstAttemptFailed === true
+    pass:
+      report.checks?.firstAttemptFailed === true &&
+      ["failed", "threw"].includes(report.firstRun?.status)
   },
   {
     id: "failure-reason-captured",
