@@ -1,0 +1,121 @@
+{
+  "runtime": "hermes-agentic-run-v2-plan-v7.0",
+  "generatedAt": "2026-06-06T06:48:33.193Z",
+  "status": "planned",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-target-contract-v6.9.json",
+    "reports/agentic-workflow/next-run/hermes-agentic-next-run-selector-v6.8.json",
+    "reports/agentic-workflow/run-index/hermes-agentic-run-index-v6.7.json",
+    "sentra/ledger/post-merge-validation.json"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v2",
+    "sourceRun": "hermes-agentic-workflow-v1-through-v6.7",
+    "sourceLedgerEntry": "pr-1-post-merge-v6.6",
+    "selectedNextRun": "agentic-next-run",
+    "objective": "Execute the second controlled Hermes agentic run by improving target selection and preparing a bounded patch proposal without applying source edits."
+  },
+  "plan": {
+    "mode": "repo-local",
+    "autonomy": "semi-autonomous",
+    "phase": "planning-only",
+    "patchApplicationAllowed": false,
+    "branchCreationAllowed": false,
+    "pushAllowed": false,
+    "mergeAllowed": false,
+    "externalSideEffectsAllowed": false,
+    "steps": [
+      {
+        "id": "load-context",
+        "action": "Read v6.9 target contract, v6.8 selector, v6.7 run index, and Sentra post-merge ledger.",
+        "output": "Run v2 planning context is available."
+      },
+      {
+        "id": "confirm-contract",
+        "action": "Verify that v6.9 selected the second controlled agentic run and declared target boundaries.",
+        "output": "Contract gate passes before planning proceeds."
+      },
+      {
+        "id": "define-patch-intent",
+        "action": "Define the next patch intent as target-selection improvement, not broad source modification.",
+        "output": "Patch intent can be reviewed before any source edit."
+      },
+      {
+        "id": "declare-validation",
+        "action": "Declare validation commands required before any v2 patch apply step.",
+        "output": "Validation commands are explicit and reusable."
+      },
+      {
+        "id": "stop-before-patch",
+        "action": "Stop at a plan artifact. Do not apply patches, create branches, push, merge, or open PRs.",
+        "output": "Human review remains required before v2 patching."
+      }
+    ],
+    "patchIntent": {
+      "id": "run-v2-target-selection-improvement",
+      "title": "Improve Hermes Agentic Run v2 Target Selection",
+      "summary": "Use completed run history, selector output, and Sentra ledger entries to pick a concrete next patch target before any source patch is generated.",
+      "proposedNextArtifact": "reports/agentic-workflow/run-v2/hermes-agentic-run-v2-patch-intent-v7.1.json"
+    },
+    "validationCommands": [
+      "npm run hermes:agentic-run-v2-target:v6.9:gate",
+      "npm run hermes:agentic-next-run:v6.8:gate",
+      "npm run hermes:agentic-run-index:v6.7:gate",
+      "npm run check",
+      "npm run mastra:check"
+    ],
+    "approvalRequiredBeforePatch": true
+  },
+  "context": {
+    "contractStatus": "contracted",
+    "selectorChoice": "agentic-next-run",
+    "runIndexStatus": "complete",
+    "runIndexState": "completed-and-recorded",
+    "ledgerEntries": 1
+  },
+  "safetyBoundary": {
+    "planningOnly": true,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v2-target:v6.9:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-next-run:v6.8:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-index:v6.7:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusPlanned": true,
+    "contractValid": true,
+    "selectorChoseNextRun": true,
+    "sourceRunComplete": true,
+    "ledgerHasEntry": true,
+    "validationRan": true,
+    "validationsPassed": true,
+    "planningOnly": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true,
+    "humanApprovalRequiredBeforePatch": true
+  },
+  "notes": [
+    "This begins Hermes agentic run v2 without applying any source patch.",
+    "The next artifact should be a v7.1 patch intent, not a patch apply.",
+    "The run remains bounded by the v6.9 target contract."
+  ]
+}
