@@ -1,0 +1,102 @@
+{
+  "runtime": "sentra-weekly-review-v1",
+  "generatedAt": "2026-06-06T04:40:38.972Z",
+  "period": {
+    "label": "current-operating-cycle",
+    "source": "sentra/ledger/events.jsonl"
+  },
+  "status": "complete",
+  "summary": "Sentra generated operating context, Hermes consumed the promotion input, a promotion decision was produced, and the operating ledger linked the cycle artifacts.",
+  "evidence": {
+    "snapshot": {
+      "runtime": "sentra-context-generator-v1",
+      "activeProjects": 1,
+      "topPriority": "Sentra Context Generator v1"
+    },
+    "promotion": {
+      "runtime": "hermes-promotion-workflow-v1",
+      "status": "promoted",
+      "recommendation": "Hermes Idea Recommendation Workflow",
+      "score": 19
+    },
+    "ledger": {
+      "runtime": "sentra-operating-ledger-v1",
+      "eventCount": 3,
+      "latestEvent": "sentra.context.v1"
+    }
+  },
+  "outcomes": [
+    {
+      "id": "sentra-context-loop",
+      "status": "complete",
+      "summary": "Sentra context now produces a snapshot and promotion input from projects, decisions, reviews, and priorities."
+    },
+    {
+      "id": "hermes-promotion-loop",
+      "status": "complete",
+      "summary": "Hermes promotion workflow consumed Sentra input and produced auditable promotion artifacts."
+    },
+    {
+      "id": "operating-ledger",
+      "status": "complete",
+      "summary": "Sentra ledger links operating events to snapshot and promotion artifacts."
+    }
+  ],
+  "risks": [
+    {
+      "id": "risk-1",
+      "status": "watch",
+      "summary": "Overbuilding qualification instead of operating the loop"
+    },
+    {
+      "id": "risk-2",
+      "status": "watch",
+      "summary": "Letting framework logic absorb Hermes domain decisions"
+    }
+  ],
+  "nextPriorities": [
+    {
+      "id": "promotion-history-ledger",
+      "rank": 1,
+      "title": "Promotion History Ledger",
+      "why": "Promotion decisions should accumulate as a durable, queryable operating history.",
+      "desiredOutcome": "Append each Hermes promotion result into a promotion history ledger with status, score, reviewer, and linked artifacts."
+    },
+    {
+      "id": "multi-project-prioritization",
+      "rank": 2,
+      "title": "Multi-project Prioritization",
+      "why": "Sentra should choose between multiple active projects instead of only operating Hermes Mastra Lab.",
+      "desiredOutcome": "Rank active projects and generate promotion inputs from the highest-value project context."
+    },
+    {
+      "id": "weekly-review-feedback",
+      "rank": 3,
+      "title": "Weekly Review Feedback",
+      "why": "Weekly reviews should update priorities and stale risks instead of only reporting them.",
+      "desiredOutcome": "Convert review outcomes into proposed updates for sentra/priorities/current.json."
+    }
+  ],
+  "ledgerEvents": [
+    {
+      "index": 1,
+      "type": "repo.initialized",
+      "summary": "Initialized Hermes Mastra Lab."
+    },
+    {
+      "index": 2,
+      "type": "mastra.promoted",
+      "summary": "Mastra promoted for controlled Hermes orchestration use."
+    },
+    {
+      "index": 3,
+      "type": "sentra.context.v1",
+      "summary": "Sentra context generator v1 created projects, decisions, reviews, priorities, snapshot, and promotion input."
+    }
+  ],
+  "notes": [
+    "This is the first Sentra weekly review generated from operating artifacts.",
+    "It closes the loop from ledger to review.",
+    "The next step is feeding review recommendations back into priorities."
+  ]
+}

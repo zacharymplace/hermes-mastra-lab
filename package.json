@@ -72,7 +72,10 @@
     "sentra:context:check": "npm run sentra:context && npm run sentra:context:gate",
     "sentra:ledger": "tsx scripts/write-sentra-ledger-report.ts",
     "sentra:ledger:gate": "tsx evaluations/sentra-ledger-gate.ts",
-    "sentra:ledger:check": "npm run sentra:ledger && npm run sentra:ledger:gate"
+    "sentra:ledger:check": "npm run sentra:ledger && npm run sentra:ledger:gate",
+    "sentra:weekly-review": "tsx scripts/write-sentra-weekly-review.ts",
+    "sentra:weekly-review:gate": "tsx evaluations/sentra-weekly-review-gate.ts",
+    "sentra:weekly-review:check": "npm run sentra:weekly-review && npm run sentra:weekly-review:gate"
   },
   "keywords": [],
   "author": "",
