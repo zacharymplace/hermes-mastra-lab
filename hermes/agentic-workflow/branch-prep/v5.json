@@ -1,0 +1,71 @@
+{
+  "runtime": "hermes-agentic-branch-prepare-v5",
+  "generatedAt": "2026-06-06T05:57:12.932Z",
+  "status": "ready-for-human-review",
+  "inputArtifacts": [
+    "reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4-report.json",
+    "hermes/agentic-workflow/approvals/branch-prepare-v5.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/branch-prep/v5.json",
+    "reports/agentic-workflow/branch-prep/hermes-agentic-branch-prepare-v5.json",
+    "reports/agentic-workflow/branch-prep/hermes-agentic-branch-prepare-v5.md"
+  ],
+  "approval": {
+    "approved": true,
+    "reviewer": "external-human-reviewer",
+    "reason": "Approve local branch preparation for Hermes Agentic Branch Prepare v5. No push or PR creation is authorized."
+  },
+  "branch": {
+    "requested": "hermes/agentic-pr-draft-v4",
+    "before": "main",
+    "after": "hermes/agentic-pr-draft-v4",
+    "existedBefore": false,
+    "command": "git switch -c hermes/agentic-pr-draft-v4",
+    "prepared": true
+  },
+  "gitStatus": {
+    "before": "## main...origin/main\n M hermes/agentic-workflow/executions/latest.json\n M hermes/agentic-workflow/pr-drafts/v4.json\n M hermes/idea-recommendation.json\n M hermes/idea-recommendation.md\n M package.json\n M reports/agentic-workflow/hermes-agentic-execution-report.json\n M reports/agentic-workflow/hermes-agentic-execution-report.md\n M reports/agentic-workflow/hermes-agentic-execution-v2.json\n M reports/agentic-workflow/hermes-agentic-execution-v2.md\n M reports/agentic-workflow/hermes-agentic-patch-apply-v3.json\n M reports/agentic-workflow/hermes-agentic-patch-apply-v3.md\n M reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4-report.json\n M reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4-report.md\n M reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4.json\n M reports/priorities/sentra-project-prioritization.json\n M reports/priorities/sentra-project-prioritization.md\n M sentra/promotion-input.json\n M sentra/snapshot.json\n?? evaluations/hermes-agentic-branch-prepare-v5-gate.ts\n?? hermes/agentic-workflow/approvals/branch-prepare-v5.example.json\n?? hermes/agentic-workflow/approvals/branch-prepare-v5.json\n?? hermes/agentic-workflow/approvals/patch-apply-v3.json\n?? scripts/run-hermes-agentic-branch-prepare-v5.ts\n",
+    "after": "## hermes/agentic-pr-draft-v4\n M hermes/agentic-workflow/executions/latest.json\n M hermes/agentic-workflow/pr-drafts/v4.json\n M hermes/idea-recommendation.json\n M hermes/idea-recommendation.md\n M package.json\n M reports/agentic-workflow/hermes-agentic-execution-report.json\n M reports/agentic-workflow/hermes-agentic-execution-report.md\n M reports/agentic-workflow/hermes-agentic-execution-v2.json\n M reports/agentic-workflow/hermes-agentic-execution-v2.md\n M reports/agentic-workflow/hermes-agentic-patch-apply-v3.json\n M reports/agentic-workflow/hermes-agentic-patch-apply-v3.md\n M reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4-report.json\n M reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4-report.md\n M reports/agentic-workflow/pr-drafts/hermes-agentic-pr-draft-v4.json\n M reports/priorities/sentra-project-prioritization.json\n M reports/priorities/sentra-project-prioritization.md\n M sentra/promotion-input.json\n M sentra/snapshot.json\n?? evaluations/hermes-agentic-branch-prepare-v5-gate.ts\n?? hermes/agentic-workflow/approvals/branch-prepare-v5.example.json\n?? hermes/agentic-workflow/approvals/branch-prepare-v5.json\n?? hermes/agentic-workflow/approvals/patch-apply-v3.json\n?? scripts/run-hermes-agentic-branch-prepare-v5.ts\n"
+  },
+  "validationResults": [
+    {
+      "command": "npm run check",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 check\n> tsc --noEmit && npm run experiment:idea && npm run experiment:report && npm run promotion:gate && npm run doctor\n\n\n> hermes-mastra-lab@1.0.0 experiment:idea\n> tsx workflows/idea-recommendation.ts\n\n{\n  \"generatedAt\": \"2026-06-06T05:57:11.920Z\",\n  \"goal\": \"Generate the next best Hermes push\",\n  \"recommendation\": {\n    \"title\": \"Hermes Idea Recommendation Workflow\",\n    \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n    \"rationale\": [\n      \"Proves the orchestration shape first\",\n      \"Creates a baseline for later Mastra comparison\",\n      \"Keeps the experiment auditable\"\n    ],\n    \"risks\": [\n      \"May be too deterministic to test real agent behavior\"\n    ],\n    \"verdict\": \"advance\",\n    \"score\": 19,\n    \"scoring\": {\n      \"shipSize\": 5,\n      \"strategicFit\": 5,\n      \"learningValue\": 4,\n      \"reversibility\": 5\n    }\n  },\n  \"candidates\": [\n    {\n      \"title\": \"Hermes Idea Recommendation Workflow\",\n      \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n      \"rationale\": [\n        \"Proves the orchestration shape first\",\n        \"Creates a baseline for later Mastra comparison\",\n        \"Keeps the experiment auditable\"\n      ],\n      \"risks\": [\n        \"May be too deterministic to test real agent behavior\"\n      ],\n      \"verdict\": \"advance\",\n      \"score\": 19,\n      \"scoring\": {\n        \"shipSize\": 5,\n        \"strategicFit\": 5,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Mastra Runtime Adapter Spike\",\n      \"summary\": \"Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.\",\n      \"rationale\": [\n        \"Reduces framework lock-in\",\n        \"Keeps Hermes portable\",\n        \"Creates a clear comparison point\"\n      ],\n      \"risks\": [\n        \"May add abstraction before the runtime is understood\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 17,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 5,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Langfuse Trace Contract\",\n      \"summary\": \"Define the minimum trace fields Hermes must emit regardless of runtime.\",\n      \"rationale\": [\n        \"Preserves observability\",\n        \"Makes runtime swaps measurable\",\n        \"Supports regression review\"\n      ],\n      \"risks\": [\n        \"May be premature before workflow behavior exists\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 16,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    }\n  ]\n}\n\n> hermes-mastra-lab@1.0.0 experiment:report\n> tsx workflows/write-experiment-report.ts\n\nWrote /Users/zplace/dev/hermes-mastra-lab/hermes/idea-recommendation.md\n\n> hermes-mastra-lab@1.0.0 promotion:gate\n> tsx evaluations/promotion-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"has-recommendation\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"score-threshold\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"verdict-advance\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"has-risks\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"has-candidate-comparison\",\n      \"pass\": true\n    }\n  ]\n}\n\n> hermes-mastra-lab@1.0.0 doctor\n> tsx evaluations/doctor.ts\n\n{\n  \"name\": \"hermes-mastra-lab\",\n  \"status\": \"healthy\",\n  \"requiredFiles\": 10,\n  \"missing\": []\n}\n"
+    },
+    {
+      "command": "npm run mastra:check",
+      "passed": true,
+      "output": "\n> hermes-mastra-lab@1.0.0 mastra:check\n> npm run mastra:spike && npm run mastra:gate\n\n\n> hermes-mastra-lab@1.0.0 mastra:spike\n> tsx adapters/mastra/run-spike.ts\n\n{\n  \"runtime\": \"mastra-adapter-spike\",\n  \"mode\": \"local-deterministic\",\n  \"recommendation\": {\n    \"title\": \"Hermes Idea Recommendation Workflow\",\n    \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n    \"rationale\": [\n      \"Proves the orchestration shape first\",\n      \"Creates a baseline for later Mastra comparison\",\n      \"Keeps the experiment auditable\"\n    ],\n    \"risks\": [\n      \"May be too deterministic to test real agent behavior\"\n    ],\n    \"verdict\": \"advance\",\n    \"score\": 19,\n    \"scoring\": {\n      \"shipSize\": 5,\n      \"strategicFit\": 5,\n      \"learningValue\": 4,\n      \"reversibility\": 5\n    }\n  },\n  \"candidates\": [\n    {\n      \"title\": \"Hermes Idea Recommendation Workflow\",\n      \"summary\": \"Create a deterministic idea generation, critique, scoring, and recommendation workflow before adding live LLM calls.\",\n      \"rationale\": [\n        \"Proves the orchestration shape first\",\n        \"Creates a baseline for later Mastra comparison\",\n        \"Keeps the experiment auditable\"\n      ],\n      \"risks\": [\n        \"May be too deterministic to test real agent behavior\"\n      ],\n      \"verdict\": \"advance\",\n      \"score\": 19,\n      \"scoring\": {\n        \"shipSize\": 5,\n        \"strategicFit\": 5,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Mastra Runtime Adapter Spike\",\n      \"summary\": \"Wrap Hermes agents behind a thin runtime adapter so Mastra can be tested without contaminating core logic.\",\n      \"rationale\": [\n        \"Reduces framework lock-in\",\n        \"Keeps Hermes portable\",\n        \"Creates a clear comparison point\"\n      ],\n      \"risks\": [\n        \"May add abstraction before the runtime is understood\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 17,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 5,\n        \"reversibility\": 5\n      }\n    },\n    {\n      \"title\": \"Langfuse Trace Contract\",\n      \"summary\": \"Define the minimum trace fields Hermes must emit regardless of runtime.\",\n      \"rationale\": [\n        \"Preserves observability\",\n        \"Makes runtime swaps measurable\",\n        \"Supports regression review\"\n      ],\n      \"risks\": [\n        \"May be premature before workflow behavior exists\"\n      ],\n      \"verdict\": \"hold\",\n      \"score\": 16,\n      \"scoring\": {\n        \"shipSize\": 3,\n        \"strategicFit\": 4,\n        \"learningValue\": 4,\n        \"reversibility\": 5\n      }\n    }\n  ],\n  \"notes\": [\n    \"This is the adapter boundary Mastra must satisfy.\",\n    \"No live LLM calls are used yet.\",\n    \"Hermes core logic remains framework-independent.\"\n  ]\n}\n\n> hermes-mastra-lab@1.0.0 mastra:gate\n> tsx evaluations/mastra-adapter-gate.ts\n\n{\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"id\": \"runtime-labeled\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"deterministic-mode\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"has-recommendation\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"candidate-count\",\n      \"pass\": true\n    },\n    {\n      \"id\": \"framework-independent-note\",\n      \"pass\": true\n    }\n  ]\n}\n"
+    }
+  ],
+  "safetyBoundary": {
+    "localBranchOnly": true,
+    "pushed": false,
+    "prOpened": false,
+    "autoMerge": false,
+    "requiresHumanApproval": true
+  },
+  "checks": {
+    "approvalGranted": true,
+    "reviewerCaptured": true,
+    "reasonCaptured": true,
+    "sourcePrDraftReady": true,
+    "branchPrepared": true,
+    "branchNameMatches": true,
+    "validationRan": true,
+    "validationsPassed": true,
+    "localBranchOnly": true,
+    "notPushed": true,
+    "prNotOpened": true,
+    "noAutoMerge": true,
+    "humanApprovalRequired": true
+  },
+  "notes": [
+    "This creates or switches to a local branch after explicit approval.",
+    "It does not push the branch.",
+    "It does not create a GitHub PR.",
+    "The next version can prepare a push command or open a draft PR only after explicit approval."
+  ]
+}

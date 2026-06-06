@@ -117,7 +117,10 @@
     "hermes:agentic-patch:v3:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-patch:v3:gate",
     "hermes:agentic-pr-draft:v4": "tsx scripts/run-hermes-agentic-pr-draft-v4.ts",
     "hermes:agentic-pr-draft:v4:gate": "tsx evaluations/hermes-agentic-pr-draft-v4-gate.ts",
-    "hermes:agentic-pr-draft:v4:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-pr-draft:v4 && npm run hermes:agentic-pr-draft:v4:gate"
+    "hermes:agentic-pr-draft:v4:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-pr-draft:v4 && npm run hermes:agentic-pr-draft:v4:gate",
+    "hermes:agentic-branch:v5": "tsx scripts/run-hermes-agentic-branch-prepare-v5.ts",
+    "hermes:agentic-branch:v5:gate": "tsx evaluations/hermes-agentic-branch-prepare-v5-gate.ts",
+    "hermes:agentic-branch:v5:check": "npm run sentra:project-prioritization && npm run sentra:context && npm run hermes:agentic-workflow && npm run hermes:agentic-execution:v2 && npm run hermes:agentic-patch:v3 && npm run hermes:agentic-pr-draft:v4 && npm run hermes:agentic-branch:v5 && npm run hermes:agentic-branch:v5:gate"
   },
   "keywords": [],
   "author": "",
