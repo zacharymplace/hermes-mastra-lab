@@ -1,10 +1,10 @@
 {
   "runtime": "langfuse-qualification-local-contract",
   "mode": "local-deterministic-no-network",
-  "traceId": "hermes-mastra-1780714662234",
+  "traceId": "hermes-mastra-1780714803975",
   "events": [
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "core",
       "name": "Hermes core recommendation",
       "inputArtifact": "sentra/sample-input.json",
@@ -15,7 +15,7 @@
       }
     },
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "native",
       "name": "Mastra native workflow",
       "inputArtifact": "sentra/sample-input.json",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "parallel",
       "name": "Mastra parallel critique",
       "outputArtifact": "hermes/mastra-native-parallel-critique.json",
@@ -36,7 +36,7 @@
       }
     },
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "human-review",
       "name": "Mastra human review",
       "outputArtifact": "hermes/mastra-native-human-review.json",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "suspend",
       "name": "Suspend packet",
       "outputArtifact": "hermes/mastra-suspend-packet.json",
@@ -56,7 +56,7 @@
       }
     },
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "resume",
       "name": "Resume result",
       "outputArtifact": "hermes/mastra-resume-result.json",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "traceId": "hermes-mastra-1780714662234",
+      "traceId": "hermes-mastra-1780714803975",
       "stage": "qualification",
       "name": "Mastra qualification report",
       "outputArtifact": "reports/mastra-qualification.json",

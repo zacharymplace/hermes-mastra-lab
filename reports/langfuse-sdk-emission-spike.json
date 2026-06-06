@@ -1,0 +1,14 @@
+{
+  "runtime": "langfuse-sdk-emission-spike",
+  "mode": "dry-run",
+  "traceId": "hermes-mastra-1780714803975",
+  "attemptedEvents": 7,
+  "emittedEvents": 0,
+  "skippedReason": "Missing LANGFUSE_PUBLIC_KEY and/or LANGFUSE_SECRET_KEY. No network emission attempted.",
+  "artifactsLinked": true,
+  "notes": [
+    "Dry-run mode validates the SDK emission payload without sending network traces.",
+    "Set LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY to attempt real SDK emission.",
+    "LANGFUSE_BASE_URL may be set for self-hosted Langfuse."
+  ]
+}
