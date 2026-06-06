@@ -39,7 +39,9 @@
     "mastra:promotion:check": "npm run langfuse:qualification:check && npm run failure:qualification:check && npm run mastra:promotion && npm run mastra:promotion:gate",
     "langfuse:sdk-spike": "tsx scripts/run-langfuse-sdk-spike.ts",
     "langfuse:sdk-spike:gate": "tsx evaluations/langfuse-sdk-spike-gate.ts",
-    "langfuse:sdk-spike:check": "npm run langfuse:qualification:check && npm run langfuse:sdk-spike && npm run langfuse:sdk-spike:gate"
+    "langfuse:sdk-spike:check": "npm run langfuse:qualification:check && npm run langfuse:sdk-spike && npm run langfuse:sdk-spike:gate",
+    "langfuse:real-emission:verify": "tsx scripts/verify-real-langfuse-emission.ts",
+    "langfuse:real-emission:check": "npm run langfuse:sdk-spike && npm run langfuse:real-emission:verify"
   },
   "keywords": [],
   "author": "",

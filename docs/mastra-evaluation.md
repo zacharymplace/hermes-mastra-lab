@@ -39,3 +39,17 @@ Do not promote Mastra if it creates:
 ## API exploration
 
 See `docs/mastra-api-exploration.md` before wiring framework code.
+
+## Real Langfuse emission verification
+
+Use this only with real Langfuse credentials available locally:
+
+```bash
+export LANGFUSE_PUBLIC_KEY="..."
+export LANGFUSE_SECRET_KEY="..."
+export LANGFUSE_BASE_URL="https://cloud.langfuse.com"
+
+npm run langfuse:real-emission:check
+```
+
+Passing this command only proves SDK emission completed locally. Manual verification in the Langfuse UI is still required before closing the `real-langfuse-sdk` promotion blocker.

@@ -1,7 +1,7 @@
 {
   "runtime": "langfuse-sdk-emission-spike",
   "mode": "dry-run",
-  "traceId": "hermes-mastra-1780714803975",
+  "traceId": "hermes-mastra-1780714986964",
   "attemptedEvents": 7,
   "emittedEvents": 0,
   "skippedReason": "Missing LANGFUSE_PUBLIC_KEY and/or LANGFUSE_SECRET_KEY. No network emission attempted.",
