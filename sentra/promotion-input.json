@@ -1,24 +1,24 @@
 {
   "runtime": "sentra-promotion-input-v1",
-  "generatedAt": "2026-06-06T04:30:51.532Z",
-  "sourceArtifact": "sentra/promotions/current.json",
-  "goal": "Generate the next best Hermes push",
+  "generatedAt": "2026-06-06T04:34:21.580Z",
+  "sourceArtifact": "sentra/snapshot.json",
+  "goal": "Sentra Context Generator v1",
   "constraints": [
-    "Keep Hermes domain logic framework-independent",
-    "Use Mastra only for qualified orchestration boundaries",
-    "Preserve artifact-backed promotion decisions",
-    "Require external review before promotion"
+    "Use current Sentra operating state",
+    "Preserve Hermes domain logic outside framework code",
+    "Keep promotion artifact-backed",
+    "Require explicit review for promotion"
   ],
   "context": [
-    "Mastra promotion report v3 qualified controlled use",
-    "Langfuse OTEL visibility is verified",
-    "Persistence-backed suspend and resume is verified",
-    "External human input is verified",
-    "Failure recovery is verified"
+    "Project: Hermes Mastra Lab — Qualify Mastra as a Hermes orchestration runtime with Langfuse observability.",
+    "Decision: Promote Mastra for controlled Hermes orchestration use.",
+    "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
+    "Priority 1: Sentra Context Generator v1 — Hermes should be driven by Sentra operating state instead of static samples.",
+    "Priority 2: Hermes Operating Loop — Use the qualified promotion workflow as a repeatable decision loop."
   ],
   "notes": [
-    "This is the Sentra-authored input artifact for Hermes promotion.",
-    "Hermes promotion workflow should read this artifact instead of static sample input.",
-    "Sentra owns current operating context; Hermes owns recommendation and promotion."
+    "This is generated from Sentra operating state.",
+    "Sentra owns current operating context; Hermes owns recommendation and promotion.",
+    "Promotion input should not be edited directly unless debugging."
   ]
 }

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "promotion-v3-review",
+    "status": "complete",
+    "summary": "Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
+    "followUp": "Build Sentra context generation so Hermes consumes real operating state."
+  }
+]

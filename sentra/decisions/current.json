@@ -1,0 +1,13 @@
+[
+  {
+    "id": "mastra-controlled-use",
+    "status": "accepted",
+    "decision": "Promote Mastra for controlled Hermes orchestration use.",
+    "rationale": "Promotion Report v3 scored 90% and closed major observability, persistence, review, and recovery blockers.",
+    "guardrails": [
+      "Hermes domain logic remains framework-independent",
+      "Mastra orchestrates but does not decide",
+      "All promotions remain artifact-backed"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "hermes-mastra-lab",
+    "name": "Hermes Mastra Lab",
+    "status": "active",
+    "priority": "high",
+    "summary": "Qualify Mastra as a Hermes orchestration runtime with Langfuse observability.",
+    "nextAction": "Move from qualification into Sentra-fed Hermes operation.",
+    "risks": [
+      "Overbuilding qualification instead of operating the loop",
+      "Letting framework logic absorb Hermes domain decisions"
+    ]
+  }
+]

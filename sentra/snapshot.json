@@ -1,0 +1,82 @@
+{
+  "runtime": "sentra-context-generator-v1",
+  "generatedAt": "2026-06-06T04:34:21.580Z",
+  "activeProjects": [
+    {
+      "id": "hermes-mastra-lab",
+      "name": "Hermes Mastra Lab",
+      "status": "active",
+      "priority": "high",
+      "summary": "Qualify Mastra as a Hermes orchestration runtime with Langfuse observability.",
+      "nextAction": "Move from qualification into Sentra-fed Hermes operation.",
+      "risks": [
+        "Overbuilding qualification instead of operating the loop",
+        "Letting framework logic absorb Hermes domain decisions"
+      ]
+    }
+  ],
+  "acceptedDecisions": [
+    {
+      "id": "mastra-controlled-use",
+      "status": "accepted",
+      "decision": "Promote Mastra for controlled Hermes orchestration use.",
+      "rationale": "Promotion Report v3 scored 90% and closed major observability, persistence, review, and recovery blockers.",
+      "guardrails": [
+        "Hermes domain logic remains framework-independent",
+        "Mastra orchestrates but does not decide",
+        "All promotions remain artifact-backed"
+      ]
+    }
+  ],
+  "recentReviews": [
+    {
+      "id": "promotion-v3-review",
+      "status": "complete",
+      "summary": "Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
+      "followUp": "Build Sentra context generation so Hermes consumes real operating state."
+    }
+  ],
+  "priorities": [
+    {
+      "id": "sentra-context-generator",
+      "rank": 1,
+      "title": "Sentra Context Generator v1",
+      "why": "Hermes should be driven by Sentra operating state instead of static samples.",
+      "desiredOutcome": "Generate sentra/snapshot.json and sentra/promotion-input.json from projects, decisions, reviews, and priorities."
+    },
+    {
+      "id": "hermes-operating-loop",
+      "rank": 2,
+      "title": "Hermes Operating Loop",
+      "why": "Use the qualified promotion workflow as a repeatable decision loop.",
+      "desiredOutcome": "Run promotion workflow from generated Sentra context and produce auditable reports."
+    }
+  ],
+  "topPriority": {
+    "id": "sentra-context-generator",
+    "rank": 1,
+    "title": "Sentra Context Generator v1",
+    "why": "Hermes should be driven by Sentra operating state instead of static samples.",
+    "desiredOutcome": "Generate sentra/snapshot.json and sentra/promotion-input.json from projects, decisions, reviews, and priorities."
+  },
+  "staleRisks": [
+    "Overbuilding qualification instead of operating the loop",
+    "Letting framework logic absorb Hermes domain decisions"
+  ],
+  "hermesPrompt": {
+    "goal": "Sentra Context Generator v1",
+    "constraints": [
+      "Use current Sentra operating state",
+      "Preserve Hermes domain logic outside framework code",
+      "Keep promotion artifact-backed",
+      "Require explicit review for promotion"
+    ],
+    "context": [
+      "Project: Hermes Mastra Lab — Qualify Mastra as a Hermes orchestration runtime with Langfuse observability.",
+      "Decision: Promote Mastra for controlled Hermes orchestration use.",
+      "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
+      "Priority 1: Sentra Context Generator v1 — Hermes should be driven by Sentra operating state instead of static samples.",
+      "Priority 2: Hermes Operating Loop — Use the qualified promotion workflow as a repeatable decision loop."
+    ]
+  }
+}

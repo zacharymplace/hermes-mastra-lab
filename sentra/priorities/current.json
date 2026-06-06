@@ -1,0 +1,16 @@
+[
+  {
+    "id": "sentra-context-generator",
+    "rank": 1,
+    "title": "Sentra Context Generator v1",
+    "why": "Hermes should be driven by Sentra operating state instead of static samples.",
+    "desiredOutcome": "Generate sentra/snapshot.json and sentra/promotion-input.json from projects, decisions, reviews, and priorities."
+  },
+  {
+    "id": "hermes-operating-loop",
+    "rank": 2,
+    "title": "Hermes Operating Loop",
+    "why": "Use the qualified promotion workflow as a repeatable decision loop.",
+    "desiredOutcome": "Run promotion workflow from generated Sentra context and produce auditable reports."
+  }
+]

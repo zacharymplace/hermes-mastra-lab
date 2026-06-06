@@ -66,7 +66,10 @@
     "hermes:promotion:v1:check": "npm run hermes:promotion:v1 && npm run hermes:promotion:v1:gate",
     "sentra:promotion-input": "tsx scripts/write-sentra-promotion-input.ts",
     "sentra:promotion-input:gate": "tsx evaluations/sentra-promotion-input-gate.ts",
-    "sentra:promotion-input:check": "npm run sentra:promotion-input && npm run sentra:promotion-input:gate"
+    "sentra:promotion-input:check": "npm run sentra:promotion-input && npm run sentra:promotion-input:gate",
+    "sentra:context": "tsx scripts/write-sentra-context.ts",
+    "sentra:context:gate": "tsx evaluations/sentra-context-gate.ts",
+    "sentra:context:check": "npm run sentra:context && npm run sentra:context:gate"
   },
   "keywords": [],
   "author": "",
