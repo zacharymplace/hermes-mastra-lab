@@ -1,0 +1,130 @@
+{
+  "runtime": "hermes-agentic-next-run-selector-v6.8",
+  "generatedAt": "2026-06-06T06:40:37.972Z",
+  "status": "selected",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-index/hermes-agentic-run-index-v6.7.json",
+    "sentra/ledger/post-merge-validation.json",
+    "reports/priorities/sentra-project-prioritization.json"
+  ],
+  "context": {
+    "runIndexStatus": "complete",
+    "runState": "completed-and-recorded",
+    "latestLedgerEntry": "pr-1-post-merge-v6.6",
+    "priorSelectedProject": "hermes-agentic-workflow"
+  },
+  "selected": {
+    "id": "agentic-next-run",
+    "title": "Start Next Agentic Run",
+    "summary": "Use the completed v1-v6.7 run index to start a second controlled agentic workflow cycle.",
+    "signals": {
+      "strategicFit": 5,
+      "learningValue": 5,
+      "operatingLeverage": 5,
+      "riskReduction": 4,
+      "autonomyLeverage": 5,
+      "effort": 3
+    },
+    "risks": [
+      "Could repeat the same artifact loop without adding autonomy",
+      "Needs clearer target selection before applying more repo changes"
+    ],
+    "scoring": {
+      "gross": 87,
+      "effortPenalty": 6,
+      "final": 81
+    },
+    "score": 81
+  },
+  "rankedCandidates": [
+    {
+      "id": "agentic-next-run",
+      "title": "Start Next Agentic Run",
+      "summary": "Use the completed v1-v6.7 run index to start a second controlled agentic workflow cycle.",
+      "signals": {
+        "strategicFit": 5,
+        "learningValue": 5,
+        "operatingLeverage": 5,
+        "riskReduction": 4,
+        "autonomyLeverage": 5,
+        "effort": 3
+      },
+      "risks": [
+        "Could repeat the same artifact loop without adding autonomy",
+        "Needs clearer target selection before applying more repo changes"
+      ],
+      "scoring": {
+        "gross": 87,
+        "effortPenalty": 6,
+        "final": 81
+      },
+      "score": 81
+    },
+    {
+      "id": "agentic-loop-improvement",
+      "title": "Improve Current Agentic Loop",
+      "summary": "Tighten the current loop by adding stronger target selection, stale artifact cleanup, and generated-file policy.",
+      "signals": {
+        "strategicFit": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 5,
+        "autonomyLeverage": 4,
+        "effort": 2
+      },
+      "risks": [
+        "May over-polish the workflow before testing another real run"
+      ],
+      "scoring": {
+        "gross": 83,
+        "effortPenalty": 4,
+        "final": 79
+      },
+      "score": 79
+    },
+    {
+      "id": "sentra-os-extraction",
+      "title": "Extract Sentra OS",
+      "summary": "Begin separating Sentra from the lab into a portable operating layer with projects, priorities, ledgers, reviews, and context.",
+      "signals": {
+        "strategicFit": 5,
+        "learningValue": 4,
+        "operatingLeverage": 5,
+        "riskReduction": 4,
+        "autonomyLeverage": 4,
+        "effort": 4
+      },
+      "risks": [
+        "Extraction before the second agentic run may freeze immature contracts",
+        "Could split attention across repos too early"
+      ],
+      "scoring": {
+        "gross": 80,
+        "effortPenalty": 8,
+        "final": 72
+      },
+      "score": 72
+    }
+  ],
+  "recommendation": {
+    "nextAction": "Create a second controlled agentic run using the v6.7 run index as completed operating context.",
+    "rationale": [
+      "The v1-v6.7 chain is complete and recorded.",
+      "The system now needs either another run or a tighter loop before extraction.",
+      "The highest score should drive the next terminal push."
+    ]
+  },
+  "checks": {
+    "runtimeLabeled": true,
+    "runIndexComplete": true,
+    "ledgerHasEntry": true,
+    "candidatesRanked": true,
+    "selectedCandidatePresent": true,
+    "recommendationPresent": true
+  },
+  "notes": [
+    "This selector turns the completed agentic run into the next operating decision.",
+    "It prevents Hermes from blindly continuing the same sequence.",
+    "It creates a deterministic bridge between completed work and the next run."
+  ]
+}
