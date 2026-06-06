@@ -1,0 +1,247 @@
+{
+  "runtime": "hermes-agentic-run-v3-quality-gate-enforcement-implementation-v9.1",
+  "generatedAt": "2026-06-06T09:49:44.630Z",
+  "status": "implemented",
+  "inputArtifacts": [
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-intent-v9.0.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-plan-v8.9.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-adoption-report-v8.8.json"
+  ],
+  "outputArtifacts": [
+    "hermes/agentic-workflow/run-v3/quality-gate-enforcement-implementation/v9.1.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-implementation-v9.1.json",
+    "reports/agentic-workflow/run-v3/hermes-agentic-run-v3-quality-gate-enforcement-implementation-v9.1.md"
+  ],
+  "run": {
+    "id": "hermes-agentic-run-v3",
+    "selectedTarget": "loop-quality-hardening",
+    "sourceEnforcementIntent": "hermes-agentic-run-v3-quality-gate-enforcement-intent-v9.0",
+    "sourceEnforcementPlan": "hermes-agentic-run-v3-quality-gate-enforcement-plan-v8.9",
+    "sourceAdoptionReport": "hermes-agentic-run-v3-quality-gate-adoption-report-v8.8"
+  },
+  "enforcementImplementation": {
+    "id": "run-v3-quality-gate-enforcement-implementation-v9.1",
+    "title": "Hermes Agentic Loop Quality Gate Enforcement Implementation",
+    "summary": "Implements the reusable qualityGate artifact shape and enforcement mapping future Hermes agentic workflow phases must use before claiming readiness.",
+    "qualityGateShape": {
+      "status": "required",
+      "requiredChecks": [
+        "generated-artifact-drift",
+        "stale-timestamp-churn",
+        "no-op-patch-claims",
+        "human-boundary-preservation",
+        "declared-target-only-changes"
+      ],
+      "results": [
+        {
+          "id": "generated-artifact-drift",
+          "required": true,
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "id": "stale-timestamp-churn",
+          "required": true,
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "id": "no-op-patch-claims",
+          "required": true,
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "id": "human-boundary-preservation",
+          "required": true,
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "id": "declared-target-only-changes",
+          "required": true,
+          "passed": null,
+          "evidence": null
+        }
+      ],
+      "generatedArtifactDrift": {
+        "status": "required",
+        "classification": null,
+        "driftPaths": []
+      },
+      "timestampChurn": {
+        "status": "required",
+        "classification": null,
+        "timestampOnly": null
+      },
+      "noOpPatchClaims": {
+        "status": "required",
+        "applied": null,
+        "changed": null,
+        "diffOutput": null,
+        "semanticChange": null
+      },
+      "humanBoundaryPreserved": {
+        "status": "required",
+        "branchCreated": false,
+        "pushed": false,
+        "prOpened": false,
+        "merged": false
+      },
+      "declaredTargetOnlyChanges": {
+        "status": "required",
+        "allowedTargets": [],
+        "changedFiles": [],
+        "undeclaredChanges": []
+      },
+      "passed": null
+    },
+    "enforcementPoints": [
+      {
+        "phase": "source-patch-proposal",
+        "requirement": "Declare whether the proposed patch is subject to the loop-quality gate and list expected changed paths."
+      },
+      {
+        "phase": "source-patch-apply",
+        "requirement": "Run or reference the loop-quality gate before reporting ready-for-human-review."
+      },
+      {
+        "phase": "source-patch-validation",
+        "requirement": "Fail validation when gate status is missing, failed, or timestamp/no-op drift is unclassified."
+      },
+      {
+        "phase": "branch-prepare",
+        "requirement": "Confirm generated drift is clean or intentionally declared before preparing a branch."
+      },
+      {
+        "phase": "pr-draft",
+        "requirement": "Include loop-quality gate status in PR draft metadata and validation section."
+      },
+      {
+        "phase": "post-merge-ledger",
+        "requirement": "Record quality gate status with post-merge validation results."
+      },
+      {
+        "phase": "run-index",
+        "requirement": "Expose quality gate status as part of durable run-level state."
+      }
+    ],
+    "enforcementRules": [
+      "Future patch/apply steps must fail closed when quality gate status is absent.",
+      "Patch apply reports must include applied, changed, diffOutput, and semanticChange.",
+      "Timestamp-only changes must be classified as noise unless explicitly justified.",
+      "Generated artifact drift must be committed as declared output or restored before clean-state claims.",
+      "Changed paths must be compared against declared targets before readiness.",
+      "Branch, push, PR creation, and merge remain operator-controlled.",
+      "The enforcement plan is not itself a source patch application."
+    ],
+    "futurePhaseRequirements": [
+      {
+        "phase": "patch-intent",
+        "qualityGateRequired": false,
+        "requirement": "Reference adopted qualityGate rules when applicable."
+      },
+      {
+        "phase": "target-selection",
+        "qualityGateRequired": false,
+        "requirement": "Reference adopted qualityGate rules when applicable."
+      },
+      {
+        "phase": "source-patch-proposal",
+        "qualityGateRequired": false,
+        "requirement": "Declare qualityGate applicability and expected changed paths."
+      },
+      {
+        "phase": "source-patch-apply",
+        "qualityGateRequired": true,
+        "requirement": "Include complete qualityGate status before readiness."
+      },
+      {
+        "phase": "source-patch-validation",
+        "qualityGateRequired": true,
+        "requirement": "Fail closed if qualityGate is missing, failed, or incomplete."
+      },
+      {
+        "phase": "branch-prepare",
+        "qualityGateRequired": true,
+        "requirement": "Confirm generated drift is clean or declared before branch preparation."
+      },
+      {
+        "phase": "pr-draft",
+        "qualityGateRequired": true,
+        "requirement": "Include qualityGate status in PR draft validation metadata."
+      },
+      {
+        "phase": "pr-lifecycle",
+        "qualityGateRequired": false,
+        "requirement": "Reference adopted qualityGate rules when applicable."
+      },
+      {
+        "phase": "post-merge-ledger",
+        "qualityGateRequired": true,
+        "requirement": "Record qualityGate status with post-merge validation."
+      },
+      {
+        "phase": "run-index",
+        "qualityGateRequired": true,
+        "requirement": "Expose qualityGate status in durable run-level state."
+      }
+    ],
+    "failClosedConditions": [
+      "qualityGate is missing when required",
+      "qualityGate.passed is false",
+      "qualityGate.passed is null during validation/readiness",
+      "requiredChecks are missing or incomplete",
+      "timestamp churn is unclassified",
+      "no-op patch fields are missing",
+      "human boundary fields indicate branch, push, PR, or merge action occurred without explicit contract",
+      "changed files include undeclared targets"
+    ]
+  },
+  "safetyBoundary": {
+    "implementationOnly": true,
+    "patchApplied": false,
+    "branchCreated": false,
+    "pushed": false,
+    "merged": false,
+    "prOpened": false
+  },
+  "validationResults": [
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-intent:v9.0:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-enforcement-plan:v8.9:gate",
+      "passed": true
+    },
+    {
+      "command": "npm run hermes:agentic-run-v3-quality-gate-adoption-report:v8.8:gate",
+      "passed": true
+    }
+  ],
+  "checks": {
+    "runtimeLabeled": true,
+    "statusImplemented": true,
+    "enforcementIntentReady": true,
+    "enforcementPlanReady": true,
+    "adoptionReportReady": true,
+    "qualityGateShapeDeclared": true,
+    "requiredChecksCarriedForward": true,
+    "enforcementPointsCarriedForward": true,
+    "enforcementRulesCarriedForward": true,
+    "futurePhaseRequirementsDeclared": true,
+    "failClosedConditionsDeclared": true,
+    "implementationOnly": true,
+    "noPatchApplied": true,
+    "noBranchCreated": true,
+    "noPush": true,
+    "noMerge": true,
+    "noPrOpened": true
+  },
+  "notes": [
+    "This implements the reusable enforcement shape for future quality-gated artifacts.",
+    "It still does not broadly rewrite existing workflow scripts.",
+    "The next safe step is v9.2 enforcement validation or a bounded wiring proposal."
+  ]
+}
