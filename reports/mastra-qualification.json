@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-06-06T02:51:51.393Z",
+  "recommendation": "continue-evaluation",
+  "score": {
+    "total": 20,
+    "max": 30,
+    "percentage": 67
+  },
+  "stages": [
+    {
+      "id": "core",
+      "name": "Hermes Core",
+      "status": "pass",
+      "artifact": "hermes/idea-recommendation.json",
+      "runtime": "plain-typescript",
+      "recommendation": "Hermes Idea Recommendation Workflow"
+    },
+    {
+      "id": "adapter",
+      "name": "Mastra Adapter Boundary",
+      "status": "pass",
+      "artifact": "hermes/mastra-adapter-spike.json",
+      "runtime": "mastra-adapter-spike",
+      "recommendation": "Hermes Idea Recommendation Workflow"
+    },
+    {
+      "id": "native",
+      "name": "Mastra Native Workflow",
+      "status": "pass",
+      "artifact": "hermes/mastra-native-workflow.json",
+      "runtime": "mastra-native-workflow",
+      "recommendation": "Hermes Idea Recommendation Workflow"
+    },
+    {
+      "id": "parallel",
+      "name": "Mastra Parallel Critique",
+      "status": "pass",
+      "artifact": "hermes/mastra-native-parallel-critique.json",
+      "runtime": "mastra-native-parallel-critique",
+      "recommendation": "Hermes Idea Recommendation Workflow",
+      "critiqueLanes": [
+        "strategy",
+        "execution",
+        "architecture"
+      ]
+    },
+    {
+      "id": "human-review",
+      "name": "Mastra Human Review",
+      "status": "pass",
+      "artifact": "hermes/mastra-native-human-review.json",
+      "runtime": "mastra-native-human-review",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "suspend-resume",
+      "name": "Mastra Suspend/Resume Contract",
+      "status": "pass",
+      "artifacts": [
+        "hermes/mastra-suspend-packet.json",
+        "hermes/mastra-resume-result.json"
+      ],
+      "suspendStatus": "suspended",
+      "resumeStatus": "approved"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "clarity",
+      "score": 4,
+      "rationale": "Mastra workflows make multi-step orchestration explicit, but simple deterministic flows remain clearer in plain TypeScript."
+    },
+    {
+      "id": "type-safety",
+      "score": 4,
+      "rationale": "Zod schemas around workflow inputs and outputs improve runtime boundaries while TypeScript still owns domain types."
+    },
+    {
+      "id": "observability-handoff",
+      "score": 2,
+      "rationale": "Artifacts are comparable, but Langfuse or runtime tracing has not been tested yet."
+    },
+    {
+      "id": "human-review-flow",
+      "score": 4,
+      "rationale": "Human review and suspend/resume contracts map well to Hermes promotion governance."
+    },
+    {
+      "id": "retry-error-handling",
+      "score": 1,
+      "rationale": "Retries, failures, and recovery behavior have not been tested yet."
+    },
+    {
+      "id": "workflow-composition",
+      "score": 5,
+      "rationale": "Parallel critique and fan-out/fan-in patterns are stronger candidates for Mastra than plain TypeScript."
+    }
+  ],
+  "nextTests": [
+    "real Mastra suspend/resume API",
+    "failure and retry behavior",
+    "Langfuse trace handoff",
+    "artifact stability across repeated runs",
+    "human decision injected from external input"
+  ],
+  "decisionBoundary": "Mastra should remain a candidate runtime, not the Hermes owner. Hermes domain logic, scoring, promotion criteria, and artifacts should stay framework-independent."
+}
