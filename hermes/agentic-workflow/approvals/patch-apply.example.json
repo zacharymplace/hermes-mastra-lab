@@ -1,0 +1,5 @@
+{
+  "approved": true,
+  "reviewer": "external-human-reviewer",
+  "reason": "Patch scope is constrained to agentic workflow artifacts and does not auto-merge."
+}
