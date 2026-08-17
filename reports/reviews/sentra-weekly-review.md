@@ -1,6 +1,6 @@
 # Sentra Weekly Review
 
-Generated: 2026-08-17T20:20:26.230Z
+Generated: 2026-08-17T20:23:30.825Z
 Status: complete
 
 ## Summary
@@ -30,12 +30,12 @@ Sentra generated operating context, Hermes consumed the promotion input, a promo
 - Promotion History Ledger
 - Multi-project Prioritization
 - Weekly Review Feedback
+- Promotion Ledger Multi-Source
 - Operating Loop CI Coverage
 
 ## Next priorities
 
-- 1. Promotion Ledger Multi-Source: The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.
-- 2. Hermes Agentic Workflow Run Closeout: Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.
+- 1. Hermes Agentic Workflow Run Closeout: Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.
 
 ## Notes
 

@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-context-generator-v1",
-  "generatedAt": "2026-08-17T20:20:43.505Z",
+  "generatedAt": "2026-08-17T20:23:42.673Z",
   "activeProjects": [
     {
       "id": "hermes-agentic-workflow",
@@ -62,26 +62,19 @@
   ],
   "priorities": [
     {
-      "id": "promotion-ledger-multi-source",
-      "rank": 1,
-      "title": "Promotion Ledger Multi-Source",
-      "why": "The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
-      "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
-    },
-    {
       "id": "agentic-workflow-run-closeout",
-      "rank": 2,
+      "rank": 1,
       "title": "Hermes Agentic Workflow Run Closeout",
       "why": "Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.",
       "desiredOutcome": "Produce the proposed post-merge ledger (or an explicit closeout decision) for run-v4 so the top-priority project stops stalling."
     }
   ],
   "topPriority": {
-    "id": "promotion-ledger-multi-source",
+    "id": "agentic-workflow-run-closeout",
     "rank": 1,
-    "title": "Promotion Ledger Multi-Source",
-    "why": "The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
-    "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
+    "title": "Hermes Agentic Workflow Run Closeout",
+    "why": "Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.",
+    "desiredOutcome": "Produce the proposed post-merge ledger (or an explicit closeout decision) for run-v4 so the top-priority project stops stalling."
   },
   "projectPrioritization": {
     "selectedProject": {
@@ -264,7 +257,7 @@
     "Premature full autonomy before patch/test/report boundaries are stable"
   ],
   "hermesPrompt": {
-    "goal": "Promotion Ledger Multi-Source",
+    "goal": "Hermes Agentic Workflow Run Closeout",
     "constraints": [
       "Use current Sentra operating state",
       "Preserve Hermes domain logic outside framework code",
@@ -275,8 +268,7 @@
       "Project: Hermes Agentic Workflow — Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
       "Decision: Promote Mastra for controlled Hermes orchestration use.",
       "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
-      "Priority 1: Promotion Ledger Multi-Source — The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
-      "Priority 2: Hermes Agentic Workflow Run Closeout — Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced."
+      "Priority 1: Hermes Agentic Workflow Run Closeout — Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced."
     ]
   }
 }

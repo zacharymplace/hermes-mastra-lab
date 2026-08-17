@@ -2,7 +2,7 @@
   "runtime": "hermes-promotion-workflow-v1",
   "mode": "operational-local",
   "status": "promoted",
-  "generatedAt": "2026-08-17T20:20:44.036Z",
+  "generatedAt": "2026-08-17T20:23:43.283Z",
   "inputArtifact": "sentra/promotion-input.json",
   "reviewArtifact": "reviews/promotion-v1-review.json",
   "outputArtifacts": [

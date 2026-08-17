@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-priority-apply-v1",
-  "generatedAt": "2026-08-17T20:20:26.702Z",
+  "generatedAt": "2026-08-17T20:23:31.284Z",
   "status": "applied",
   "proposalArtifact": "sentra/priorities/proposals/current.json",
   "approvalArtifact": "sentra/priorities/proposals/current-approval.json",

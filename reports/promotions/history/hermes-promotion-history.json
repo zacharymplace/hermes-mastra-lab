@@ -1,16 +1,19 @@
 {
   "runtime": "hermes-promotion-history-ledger-v1",
-  "generatedAt": "2026-08-17T20:20:44.454Z",
+  "generatedAt": "2026-08-17T20:23:43.785Z",
   "ledgerArtifact": "hermes/promotions/history/events.jsonl",
-  "eventCount": 4,
-  "promotedCount": 4,
+  "sourceArtifacts": [
+    "reports/promotions/hermes-promotion-v1.json"
+  ],
+  "eventCount": 6,
+  "promotedCount": 6,
   "heldCount": 0,
   "averageScore": 19,
   "latestEvent": {
     "type": "hermes.promotion",
-    "id": "hermes-promotion-workflow-v1:2026-08-17T20:20:44.036Z",
-    "generatedAt": "2026-08-17T20:20:44.036Z",
-    "recordedAt": "2026-08-17T20:20:44.453Z",
+    "id": "hermes-promotion-workflow-v1:2026-08-17T20:23:43.283Z",
+    "generatedAt": "2026-08-17T20:23:43.283Z",
+    "recordedAt": "2026-08-17T20:23:43.784Z",
     "status": "promoted",
     "recommendation": {
       "title": "Hermes Idea Recommendation Workflow",
@@ -23,7 +26,7 @@
       "reason": "Recommendation clears threshold, risks are documented, and promotion is approved."
     },
     "sourceContext": {
-      "topPriority": "Promotion Ledger Multi-Source",
+      "topPriority": "Hermes Agentic Workflow Run Closeout",
       "snapshotArtifact": "sentra/snapshot.json",
       "promotionInputArtifact": "sentra/promotion-input.json"
     },
@@ -146,6 +149,60 @@
       },
       "sourceContext": {
         "topPriority": "Promotion Ledger Multi-Source",
+        "snapshotArtifact": "sentra/snapshot.json",
+        "promotionInputArtifact": "sentra/promotion-input.json"
+      },
+      "linkedArtifacts": {
+        "promotionJson": "reports/promotions/hermes-promotion-v1.json",
+        "promotionMarkdown": "reports/promotions/hermes-promotion-v1.md",
+        "weeklyReview": "sentra/reviews/weekly/current.json"
+      }
+    },
+    {
+      "type": "hermes.promotion",
+      "id": "hermes-promotion-workflow-v1:2026-08-17T20:23:17.565Z",
+      "generatedAt": "2026-08-17T20:23:17.565Z",
+      "recordedAt": "2026-08-17T20:23:18.044Z",
+      "status": "promoted",
+      "recommendation": {
+        "title": "Hermes Idea Recommendation Workflow",
+        "score": 19,
+        "verdict": "advance"
+      },
+      "review": {
+        "approved": true,
+        "reviewer": "external-human-reviewer",
+        "reason": "Recommendation clears threshold, risks are documented, and promotion is approved."
+      },
+      "sourceContext": {
+        "topPriority": "Promotion Ledger Multi-Source",
+        "snapshotArtifact": "sentra/snapshot.json",
+        "promotionInputArtifact": "sentra/promotion-input.json"
+      },
+      "linkedArtifacts": {
+        "promotionJson": "reports/promotions/hermes-promotion-v1.json",
+        "promotionMarkdown": "reports/promotions/hermes-promotion-v1.md",
+        "weeklyReview": "sentra/reviews/weekly/current.json"
+      }
+    },
+    {
+      "type": "hermes.promotion",
+      "id": "hermes-promotion-workflow-v1:2026-08-17T20:23:43.283Z",
+      "generatedAt": "2026-08-17T20:23:43.283Z",
+      "recordedAt": "2026-08-17T20:23:43.784Z",
+      "status": "promoted",
+      "recommendation": {
+        "title": "Hermes Idea Recommendation Workflow",
+        "score": 19,
+        "verdict": "advance"
+      },
+      "review": {
+        "approved": true,
+        "reviewer": "external-human-reviewer",
+        "reason": "Recommendation clears threshold, risks are documented, and promotion is approved."
+      },
+      "sourceContext": {
+        "topPriority": "Hermes Agentic Workflow Run Closeout",
         "snapshotArtifact": "sentra/snapshot.json",
         "promotionInputArtifact": "sentra/promotion-input.json"
       },

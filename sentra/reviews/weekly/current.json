@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-weekly-review-v1",
-  "generatedAt": "2026-08-17T20:20:26.230Z",
+  "generatedAt": "2026-08-17T20:23:30.825Z",
   "period": {
     "label": "current-operating-cycle",
     "source": "sentra/ledger/events.jsonl"
@@ -73,21 +73,18 @@
       "title": "Weekly Review Feedback"
     },
     {
+      "id": "promotion-ledger-multi-source",
+      "title": "Promotion Ledger Multi-Source"
+    },
+    {
       "id": "operating-loop-ci-coverage",
       "title": "Operating Loop CI Coverage"
     }
   ],
   "nextPriorities": [
     {
-      "id": "promotion-ledger-multi-source",
-      "rank": 1,
-      "title": "Promotion Ledger Multi-Source",
-      "why": "The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
-      "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
-    },
-    {
       "id": "agentic-workflow-run-closeout",
-      "rank": 2,
+      "rank": 1,
       "title": "Hermes Agentic Workflow Run Closeout",
       "why": "Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.",
       "desiredOutcome": "Produce the proposed post-merge ledger (or an explicit closeout decision) for run-v4 so the top-priority project stops stalling."
