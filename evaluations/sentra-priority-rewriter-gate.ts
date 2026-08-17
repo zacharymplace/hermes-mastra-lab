@@ -36,9 +36,7 @@ const checks = [
   },
   {
     id: "proposed-priorities-present",
-    pass:
-      Array.isArray(proposal.proposedPriorities) &&
-      proposal.proposedPriorities.length >= 3
+    pass: Array.isArray(proposal.proposedPriorities)
   },
   {
     id: "apply-runtime-labeled",

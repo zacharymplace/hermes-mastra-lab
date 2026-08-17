@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-operating-ledger-v1",
-  "generatedAt": "2026-06-06T04:59:28.631Z",
+  "generatedAt": "2026-08-17T20:20:44.958Z",
   "ledgerArtifact": "sentra/ledger/events.jsonl",
   "eventCount": 3,
   "latestEvent": {
@@ -13,14 +13,14 @@
       "artifact": "sentra/snapshot.json",
       "exists": true,
       "runtime": "sentra-context-generator-v1",
-      "generatedAt": "2026-06-06T04:59:27.510Z"
+      "generatedAt": "2026-08-17T20:20:43.505Z"
     },
     "promotion": {
       "artifact": "reports/promotions/hermes-promotion-v1.json",
       "exists": true,
       "runtime": "hermes-promotion-workflow-v1",
       "status": "promoted",
-      "generatedAt": "2026-06-06T04:59:28.105Z"
+      "generatedAt": "2026-08-17T20:20:44.036Z"
     }
   },
   "checks": {

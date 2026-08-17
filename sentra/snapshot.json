@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-context-generator-v1",
-  "generatedAt": "2026-08-17T20:15:42.580Z",
+  "generatedAt": "2026-08-17T20:20:43.505Z",
   "activeProjects": [
     {
       "id": "hermes-agentic-workflow",
@@ -69,15 +69,8 @@
       "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
     },
     {
-      "id": "operating-loop-ci-coverage",
-      "rank": 2,
-      "title": "Operating Loop CI Coverage",
-      "why": "CI only runs npm run check and npm run mastra:check, neither of which exercises the Sentra/Hermes promotion and ledger loop, so a regression there would go unnoticed.",
-      "desiredOutcome": "Wire the Sentra/Hermes operating loop (context, promotion, ledger) into a script CI already runs."
-    },
-    {
       "id": "agentic-workflow-run-closeout",
-      "rank": 3,
+      "rank": 2,
       "title": "Hermes Agentic Workflow Run Closeout",
       "why": "Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.",
       "desiredOutcome": "Produce the proposed post-merge ledger (or an explicit closeout decision) for run-v4 so the top-priority project stops stalling."
@@ -283,8 +276,7 @@
       "Decision: Promote Mastra for controlled Hermes orchestration use.",
       "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
       "Priority 1: Promotion Ledger Multi-Source — The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
-      "Priority 2: Operating Loop CI Coverage — CI only runs npm run check and npm run mastra:check, neither of which exercises the Sentra/Hermes promotion and ledger loop, so a regression there would go unnoticed.",
-      "Priority 3: Hermes Agentic Workflow Run Closeout — Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced."
+      "Priority 2: Hermes Agentic Workflow Run Closeout — Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced."
     ]
   }
 }

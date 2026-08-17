@@ -1,9 +1,9 @@
 # Hermes Promotion History
 
-Generated: 2026-08-17T20:15:32.488Z
+Generated: 2026-08-17T20:20:44.454Z
 
-Event count: 2
-Promoted: 2
+Event count: 4
+Promoted: 4
 Held: 0
 Average score: 19
 
@@ -14,9 +14,11 @@ Average score: 19
 - Score: 19
 - Verdict: advance
 - Reviewer: external-human-reviewer
-- Top priority: Promotion History Ledger
+- Top priority: Promotion Ledger Multi-Source
 
 ## Events
 
 - 1. promoted: Hermes Idea Recommendation Workflow (19)
 - 2. promoted: Hermes Idea Recommendation Workflow (19)
+- 3. promoted: Hermes Idea Recommendation Workflow (19)
+- 4. promoted: Hermes Idea Recommendation Workflow (19)

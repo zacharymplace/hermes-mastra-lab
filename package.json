@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check": "tsc --noEmit && npm run experiment:idea && npm run experiment:report && npm run promotion:gate && npm run doctor",
+    "check": "tsc --noEmit && npm run experiment:idea && npm run experiment:report && npm run promotion:gate && npm run sentra:operating-loop:check && npm run doctor",
     "experiment:idea": "tsx workflows/idea-recommendation.ts",
     "promotion:gate": "tsx evaluations/promotion-gate.ts",
     "experiment:report": "tsx workflows/write-experiment-report.ts",
@@ -73,6 +73,7 @@
     "sentra:ledger": "tsx scripts/write-sentra-ledger-report.ts",
     "sentra:ledger:gate": "tsx evaluations/sentra-ledger-gate.ts",
     "sentra:ledger:check": "npm run sentra:ledger && npm run sentra:ledger:gate",
+    "sentra:operating-loop:check": "npm run sentra:context:check && npm run hermes:promotion:v1:check && npm run sentra:ledger:check",
     "sentra:weekly-review": "tsx scripts/write-sentra-weekly-review.ts",
     "sentra:weekly-review:gate": "tsx evaluations/sentra-weekly-review-gate.ts",
     "sentra:weekly-review:check": "npm run sentra:weekly-review && npm run sentra:weekly-review:gate",

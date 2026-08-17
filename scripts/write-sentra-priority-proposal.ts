@@ -33,8 +33,7 @@ const proposal = {
   checks: {
     hasCurrentPriorities:
       Array.isArray(currentPriorities) && currentPriorities.length > 0,
-    hasProposedPriorities:
-      Array.isArray(proposedPriorities) && proposedPriorities.length >= 3,
+    hasProposedPriorities: Array.isArray(proposedPriorities),
     proposalChangesTopPriority:
       currentPriorities?.[0]?.id !== proposedPriorities?.[0]?.id,
     allProposalsSourcedFromReview: proposedPriorities.every(

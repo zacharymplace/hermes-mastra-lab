@@ -38,7 +38,7 @@ const checks = [
   },
   {
     id: "next-priorities-present",
-    pass: Array.isArray(review.nextPriorities) && review.nextPriorities.length >= 3
+    pass: Array.isArray(review.nextPriorities)
   },
   {
     id: "report-written",

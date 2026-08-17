@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-weekly-review-v1",
-  "generatedAt": "2026-08-17T20:15:37.429Z",
+  "generatedAt": "2026-08-17T20:20:26.230Z",
   "period": {
     "label": "current-operating-cycle",
     "source": "sentra/ledger/events.jsonl"
@@ -11,7 +11,7 @@
     "snapshot": {
       "runtime": "sentra-context-generator-v1",
       "activeProjects": 1,
-      "topPriority": "Promotion History Ledger"
+      "topPriority": "Promotion Ledger Multi-Source"
     },
     "promotion": {
       "runtime": "hermes-promotion-workflow-v1",
@@ -71,6 +71,10 @@
     {
       "id": "weekly-review-feedback",
       "title": "Weekly Review Feedback"
+    },
+    {
+      "id": "operating-loop-ci-coverage",
+      "title": "Operating Loop CI Coverage"
     }
   ],
   "nextPriorities": [
@@ -82,15 +86,8 @@
       "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
     },
     {
-      "id": "operating-loop-ci-coverage",
-      "rank": 2,
-      "title": "Operating Loop CI Coverage",
-      "why": "CI only runs npm run check and npm run mastra:check, neither of which exercises the Sentra/Hermes promotion and ledger loop, so a regression there would go unnoticed.",
-      "desiredOutcome": "Wire the Sentra/Hermes operating loop (context, promotion, ledger) into a script CI already runs."
-    },
-    {
       "id": "agentic-workflow-run-closeout",
-      "rank": 3,
+      "rank": 2,
       "title": "Hermes Agentic Workflow Run Closeout",
       "why": "Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.",
       "desiredOutcome": "Produce the proposed post-merge ledger (or an explicit closeout decision) for run-v4 so the top-priority project stops stalling."
