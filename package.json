@@ -63,7 +63,7 @@
     "mastra:promotion:v3:check": "npm run mastra:promotion:v3 && npm run mastra:promotion:v3:gate",
     "hermes:promotion:v1": "tsx workflows/hermes-promotion-v1/run.ts",
     "hermes:promotion:v1:gate": "tsx evaluations/hermes-promotion-v1-gate.ts",
-    "hermes:promotion:v1:check": "npm run hermes:promotion:v1 && npm run hermes:promotion:v1:gate",
+    "hermes:promotion:v1:check": "npm run hermes:promotion:v1 && npm run hermes:promotion:v1:gate && npm run hermes:promotion-history && npm run hermes:promotion-history:gate",
     "sentra:promotion-input": "tsx scripts/write-sentra-promotion-input.ts",
     "sentra:promotion-input:gate": "tsx evaluations/sentra-promotion-input-gate.ts",
     "sentra:promotion-input:check": "npm run sentra:promotion-input && npm run sentra:promotion-input:gate",

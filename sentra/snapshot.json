@@ -1,6 +1,6 @@
 {
   "runtime": "sentra-context-generator-v1",
-  "generatedAt": "2026-06-06T05:57:05.774Z",
+  "generatedAt": "2026-08-17T20:15:42.580Z",
   "activeProjects": [
     {
       "id": "hermes-agentic-workflow",
@@ -62,33 +62,33 @@
   ],
   "priorities": [
     {
-      "id": "promotion-history-ledger",
+      "id": "promotion-ledger-multi-source",
       "rank": 1,
-      "title": "Promotion History Ledger",
-      "why": "Promotion decisions should accumulate as a durable, queryable operating history.",
-      "desiredOutcome": "Append each Hermes promotion result into a promotion history ledger with status, score, reviewer, and linked artifacts."
+      "title": "Promotion Ledger Multi-Source",
+      "why": "The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
+      "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
     },
     {
-      "id": "multi-project-prioritization",
+      "id": "operating-loop-ci-coverage",
       "rank": 2,
-      "title": "Multi-project Prioritization",
-      "why": "Sentra should choose between multiple active projects instead of only operating Hermes Mastra Lab.",
-      "desiredOutcome": "Rank active projects and generate promotion inputs from the highest-value project context."
+      "title": "Operating Loop CI Coverage",
+      "why": "CI only runs npm run check and npm run mastra:check, neither of which exercises the Sentra/Hermes promotion and ledger loop, so a regression there would go unnoticed.",
+      "desiredOutcome": "Wire the Sentra/Hermes operating loop (context, promotion, ledger) into a script CI already runs."
     },
     {
-      "id": "weekly-review-feedback",
+      "id": "agentic-workflow-run-closeout",
       "rank": 3,
-      "title": "Weekly Review Feedback",
-      "why": "Weekly reviews should update priorities and stale risks instead of only reporting them.",
-      "desiredOutcome": "Convert review outcomes into proposed updates for sentra/priorities/current.json."
+      "title": "Hermes Agentic Workflow Run Closeout",
+      "why": "Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced.",
+      "desiredOutcome": "Produce the proposed post-merge ledger (or an explicit closeout decision) for run-v4 so the top-priority project stops stalling."
     }
   ],
   "topPriority": {
-    "id": "promotion-history-ledger",
+    "id": "promotion-ledger-multi-source",
     "rank": 1,
-    "title": "Promotion History Ledger",
-    "why": "Promotion decisions should accumulate as a durable, queryable operating history.",
-    "desiredOutcome": "Append each Hermes promotion result into a promotion history ledger with status, score, reviewer, and linked artifacts."
+    "title": "Promotion Ledger Multi-Source",
+    "why": "The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
+    "desiredOutcome": "Generalize the ledger writer to discover and append events from every Hermes promotion artifact, not just hermes-promotion-v1.json."
   },
   "projectPrioritization": {
     "selectedProject": {
@@ -271,7 +271,7 @@
     "Premature full autonomy before patch/test/report boundaries are stable"
   ],
   "hermesPrompt": {
-    "goal": "Promotion History Ledger",
+    "goal": "Promotion Ledger Multi-Source",
     "constraints": [
       "Use current Sentra operating state",
       "Preserve Hermes domain logic outside framework code",
@@ -282,9 +282,9 @@
       "Project: Hermes Agentic Workflow — Set up Hermes so selected work can move from recommendation into autonomous or semi-autonomous execution.",
       "Decision: Promote Mastra for controlled Hermes orchestration use.",
       "Review: Mastra qualified for controlled use after real suspend/resume, persistence, external human input, failure recovery, and Langfuse visibility.",
-      "Priority 1: Promotion History Ledger — Promotion decisions should accumulate as a durable, queryable operating history.",
-      "Priority 2: Multi-project Prioritization — Sentra should choose between multiple active projects instead of only operating Hermes Mastra Lab.",
-      "Priority 3: Weekly Review Feedback — Weekly reviews should update priorities and stale risks instead of only reporting them."
+      "Priority 1: Promotion Ledger Multi-Source — The promotion history ledger only reads the single hardcoded hermes-promotion-v1.json artifact, so it would silently miss any future Hermes promotion workflow version.",
+      "Priority 2: Operating Loop CI Coverage — CI only runs npm run check and npm run mastra:check, neither of which exercises the Sentra/Hermes promotion and ledger loop, so a regression there would go unnoticed.",
+      "Priority 3: Hermes Agentic Workflow Run Closeout — Multi-project prioritization selected Hermes Agentic Workflow as the top project, but its run-v4 PR lifecycle has been tracking-ready with no branch, push, or PR across multiple cycles, and no closeout artifact has been produced."
     ]
   }
 }
