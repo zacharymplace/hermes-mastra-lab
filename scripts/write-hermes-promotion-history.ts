@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -61,9 +62,23 @@ for (const fileName of promotionArtifacts) {
   );
   const promotion = readJson(promotionJsonArtifact);
 
+  const decisionIdentity = {
+    runtime: promotion.runtime,
+    status: promotion.status,
+    inputArtifact: promotion.inputArtifact,
+    recommendation: promotion.recommendation,
+    review: promotion.review
+  };
+
+  const decisionHash = crypto
+    .createHash("sha256")
+    .update(JSON.stringify(decisionIdentity))
+    .digest("hex")
+    .slice(0, 16);
+
   const event = {
     type: "hermes.promotion",
-    id: `${promotion.runtime}:${promotion.generatedAt}`,
+    id: `${promotion.runtime}:${decisionHash}`,
     generatedAt: promotion.generatedAt,
     recordedAt: new Date().toISOString(),
     status: promotion.status,

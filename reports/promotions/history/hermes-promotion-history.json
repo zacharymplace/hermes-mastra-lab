@@ -1,19 +1,19 @@
 {
   "runtime": "hermes-promotion-history-ledger-v1",
-  "generatedAt": "2026-08-17T20:23:43.785Z",
+  "generatedAt": "2026-08-24T20:43:09.092Z",
   "ledgerArtifact": "hermes/promotions/history/events.jsonl",
   "sourceArtifacts": [
     "reports/promotions/hermes-promotion-v1.json"
   ],
-  "eventCount": 6,
-  "promotedCount": 6,
+  "eventCount": 7,
+  "promotedCount": 7,
   "heldCount": 0,
   "averageScore": 19,
   "latestEvent": {
     "type": "hermes.promotion",
-    "id": "hermes-promotion-workflow-v1:2026-08-17T20:23:43.283Z",
+    "id": "hermes-promotion-workflow-v1:5eed7e85285bfce6",
     "generatedAt": "2026-08-17T20:23:43.283Z",
-    "recordedAt": "2026-08-17T20:23:43.784Z",
+    "recordedAt": "2026-08-24T20:43:09.091Z",
     "status": "promoted",
     "recommendation": {
       "title": "Hermes Idea Recommendation Workflow",
@@ -190,6 +190,33 @@
       "id": "hermes-promotion-workflow-v1:2026-08-17T20:23:43.283Z",
       "generatedAt": "2026-08-17T20:23:43.283Z",
       "recordedAt": "2026-08-17T20:23:43.784Z",
+      "status": "promoted",
+      "recommendation": {
+        "title": "Hermes Idea Recommendation Workflow",
+        "score": 19,
+        "verdict": "advance"
+      },
+      "review": {
+        "approved": true,
+        "reviewer": "external-human-reviewer",
+        "reason": "Recommendation clears threshold, risks are documented, and promotion is approved."
+      },
+      "sourceContext": {
+        "topPriority": "Hermes Agentic Workflow Run Closeout",
+        "snapshotArtifact": "sentra/snapshot.json",
+        "promotionInputArtifact": "sentra/promotion-input.json"
+      },
+      "linkedArtifacts": {
+        "promotionJson": "reports/promotions/hermes-promotion-v1.json",
+        "promotionMarkdown": "reports/promotions/hermes-promotion-v1.md",
+        "weeklyReview": "sentra/reviews/weekly/current.json"
+      }
+    },
+    {
+      "type": "hermes.promotion",
+      "id": "hermes-promotion-workflow-v1:5eed7e85285bfce6",
+      "generatedAt": "2026-08-17T20:23:43.283Z",
+      "recordedAt": "2026-08-24T20:43:09.091Z",
       "status": "promoted",
       "recommendation": {
         "title": "Hermes Idea Recommendation Workflow",
