@@ -1,0 +1,57 @@
+{
+  "schema_version": "systems-builder-lifecycle-v1",
+  "system_id": "hermes-mastra-lab",
+  "display_name": "Hermes Mastra Lab",
+  "phase": "validate",
+  "condition": "waiting",
+  "source": {
+    "repository": "zacharymplace/hermes-mastra-lab",
+    "path": ".",
+    "branch": "main",
+    "commit": "0a0754ac"
+  },
+  "evidence": [
+    {
+      "kind": "validation",
+      "reference": "npm run check",
+      "result": "pass"
+    },
+    {
+      "kind": "health",
+      "reference": "npm run doctor",
+      "result": "healthy"
+    },
+    {
+      "kind": "promotion-history",
+      "reference": "npm run hermes:promotion-history:check",
+      "result": "pass-idempotent"
+    },
+    {
+      "kind": "evaluation-boundary",
+      "reference": "docs/mastra-evaluation.md",
+      "result": "waiting-manual-verification"
+    }
+  ],
+  "last_verified_at": "2026-08-24T20:47:54Z",
+  "next_action": {
+    "description": "Complete manual Langfuse UI verification, compare Mastra against the plain TypeScript baseline, and record an explicit adopt, contain, or reject decision.",
+    "command": "git status --short"
+  },
+  "blockers": [
+    "Mastra remains under evaluation rather than adopted as the Hermes runtime.",
+    "Real Langfuse emission still requires manual UI verification.",
+    "No production workflow or external outcome evidence has been recorded.",
+    "Approval inputs are local mutable artifacts and are not durable repository evidence."
+  ],
+  "capabilities": [
+    "workflow-runtime-evaluation",
+    "typed-agent-orchestration",
+    "human-review-gates",
+    "promotion-ledger",
+    "priority-proposals",
+    "operating-loop-reports",
+    "Langfuse-tracing",
+    "failure-recovery-evaluation",
+    "quality-gated-agentic-workflows"
+  ]
+}
