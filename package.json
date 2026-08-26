@@ -257,7 +257,7 @@
     "@langfuse/otel": "^5.4.1",
     "@langfuse/tracing": "^5.4.1",
     "@mastra/libsql": "^1.12.1",
-    "@opentelemetry/sdk-node": "^0.218.0",
+    "@opentelemetry/sdk-node": "0.221.0",
     "mastra": "^1.12.2",
     "zod": "^4.4.3"
   },
