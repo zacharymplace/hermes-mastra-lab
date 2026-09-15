@@ -1,0 +1,24 @@
+{
+  "experiment_id": "SENTRA-WATCH-001",
+  "subject_id": "OPENAI-GPT-5.6-SOL-R0-T0",
+  "provider": "OpenAI",
+  "api": "responses",
+  "model": "gpt-5.6-sol",
+  "reasoning": {
+    "effort": "none"
+  },
+  "sampling": {
+    "temperature": 0,
+    "seed_policy": "provider_seed_not_sent"
+  },
+  "tools": [],
+  "store": false,
+  "max_output_tokens": 1200,
+  "context_policy": "fresh_response_per_scenario",
+  "trial_order": "EXTERNAL_then_EMBEDDED__scenario_id_ascending",
+  "blinding": {
+    "source": "generated arm packet",
+    "strip_fields_before_subject": ["family"],
+    "forbidden_subject_inputs": ["ground_truth", "onset_tick", "scenario_family"]
+  }
+}
