@@ -61,6 +61,27 @@ jobs:
       - name: Generate arm packets
         run: node evaluations/sentra-watch-001/generate-blind-packets.mjs
 
+      - name: Verify frozen packet hashes
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const crypto = require('node:crypto');
+          const path = require('node:path');
+          const root = 'evaluations/sentra-watch-001';
+          const manifest = JSON.parse(fs.readFileSync(path.join(root, 'PACKET_FREEZE.json'), 'utf8'));
+
+          for (const [relative, expected] of Object.entries(manifest.packets)) {
+            const full = path.join(root, relative);
+            const bytes = fs.readFileSync(full);
+            const sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+            if (sha256 !== expected.sha256 || bytes.length !== expected.bytes) {
+              throw new Error(`${relative} packet freeze mismatch`);
+            }
+            console.log(`${relative} sha256=${sha256} bytes=${bytes.length} PASS`);
+          }
+          NODE
+
       - name: Run fresh-context blinded matrix
         run: node evaluations/sentra-watch-001/run-model-matrix.mjs
 
@@ -85,3 +106,4 @@ jobs:
             evaluations/sentra-watch-001/subject.json
             evaluations/sentra-watch-001/FREEZE.json
             evaluations/sentra-watch-001/SUBJECT_FREEZE.json
+            evaluations/sentra-watch-001/PACKET_FREEZE.json
