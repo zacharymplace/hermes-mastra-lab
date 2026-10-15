@@ -1,0 +1,17 @@
+{
+  "experiment_id": "SENTRA-WATCH-001",
+  "freeze_version": 1,
+  "generator": "generate-blind-packets.mjs",
+  "hash_algorithm": "sha256",
+  "packets": {
+    "generated/external-packet.json": {
+      "sha256": "11dfdc511e7258a3870ca0681a2e399ee811b816b5f0dd0e90f964b780412280",
+      "bytes": 4502
+    },
+    "generated/embedded-packet.json": {
+      "sha256": "a17e84ede505d6fd9d2451168721aeea028486ff9784bd96a661ff198c1f4a9c",
+      "bytes": 7946
+    }
+  },
+  "subject_blinding_note": "Generated packets retain the frozen family field, but run-model-matrix.mjs strips family before every fresh subject request."
+}

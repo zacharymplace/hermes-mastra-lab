@@ -1,0 +1,15 @@
+{
+  "experiment_id": "SENTRA-WATCH-001",
+  "freeze_version": 1,
+  "base_commit": "7314ab12895d03dfeb1ef6d1537dfa97b6ecfd45",
+  "branch": "experiment/sentra-watch-001",
+  "content_addressing": "git_blob_sha1",
+  "frozen_files": {
+    "README.md": "f7091c363e762f71109cea1d26e7f2dba39aa1c0",
+    "config.json": "e1a289de1908b51e0251b6298f248d9d1c2e2419",
+    "scenarios.json": "a7816d5625686ed7e42631fbcc9ddce770bc2a12",
+    "generate-blind-packets.mjs": "d129cb54b3f4178d746e37a0ec15fce5c12ffe02",
+    "score-results.mjs": "4597ab481f69b345110965c0de357d5d8e84c4a5"
+  },
+  "rule": "Do not modify any frozen file after experimental results exist. A protocol change requires a new experiment/version."
+}

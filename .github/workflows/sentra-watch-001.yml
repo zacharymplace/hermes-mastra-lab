@@ -1,0 +1,109 @@
+name: SENTRA-WATCH-001 Matrix
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - experiment/sentra-watch-001
+    paths:
+      - evaluations/sentra-watch-001/**
+      - .github/workflows/sentra-watch-001.yml
+
+permissions:
+  contents: read
+
+jobs:
+  blinded-matrix:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Require provider credential
+        shell: bash
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "OPENAI_API_KEY repository secret is not configured."
+            exit 2
+          fi
+
+      - name: Verify protocol and subject freezes
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const cp = require('node:child_process');
+          const path = require('node:path');
+          const root = 'evaluations/sentra-watch-001';
+
+          function verify(manifestName) {
+            const manifest = JSON.parse(fs.readFileSync(path.join(root, manifestName), 'utf8'));
+            for (const [relative, expected] of Object.entries(manifest.frozen_files)) {
+              const full = path.join(root, relative);
+              const actual = cp.execFileSync('git', ['hash-object', full], { encoding: 'utf8' }).trim();
+              if (actual !== expected) {
+                throw new Error(`${manifestName}: ${relative} changed: expected ${expected}, got ${actual}`);
+              }
+              console.log(`${manifestName}: ${relative} ${actual} PASS`);
+            }
+          }
+
+          verify('FREEZE.json');
+          verify('SUBJECT_FREEZE.json');
+          NODE
+
+      - name: Generate arm packets
+        run: node evaluations/sentra-watch-001/generate-blind-packets.mjs
+
+      - name: Verify frozen packet hashes
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const crypto = require('node:crypto');
+          const path = require('node:path');
+          const root = 'evaluations/sentra-watch-001';
+          const manifest = JSON.parse(fs.readFileSync(path.join(root, 'PACKET_FREEZE.json'), 'utf8'));
+
+          for (const [relative, expected] of Object.entries(manifest.packets)) {
+            const full = path.join(root, relative);
+            const bytes = fs.readFileSync(full);
+            const sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+            if (sha256 !== expected.sha256 || bytes.length !== expected.bytes) {
+              throw new Error(`${relative} packet freeze mismatch`);
+            }
+            console.log(`${relative} sha256=${sha256} bytes=${bytes.length} PASS`);
+          }
+          NODE
+
+      - name: Run fresh-context blinded matrix
+        run: node evaluations/sentra-watch-001/run-model-matrix.mjs
+
+      - name: Score matrix
+        shell: bash
+        run: |
+          node evaluations/sentra-watch-001/score-results.mjs \
+            evaluations/sentra-watch-001/results/external.json \
+            evaluations/sentra-watch-001/results/embedded.json \
+            > evaluations/sentra-watch-001/results/report.json
+          cat evaluations/sentra-watch-001/results/report.json
+
+      - name: Upload immutable run evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: sentra-watch-001-matrix
+          if-no-files-found: error
+          retention-days: 90
+          path: |
+            evaluations/sentra-watch-001/generated/*.json
+            evaluations/sentra-watch-001/results/*.json
+            evaluations/sentra-watch-001/subject.json
+            evaluations/sentra-watch-001/FREEZE.json
+            evaluations/sentra-watch-001/SUBJECT_FREEZE.json
+            evaluations/sentra-watch-001/PACKET_FREEZE.json

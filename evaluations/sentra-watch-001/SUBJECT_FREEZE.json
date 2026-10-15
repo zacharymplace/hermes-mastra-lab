@@ -1,0 +1,10 @@
+{
+  "experiment_id": "SENTRA-WATCH-001",
+  "freeze_version": 1,
+  "content_addressing": "git_blob_sha1",
+  "frozen_files": {
+    "subject.json": "752f0b3421dc6b4ccb37f3d3f369e84dbb631e4f",
+    "run-model-matrix.mjs": "05a2845695745d47c596c70d2104805ded1413fc"
+  },
+  "rule": "Any change to subject model, sampling policy, prompt, blinding transform, or runner requires a new subject freeze version before another scored matrix."
+}
